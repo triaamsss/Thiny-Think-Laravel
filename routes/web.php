@@ -19,3 +19,5 @@ Route::view('/pencocokkan-abjad', 'pages.pencocokkan_abjad')->name('pencocokkan-
 Route::view('/pencocokkan-abjad/play', 'pages.pencocokkan_abjad_play')->name('pencocokkan-abjad.play');
 Route::view('/kosa-kata', 'pages.kosa_kata')->name('kosa-kata');
 Route::view('/kosa-kata/play', 'pages.kosa_kata_play')->name('kosa-kata.play');
+Route::view('/surat-pendek', 'pages.surat_pendek')->name('surat-pendek');
+Route::view('/surat-pendek/play', 'pages.surat_pendek_play')->name('surat-pendek.play');
