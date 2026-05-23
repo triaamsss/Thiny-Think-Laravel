@@ -236,7 +236,7 @@
                                     <img src="{{ asset('assets/images/service/Hijaiyah.png') }}" alt="">
                                 </div>
                                 <div class="service-text">
-                                    <h2><a href="{{ route('hijaiyah') }}">Huruf Hijaiyyah</a></h2>
+                                    <h2><a href="{{ route('hijaiyah') }}">Huruf Hijaiyah</a></h2>
                                 </div>
                             </div>
                         </div> 
