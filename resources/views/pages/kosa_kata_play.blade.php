@@ -946,6 +946,126 @@
       } */
 
         /* =========================================================
+            MATERI SEBELUM KUIS
+      ========================================================== */
+        .materi-wrapper {
+            max-width: 860px;
+            margin: 40px auto 0;
+            background: var(--paper);
+            border: 4px solid var(--dark);
+            border-radius: 32px;
+            padding: 36px 32px;
+            text-align: center;
+            box-shadow: 8px 8px 0 var(--dark);
+        }
+
+        .materi-bridge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--yellow);
+            color: var(--dark);
+            border-radius: 99px;
+            padding: 7px 22px;
+            font-family: "Baloo 2", cursive;
+            font-size: 15px;
+            font-weight: 800;
+            border: 3px solid var(--dark);
+            box-shadow: 3px 3px 0 var(--dark);
+            margin-bottom: 18px;
+        }
+
+        .materi-title {
+            font-family: "Baloo 2", cursive;
+            font-size: clamp(34px, 5vw, 54px);
+            font-weight: 900;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .materi-desc {
+            max-width: 680px;
+            margin: 0 auto 22px;
+            font-size: 18px;
+            font-weight: 800;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .materi-box {
+            background: #ffffff;
+            border: 3px dashed var(--dark);
+            border-radius: 24px;
+            padding: 22px;
+            margin-top: 20px;
+        }
+
+        .materi-subtitle {
+            font-family: "Baloo 2", cursive;
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--purple);
+            margin-bottom: 14px;
+        }
+
+        .materi-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(180px, 1fr));
+            gap: 14px;
+        }
+
+        .materi-item {
+            background: var(--warm);
+            border: 3px solid var(--dark);
+            border-radius: 18px;
+            padding: 14px 12px;
+            font-family: "Baloo 2", cursive;
+            font-size: 21px;
+            font-weight: 900;
+            color: var(--dark);
+            box-shadow: 4px 4px 0 var(--dark);
+            cursor: pointer;
+        }
+
+        .materi-item:hover {
+            background: #fff4c7;
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 var(--dark);
+        }
+
+        .materi-kata {
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+        .materi-suku {
+            display: block;
+            margin-top: 4px;
+            font-size: 17px;
+            color: var(--orange);
+        }
+
+        .materi-note {
+            margin-top: 18px;
+            font-family: "Baloo 2", cursive;
+            font-size: 18px;
+            font-weight: 900;
+            color: var(--dark);
+        }
+
+        @media (max-width: 600px) {
+            .materi-list {
+                grid-template-columns: 1fr;
+            }
+
+            .materi-wrapper {
+                margin: 30px 16px 0;
+                padding: 28px 20px;
+            }
+        }
+
+
+        /* =========================================================
         GAME LENGKAPI SUKU KATA
       ========================================================== */
         #game-screen {
@@ -1050,23 +1170,25 @@
 
         .suku-image {
             height: 145px;
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 82px;
             background: #ffffff;
             border-bottom: 5px solid currentColor;
+            overflow: hidden;
         }
 
         .suku-image img {
-            max-width: 130px;
-            max-height: 125px;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
+            display: block;
+            padding: 8px;
         }
 
         .suku-word-row {
             display: grid;
-            grid-template-columns: 1fr 1fr;
             min-height: 58px;
         }
 
@@ -1080,6 +1202,9 @@
             color: #ff2727;
             background: #ffffff;
             border-right: 4px solid currentColor;
+            min-height: 58px;
+            text-align: center;
+            padding: 6px;
         }
 
         .suku-part:last-child {
@@ -1101,6 +1226,7 @@
 
         .suku-blank.wrong {
             background: #ffd7d7;
+            color: #ff2727;
         }
 
         .suku-options {
@@ -1145,6 +1271,193 @@
         }
 
         /* =========================================================
+GAME SUSUN HURUF
+========================================================== */
+        .letter-game-wrapper {
+            max-width: 860px;
+            margin: 40px auto 0;
+            background: #ffffff;
+            border: 5px solid var(--purple);
+            border-radius: 30px;
+            padding: 32px;
+            box-shadow: 8px 8px 0 var(--dark);
+            text-align: center;
+        }
+
+        .letter-title-area {
+            margin-bottom: 20px;
+        }
+
+        .letter-title {
+            font-family: "Baloo 2", cursive;
+            font-size: clamp(42px, 7vw, 68px);
+            font-weight: 900;
+            color: var(--dark);
+            line-height: 1;
+        }
+
+        .letter-title-area p {
+            font-size: 18px;
+            font-weight: 900;
+            color: #555;
+        }
+
+        .letter-score-row {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .letter-score-card {
+            background: var(--warm);
+            border: 3px solid var(--dark);
+            border-radius: 18px;
+            padding: 10px 20px;
+            font-family: "Baloo 2", cursive;
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--dark);
+            box-shadow: 4px 4px 0 var(--dark);
+        }
+
+        .letter-card {
+            background: var(--paper);
+            border: 4px solid var(--dark);
+            border-radius: 28px;
+            padding: 28px 24px;
+            box-shadow: 6px 6px 0 var(--dark);
+        }
+
+        .letter-image {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 14px;
+            background: var(--warm);
+            border: 4px solid var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 82px;
+            box-shadow: 5px 5px 0 var(--dark);
+        }
+
+        .letter-image img {
+            max-width: 120px;
+            max-height: 120px;
+            object-fit: contain;
+        }
+
+        .letter-hint {
+            font-family: "Baloo 2", cursive;
+            font-size: 20px;
+            font-weight: 900;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .letter-suku-hint {
+            display: inline-block;
+            background: var(--yellow);
+            border: 3px solid var(--dark);
+            border-radius: 99px;
+            padding: 6px 18px;
+            font-family: "Baloo 2", cursive;
+            font-size: 17px;
+            font-weight: 900;
+            color: var(--dark);
+            margin-bottom: 18px;
+            box-shadow: 3px 3px 0 var(--dark);
+        }
+
+        .letter-answer {
+            min-height: 78px;
+            background: #ffffff;
+            border: 3px dashed var(--dark);
+            border-radius: 20px;
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .answer-letter {
+            width: 52px;
+            height: 58px;
+            border: 3px solid var(--dark);
+            border-radius: 14px;
+            background: var(--yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Baloo 2", cursive;
+            font-size: 30px;
+            font-weight: 900;
+            color: var(--dark);
+            box-shadow: 3px 3px 0 var(--dark);
+            cursor: pointer;
+        }
+
+        .letter-options {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .letter-option {
+            width: 58px;
+            height: 64px;
+            border: 3px solid var(--dark);
+            border-radius: 16px;
+            background: var(--orange);
+            color: white;
+            font-family: "Baloo 2", cursive;
+            font-size: 30px;
+            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 4px 4px 0 var(--dark);
+            transition: 0.15s ease;
+        }
+
+        .letter-option:hover:not(.used) {
+            transform: translate(-2px, -3px);
+            box-shadow: 6px 7px 0 var(--dark);
+        }
+
+        .letter-option.used {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .letter-feedback {
+            min-height: 34px;
+            margin-top: 20px;
+            font-family: "Baloo 2", cursive;
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--dark);
+        }
+
+        @media (max-width: 600px) {
+            .letter-option {
+                width: 50px;
+                height: 56px;
+                font-size: 26px;
+            }
+
+            .answer-letter {
+                width: 46px;
+                height: 52px;
+                font-size: 26px;
+            }
+        }
+
+        /* =========================================================
         13. HALAMAN HASIL AKHIR
       ========================================================== */
         #result-screen {
@@ -1182,6 +1495,14 @@
             font-size: 44px;
             margin: 10px 0 6px;
             letter-spacing: 4px;
+        }
+
+        .result-label {
+            font-family: "Baloo 2", cursive;
+            font-size: 18px;
+            font-weight: 900;
+            color: #777;
+            margin-top: 8px;
         }
 
         .result-score {
@@ -1362,44 +1683,53 @@
                     Pilih salah satu kategori untuk menyusun huruf menjadi kata!
                 </p>
 
-                <!-- KATEGORI BUAH -->
+                <!-- KATEGORI -->
                 <div class="category-menu">
-                    <button class="category-choice buah-choice" onclick="startSukuCategory('buah')">
-                        🍎 Buah-buahan
+                    <button class="category-choice buah-choice" onclick="showMateri('buah', 'suku')"> 🍎
+                        Buah-buahan</button>
+                    <button class="category-choice hewan-choice" onclick="showMateri('hewan', 'suku')"> 🐾
+                        Hewan</button>
+                    <button class="category-choice benda-choice" onclick="showMateri('benda', 'suku' )"> 🏠
+                        Benda</button>
+                    <button class="category-choice alam-choice" onclick="showMateri('alam', 'suku')"> 🌿 Alam</button>
+
+                    <button class="category-choice pekerjaan-choice" onclick="showMateri('pekerjaan', 'letter')"> 👩‍⚕️
+                        Pekerjaan</button>
+                    <button class="category-choice transportasi-choice" onclick="showMateri('transportasi', 'letter')">
+                        🚗 Alat Transportasi</button>
+                    <button class="category-choice sayuran-choice" onclick="showMateri('sayuran', 'letter')"> 🥦
+                        Sayuran</button>
+                    <button class="category-choice warna-choice" onclick="showMateri('warna', 'letter')"> 🎨
+                        Warna</button>
+
+                </div>
+        </section>
+
+        <!-- =========================================================
+        HALAMAN MATERI KATEGORI KOSAKATA SEBELUM HALAMAN KUIS
+      ========================================================== -->
+        <section id="materi-screen" style="display: none">
+            {{-- Materi Kategori --}}
+            <div class="materi-wrapper">
+                <div class="materi-bridge">📚 Materi Kosakata</div>
+                <h1 class="materi-title" id="materiTitle">Buah-buahan</h1>
+
+                <p class="materi-desc" id="materiDesc">Yuk belajar kosakata terlebih dahulu sebelum mulai kuis!</p>
+
+                <div class="materi-box">
+                    <h3 class="materi-subtitle">Contoh Kosakata</h3>
+                    <div class="materi-list" id="materiList"></div>
+                </div>
+
+                <div class="materi-note">Setelah membaca materi, klik tombol mulai kuis ya!</div>
+
+                <div class="action-row" style="margin-top: 24px">
+                    <button class="action-btn btn-clear" onclick="goHome()">
+                        ← Kembali
                     </button>
 
-                    <!-- KATEGORI HEWAN -->
-                    <button class="category-choice hewan-choice" onclick="startSukuCategory('hewan')">
-                        🐾 Hewan
-                    </button>
-
-                    <!-- KATEGORI BENDA -->
-                    <button class="category-choice benda-choice" onclick="startSukuCategory('benda')">
-                        🏠 Benda
-                    </button>
-
-                    <!-- KATEGORI ALAM -->
-                    <button class="category-choice alam-choice" onclick="startSukuCategory('alam')">
-                        🌿 Alam
-                    </button>
-
-                    <!-- KATEGORI PEKERJAAN -->
-                    <button class="category-choice pekerjaan-choice" onclick="startCategory('pekerjaan')">
-                        👩‍⚕️ Pekerjaan
-                    </button>
-
-                    <!-- KATEGORI ALAT TRANSPORTASI -->
-                    <button class="category-choice transportasi-choice" onclick="startCategory('transportasi')">
-                        🚗 Alat Transportasi
-                    </button>
-
-                    <!-- KATEGORI SAYURAN -->
-                    <button class="category-choice sayuran-choice" onclick="startCategory('sayuran')">
-                        🥦 Sayuran
-                    </button>
-
-                    <button class="category-choice warna-choice" onclick="startCategory('warna')">
-                        🎨 Warna
+                    <button class="action-btn btn-next" onclick="startQuizFromMateri()">
+                        Mulai Kuis →
                     </button>
                 </div>
             </div>
@@ -1409,16 +1739,112 @@
         HALAMAN GAME PUZZLE HURUF - KATEGORI BUAH, HEWAN, BENDA, ALAM
       ========================================================== -->
         <section id="suku-game-screen" style="display: none">
-            <div class="suku-game-wrapper"></div>
+            <div class="suku-game-wrapper">
+                <div class="suku-title-area">
+                    <h1 class="suku-title">
+                        <span>Mengenal</span>
+                        <span>Suku</span>
+                        <span>Kata</span>
+                    </h1>
+
+                    <p id="gameInstruction">
+                        Klik kotak kosong, lalu pilih suku kata yang benar!
+                    </p>
+                </div>
+
+                <div class="suku-score-row">
+                    <div class="suku-score-card">
+                        Kategori: <span id="sukuCategoryLabel">Buah</span>
+                    </div>
+
+                    <div class="suku-score-card">
+                        Skor: <span id="sukuScore">0</span>
+                    </div>
+
+                    <div class="suku-score-card">
+                        Benar: <span id="sukuCorrect">0</span> /
+                        <span id="sukuTotal">10</span>
+                    </div>
+
+                    <div class="suku-board">
+                        <div class="suku-cards" id="leftSukuCards"></div>
+                        <div class="suku-options" id="sukuOptions"></div>
+                        <div class="suku-cards" id="rightSukuCards"></div>
+                    </div>
+
+                    <div class="suku-feedback" id="sukuFeedback"></div>
+
+                    <div class="action-row" style="margin-top: 20px">
+                        <button class="action-btn btn-clear" onclick="resetSukuGame()">
+                            🔄 Ulangi
+                        </button>
+
+                        <button class="action-btn btn-next" onclick="goHome()">
+                            ➡ Kategori Lain
+                        </button>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- =========================================================
         HALAMAN GAME SUSUN HURUF - KATEGORI PEKERJAAN, TRANSPORTASI, SAYURAN, WARNA
       ========================================================== -->
         <section id="letter-game-screen" style="display: none">
+            <div class="letter-game-wrapper">
+                <div class="letter-title-area">
+                    <h1 class="letter-title">Susun Huruf</h1>
+                    <p>Susun huruf acak menjadi nama gambar yang benar!</p>
+                </div>
 
+                <div class="letter-score-row">
+                    <div class="letter-score-card">
+                        Kategori: <span id="letterCategoryLabel">Pekerjaan</span>
+                    </div>
+
+                    <div class="letter-score-card">
+                        Skor: <span id="letterScore">0</span>
+                    </div>
+
+                    <div class="letter-score-card">
+                        Benar: <span id="letterCorrect">0</span> /
+                        <span id="letterTotal">6</span>
+                    </div>
+                </div>
+
+                <div class="letter-card">
+                    <div class="letter-image" id="letterImage">👩‍⚕️</div>
+
+                    <div class="letter-hint">
+                        Susun nama gambar ini!
+                    </div>
+
+                    <div class="letter-suku-hint" id="letterSukuHint">
+                        Petunjuk: dok - ter
+                    </div>
+
+                    <div class="letter-answer" id="letterAnswer"></div>
+
+                    <div class="letter-options" id="letterOptions"></div>
+
+                    <div class="letter-feedback" id="letterFeedback"></div>
+
+                    <div class="action-row" style="margin-top: 20px">
+                        <button class="action-btn btn-clear" onclick="clearLetterAnswer()">
+                            🗑 Hapus
+                        </button>
+
+                        <button class="action-btn btn-check" onclick="checkLetterAnswer()">
+                            ✓ Cek Jawaban
+                        </button>
+
+                        <button class="action-btn btn-next" onclick="goHome()">
+                            ➡ Kategori Lain
+                        </button>
+                    </div>
+                </div>
+            </div>
         </section>
-
         <!-- <section id="game-screen">
         <div class="suku-game-wrapper">
           <div class="suku-title-area">
@@ -1578,16 +2004,16 @@
                 <span class="result-emoji" id="rEmoji">🏆</span>
                 <div class="result-title" id="rTitle">Luar Biasa!</div>
                 <div class="result-stars" id="rStars">⭐⭐⭐</div>
-                <div class="result-score" id="rScore">10 / 10</div>
+                <div class="result-label">Nilai Akhir</div>
+                <div class="result-score" id="rScore">100</div>
                 <div class="result-msg" id="rMsg">
                     Kamu adalah juara kosakata hari ini!
                 </div>
 
                 <div class="result-btns">
-                    <button class="rbtn r-yellow" onclick="retryGame()">
+                    <button class="rbtn r-yellow" onclick="retryCurrentGame()">
                         🔄 Coba Lagi
-                    </button>
-                    <button class="rbtn r-green" onclick="goHome()">
+                    </button> <button class="rbtn r-green" onclick="goHome()">
                         ➡ Topik Lain
                     </button>
                     <button class="rbtn r-blue" onclick="goHome()">🏠 Menu</button>
@@ -1597,13 +2023,9 @@
     </div>
 
     <script>
-        /* =========================================================
-                            1. DATA KOSAKATA
-                            Setiap kategori memiliki label, warna, dan daftar kata.
-                            kata  : jawaban benar
-                            suku  : pembagian suku kata untuk petunjuk
-                            emoji : gambar sederhana untuk ditampilkan
-                          ========================================================== */
+        /* ========================================================
+                                                                                                                                                                                                                                                                                1. DATA KOSAKATA
+                                                                                                                                                                                                                                                                                ========================================================== */
         const DATA = {
             buah: {
                 label: "🍎 Buah",
@@ -2054,10 +2476,702 @@
             },
         };
 
+        // BAGIAN PUZZLE KATA
+        const SUKU_DATA = {
+            buah: {
+                label: "🍎 Buah",
+                pilihanSalah: ["ma", "sa", "tu", "fa", "li", "ri", "na", "ko"],
+                soal: [{
+                        nama: "Jeruk",
+                        gambar: "{{ asset('assets/images/kosakata/buah/jeruk.jpg') }}",
+                        suku: ["je", "ruk"],
+                        kosongIndex: 1,
+                        warna: "purple"
+                    },
+                    {
+                        nama: "Apel",
+                        gambar: "{{ asset('assets/images/kosakata/buah/jeruk.jpg') }}",
+                        suku: ["a", "pel"],
+                        kosongIndex: 1,
+                        warna: "green"
+                    },
+                    {
+                        nama: "Pisang",
+                        gambar: "{{ asset('assets/images/kosakata/buah/pisang.jpg') }}",
+                        suku: ["pi", "sang"],
+                        kosongIndex: 1,
+                        warna: "yellow"
+                    },
+                    {
+                        nama: "Anggur",
+                        gambar: "{{ asset('assets/images/kosakata/buah/anggur.jpg') }}",
+                        suku: ["ang", "gur"],
+                        kosongIndex: 1,
+                        warna: "purple"
+                    },
+                    {
+                        nama: "Mangga",
+                        gambar: "{{ asset('assets/images/kosakata/buah/mangga.jpg') }}",
+                        suku: ["mang", "ga"],
+                        kosongIndex: 1,
+                        warna: "green"
+                    },
+                    {
+                        nama: "Semangka",
+                        gambar: "{{ asset('assets/images/kosakata/buah/semangka.jpg') }}",
+                        suku: ["se", "mang", "ka"],
+                        kosongIndex: 2,
+                        warna: "yellow"
+                    },
+                    {
+                        nama: "Durian",
+                        gambar: "{{ asset('assets/images/kosakata/buah/durian.jpg') }}",
+                        suku: ["du", "ri", "an"],
+                        kosongIndex: 2,
+                        warna: "purple"
+                    },
+                    {
+                        nama: "Salak",
+                        gambar: "{{ asset('assets/images/kosakata/buah/salak.jpg') }}",
+                        suku: ["sa", "lak"],
+                        kosongIndex: 1,
+                        warna: "green"
+                    },
+                    {
+                        nama: "Melon",
+                        gambar: "{{ asset('assets/images/kosakata/buah/melon.jpg') }}",
+                        suku: ["me", "lon"],
+                        kosongIndex: 1,
+                        warna: "yellow"
+                    },
+                    {
+                        nama: "Alpukat",
+                        gambar: "{{ asset('assets/images/kosakata/buah/alpukat.jpg') }}",
+                        suku: ["al", "pu", "kat"],
+                        kosongIndex: 2,
+                        warna: "purple"
+                    }
+                ]
+            },
+            hewan: {
+                label: "🐾 Hewan",
+                pilihanSalah: ["ma", "sa", "tu", "fa", "li", "ri", "na", "ko"],
+                soal: [{
+                        nama: "Kucing",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/kucing.png') }}",
+                        suku: ["ku", "cing"],
+                        kosongIndex: 1,
+                        warna: "purple"
+                    },
+                    {
+                        nama: "Ayam",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/ayam.png') }}",
+                        suku: ["a", "yam"],
+                        kosongIndex: 1,
+                        warna: "green"
+                    },
+                    {
+                        nama: "Ikan",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/ikan.png') }}",
+                        suku: ["i", "kan"],
+                        kosongIndex: 1,
+                        warna: "yellow"
+                    },
+                    {
+                        nama: "Gajah",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/gajah.png') }}",
+                        suku: ["ga", "jah"],
+                        kosongIndex: 1,
+                        warna: "purple"
+                    },
+                    {
+                        nama: "Kelinci",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/kelinci.png') }}",
+                        suku: ["ke", "lin", "ci"],
+                        kosongIndex: 2,
+                        warna: "green"
+                    },
+                    {
+                        nama: "Burung",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/burung.png') }}",
+                        suku: ["bu", "rung"],
+                        kosongIndex: 1,
+                        warna: "yellow"
+                    },
+                    {
+                        nama: "Sapi",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/sapi.png') }}",
+                        suku: ["sa", "pi"],
+                        kosongIndex: 1,
+                        warna: "purple"
+                    },
+                    {
+                        nama: "Kambing",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/kambing.png') }}",
+                        suku: ["kam", "bing"],
+                        kosongIndex: 1,
+                        warna: "green"
+                    },
+                    {
+                        nama: "Singa",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/singa.png') }}",
+                        suku: ["si", "nga"],
+                        kosongIndex: 1,
+                        warna: "yellow"
+                    },
+                    {
+                        nama: "Anjing",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/anjing.png') }}",
+                        suku: ["an", "jing"],
+                        kosongIndex: 1,
+                        warna: "purple"
+                    }
+                ]
+            },
+            benda: {
+                label: "🏠 Benda",
+                pilihanSalah: ["ma", "sa", "tu", "fa", "li", "ri", "na", "ko"],
+                soal: [{
+                        nama: "Bola",
+                        gambar: "{{ asset('assets/images/kosakata/benda/bola.png') }}",
+                        suku: ["bo", "la"],
+                        kosongIndex: 1,
+                        warna: "purple"
+                    },
+                    {
+                        nama: "Buku",
+                        gambar: "{{ asset('assets/images/kosakata/benda/buku.png') }}",
+                        suku: ["bu", "ku"],
+                        kosongIndex: 1,
+                        warna: "green"
+                    },
+                    {
+                        nama: "Kursi",
+                        gambar: "{{ asset('assets/images/kosakata/benda/kursi.png') }}",
+                        suku: ["kur", "si"],
+                        kosongIndex: 1,
+                        warna: "yellow"
+                    },
+                    {
+                        nama: "Pintu",
+                        gambar: "{{ asset('assets/images/kosakata/benda/pintu.png') }}",
+                        suku: ["pin", "tu"],
+                        kosongIndex: 1,
+                        warna: "purple"
+                    },
+                    {
+                        nama: "Piring",
+                        gambar: "{{ asset('assets/images/kosakata/benda/piring.png') }}",
+                        suku: ["pi", "ring"],
+                        kosongIndex: 1,
+                        warna: "green"
+                    },
+                    {
+                        nama: "Meja",
+                        gambar: "{{ asset('assets/images/kosakata/benda/meja.png') }}",
+                        suku: ["me", "ja"],
+                        kosongIndex: 1,
+                        warna: "yellow"
+                    },
+                    {
+                        nama: "Pensil",
+                        gambar: "{{ asset('assets/images/kosakata/benda/pensil.png') }}",
+                        suku: ["pen", "sil"],
+                        kosongIndex: 1,
+                        warna: "purple"
+                    },
+                    {
+                        nama: "Sepatu",
+                        gambar: "{{ asset('assets/images/kosakata/benda/sepatu.png') }}",
+                        suku: ["se", "pa", "tu"],
+                        kosongIndex: 2,
+                        warna: "green"
+                    },
+                    {
+                        nama: "Sendok",
+                        gambar: "{{ asset('assets/images/kosakata/benda/sendok.png') }}",
+                        suku: ["sen", "dok"],
+                        kosongIndex: 1,
+                        warna: "yellow"
+                    },
+                    {
+                        nama: "Topi",
+                        gambar: "{{ asset('assets/images/kosakata/benda/topi.png') }}",
+                        suku: ["to", "pi"],
+                        kosongIndex: 1,
+                        warna: "purple"
+                    }
+                ]
+            },
+
+            alam: {
+                label: "🌿 Alam",
+                pilihanSalah: ["ma", "sa", "tu", "fa", "li", "ri", "na", "ko"],
+                soal: [{
+                        nama: "Bunga",
+                        gambar: "{{ asset('assets/images/kosakata/alam/bunga.png') }}",
+                        suku: ["bu", "nga"],
+                        kosongIndex: 1,
+                        warna: "purple"
+                    },
+                    {
+                        nama: "Pohon",
+                        gambar: "{{ asset('assets/images/kosakata/alam/pohon.png') }}",
+                        suku: ["po", "hon"],
+                        kosongIndex: 1,
+                        warna: "green"
+                    },
+                    {
+                        nama: "Hujan",
+                        gambar: "{{ asset('assets/images/kosakata/alam/hujan.png') }}",
+                        suku: ["hu", "jan"],
+                        kosongIndex: 1,
+                        warna: "yellow"
+                    },
+                    {
+                        nama: "Bulan",
+                        gambar: "{{ asset('assets/images/kosakata/alam/bulan.png') }}",
+                        suku: ["bu", "lan"],
+                        kosongIndex: 1,
+                        warna: "purple"
+                    },
+                    {
+                        nama: "Bintang",
+                        gambar: "{{ asset('assets/images/kosakata/alam/bintang.png') }}",
+                        suku: ["bin", "tang"],
+                        kosongIndex: 1,
+                        warna: "green"
+                    },
+                    {
+                        nama: "Matahari",
+                        gambar: "{{ asset('assets/images/kosakata/alam/matahari.png') }}",
+                        suku: ["ma", "ta", "ha", "ri"],
+                        kosongIndex: 3,
+                        warna: "yellow"
+                    },
+                    {
+                        nama: "Awan",
+                        gambar: "{{ asset('assets/images/kosakata/alam/awan.png') }}",
+                        suku: ["a", "wan"],
+                        kosongIndex: 1,
+                        warna: "purple"
+                    },
+                    {
+                        nama: "Gunung",
+                        gambar: "{{ asset('assets/images/kosakata/alam/gunung.png') }}",
+                        suku: ["gu", "nung"],
+                        kosongIndex: 1,
+                        warna: "green"
+                    },
+                    {
+                        nama: "Laut",
+                        gambar: "{{ asset('assets/images/kosakata/alam/laut.png') }}",
+                        suku: ["la", "ut"],
+                        kosongIndex: 1,
+                        warna: "yellow"
+                    },
+                    {
+                        nama: "Api",
+                        gambar: "{{ asset('assets/images/kosakata/alam/api.png') }}",
+                        suku: ["a", "pi"],
+                        kosongIndex: 1,
+                        warna: "purple"
+                    }
+                ]
+            },
+            pekerjaan: {
+                label: "👩‍⚕️ Pekerjaan",
+                pilihanSalah: ["mi", "ca", "no", "lu"],
+                soal: [{
+                        nama: "Dokter",
+                        gambar: "{{ asset('assets/images/kosakata/pekerjaan/dokter.png') }}",
+                        awal: "dok",
+                        jawaban: "ter",
+                        warna: "purple"
+                    },
+                    {
+                        nama: "Guru",
+                        gambar: "{{ asset('assets/images/kosakata/pekerjaan/guru.png') }}",
+                        awal: "gu",
+                        jawaban: "ru",
+                        warna: "green"
+                    },
+                    {
+                        nama: "Polisi",
+                        gambar: "{{ asset('assets/images/kosakata/pekerjaan/polisi.png') }}",
+                        awal: "po",
+                        jawaban: "lisi",
+                        warna: "yellow"
+                    },
+                    {
+                        nama: "Koki",
+                        gambar: "{{ asset('assets/images/kosakata/pekerjaan/koki.png') }}",
+                        awal: "ko",
+                        jawaban: "ki",
+                        warna: "purple"
+                    }
+                ]
+            },
+
+            transportasi: {
+                label: "🚗 Transportasi",
+                pilihanSalah: ["ka", "do", "ni", "se"],
+                soal: [{
+                        nama: "Mobil",
+                        gambar: "{{ asset('assets/images/kosakata/transportasi/mobil.png') }}",
+                        awal: "mo",
+                        jawaban: "bil",
+                        warna: "purple"
+                    },
+                    {
+                        nama: "Motor",
+                        gambar: "{{ asset('assets/images/kosakata/transportasi/motor.png') }}",
+                        awal: "mo",
+                        jawaban: "tor",
+                        warna: "green"
+                    },
+                    {
+                        nama: "Kapal",
+                        gambar: "{{ asset('assets/images/kosakata/transportasi/kapal.png') }}",
+                        awal: "ka",
+                        jawaban: "pal",
+                        warna: "yellow"
+                    },
+                    {
+                        nama: "Pesawat",
+                        gambar: "{{ asset('assets/images/kosakata/transportasi/pesawat.png') }}",
+                        awal: "pe",
+                        jawaban: "sawat",
+                        warna: "purple"
+                    }
+                ]
+            },
+
+            sayuran: {
+                label: "🥦 Sayuran",
+                pilihanSalah: ["si", "na", "po", "mu"],
+                soal: [{
+                        nama: "Wortel",
+                        gambar: "{{ asset('assets/images/kosakata/sayuran/wortel.png') }}",
+                        awal: "wor",
+                        jawaban: "tel",
+                        warna: "purple"
+                    },
+                    {
+                        nama: "Tomat",
+                        gambar: "{{ asset('assets/images/kosakata/sayuran/tomat.png') }}",
+                        awal: "to",
+                        jawaban: "mat",
+                        warna: "green"
+                    },
+                    {
+                        nama: "Jagung",
+                        gambar: "{{ asset('assets/images/kosakata/sayuran/jagung.png') }}",
+                        awal: "ja",
+                        jawaban: "gung",
+                        warna: "yellow"
+                    },
+                    {
+                        nama: "Brokoli",
+                        gambar: "{{ asset('assets/images/kosakata/sayuran/brokoli.png') }}",
+                        awal: "bro",
+                        jawaban: "koli",
+                        warna: "purple"
+                    }
+                ]
+            },
+
+            warna: {
+                label: "🎨 Warna",
+                pilihanSalah: ["la", "co", "mi", "pa"],
+                soal: [{
+                        nama: "Merah",
+                        gambar: "{{ asset('assets/images/kosakata/warna/merah.png') }}",
+                        awal: "me",
+                        jawaban: "rah",
+                        warna: "purple"
+                    },
+                    {
+                        nama: "Hijau",
+                        gambar: "{{ asset('assets/images/kosakata/warna/hijau.png') }}",
+                        awal: "hi",
+                        jawaban: "jau",
+                        warna: "green"
+                    },
+                    {
+                        nama: "Biru",
+                        gambar: "{{ asset('assets/images/kosakata/warna/biru.png') }}",
+                        awal: "bi",
+                        jawaban: "ru",
+                        warna: "yellow"
+                    },
+                    {
+                        nama: "Kuning",
+                        gambar: "{{ asset('assets/images/kosakata/warna/kuning.png') }}",
+                        awal: "ku",
+                        jawaban: "ning",
+                        warna: "purple"
+                    }
+                ]
+            }
+        };
+
+        /* =========================================================
+          UNTUK MATERI DATA
+        ========================================================== */
+        const MATERI_DATA = {
+            buah: {
+                title: "🍎 Buah",
+                desc: "Buah adalah makanan sehat yang bersal dari tumbuhan. Ada buah yang rasanya manis, asam, dan segar.",
+                items: [{
+                        kata: "Jeruk",
+                        suku: "je-ruk",
+                        audio: "{{ asset('assets/audio/kosakata/buah/jeruk.mp3') }}"
+                    },
+                    {
+                        kata: "Apel",
+                        suku: "a-pel",
+                        audio: "{{ asset('assets/audio/kosakata/buah/apel.mp4') }}"
+                    },
+                    {
+                        kata: "Pisang",
+                        suku: "pi-sang",
+                        audio: "{{ asset('assets/audio/kosakata/buah/pisang.mp3') }}"
+                    },
+                    {
+                        kata: "Semangka",
+                        suku: "se-mang-ka",
+                        audio: "{{ asset('assets/audio/kosakata/buah/semangka.mp3') }}"
+                    },
+                    {
+                        kata: "Durian",
+                        suku: "du-ri-an",
+                        audio: "{{ asset('assets/audio/kosakata/buah/durian.mp3') }}"
+                    },
+                    {
+                        kata: "Alpukat",
+                        suku: "al-pu-kat",
+                        audio: "{{ asset('assets/audio/kosakata/buah/alpukat.mp3') }}"
+                    }
+                ]
+            },
+
+            hewan: {
+                title: "🐾 Hewan",
+                desc: "Hewan adalah makhluk hidup yang ada di sekitar kita. Hewan dapat hidup di darat, air, atau udara.",
+                items: [{
+                        kata: "Kucing",
+                        suku: "ku - cing"
+                    },
+                    {
+                        kata: "Ayam",
+                        suku: "a - yam"
+                    },
+                    {
+                        kata: "Ikan",
+                        suku: "i - kan"
+                    },
+                    {
+                        kata: "Gajah",
+                        suku: "ga - jah"
+                    },
+                    {
+                        kata: "Kelinci",
+                        suku: "ke - lin - ci"
+                    },
+                    {
+                        kata: "Burung",
+                        suku: "bu - rung"
+                    }
+                ]
+            },
+
+            benda: {
+                title: "🏠 Benda",
+                desc: "Benda adalah sesuatu yang dapat kita lihat dan gunakan dalam kehidupan sehari-hari.",
+                items: [{
+                        kata: "Bola",
+                        suku: "bo - la"
+                    },
+                    {
+                        kata: "Buku",
+                        suku: "bu - ku"
+                    },
+                    {
+                        kata: "Kursi",
+                        suku: "kur - si"
+                    },
+                    {
+                        kata: "Pintu",
+                        suku: "pin - tu"
+                    },
+                    {
+                        kata: "Piring",
+                        suku: "pi - ring"
+                    },
+                    {
+                        kata: "Pensil",
+                        suku: "pen - sil"
+                    }
+                ]
+            },
+
+            alam: {
+                title: "🌿 Alam",
+                desc: "Alam adalah lingkungan di sekitar kita, seperti tumbuhan, langit, hujan, bulan, dan bintang.",
+                items: [{
+                        kata: "Bunga",
+                        suku: "bu - nga"
+                    },
+                    {
+                        kata: "Pohon",
+                        suku: "po - hon"
+                    },
+                    {
+                        kata: "Hujan",
+                        suku: "hu - jan"
+                    },
+                    {
+                        kata: "Bulan",
+                        suku: "bu - lan"
+                    },
+                    {
+                        kata: "Bintang",
+                        suku: "bin - tang"
+                    },
+                    {
+                        kata: "Matahari",
+                        suku: "ma - ta - ha - ri"
+                    }
+                ]
+            },
+
+            pekerjaan: {
+                title: "👩‍⚕️ Pekerjaan",
+                desc: "Pekerjaan adalah kegiatan yang dilakukan seseorang. Setiap pekerjaan memiliki tugas yang berbeda.",
+                items: [{
+                        kata: "Dokter",
+                        suku: "dok - ter"
+                    },
+                    {
+                        kata: "Guru",
+                        suku: "gu - ru"
+                    },
+                    {
+                        kata: "Polisi",
+                        suku: "po - li - si"
+                    },
+                    {
+                        kata: "Petani",
+                        suku: "pe - ta - ni"
+                    },
+                    {
+                        kata: "Koki",
+                        suku: "ko - ki"
+                    },
+                    {
+                        kata: "Pilot",
+                        suku: "pi - lot"
+                    }
+                ]
+            },
+
+            transportasi: {
+                title: "🚗 Alat Transportasi",
+                desc: "Alat transportasi digunakan untuk berpindah dari satu tempat ke tempat lain.",
+                items: [{
+                        kata: "Mobil",
+                        suku: "mo - bil"
+                    },
+                    {
+                        kata: "Motor",
+                        suku: "mo - tor"
+                    },
+                    {
+                        kata: "Kereta",
+                        suku: "ke - re - ta"
+                    },
+                    {
+                        kata: "Kapal",
+                        suku: "ka - pal"
+                    },
+                    {
+                        kata: "Pesawat",
+                        suku: "pe - sa - wat"
+                    },
+                    {
+                        kata: "Sepeda",
+                        suku: "se - pe - da"
+                    }
+                ]
+            },
+
+            sayuran: {
+                title: "🥦 Sayuran",
+                desc: "Sayuran adalah makanan sehat yang berasal dari tumbuhan. Sayuran baik untuk tubuh.",
+                items: [{
+                        kata: "Wortel",
+                        suku: "wor - tel"
+                    },
+                    {
+                        kata: "Tomat",
+                        suku: "to - mat"
+                    },
+                    {
+                        kata: "Jagung",
+                        suku: "ja - gung"
+                    },
+                    {
+                        kata: "Brokoli",
+                        suku: "bro - ko - li"
+                    },
+                    {
+                        kata: "Bayam",
+                        suku: "ba - yam"
+                    },
+                    {
+                        kata: "Timun",
+                        suku: "ti - mun"
+                    }
+                ]
+            },
+
+            warna: {
+                title: "🎨 Warna",
+                desc: "Warna membuat benda terlihat berbeda dan menarik. Kita dapat mengenal warna dari benda di sekitar.",
+                items: [{
+                        kata: "Merah",
+                        suku: "me - rah"
+                    },
+                    {
+                        kata: "Hijau",
+                        suku: "hi - jau"
+                    },
+                    {
+                        kata: "Biru",
+                        suku: "bi - ru"
+                    },
+                    {
+                        kata: "Kuning",
+                        suku: "ku - ning"
+                    },
+                    {
+                        kata: "Ungu",
+                        suku: "u - ngu"
+                    },
+                    {
+                        kata: "Hitam",
+                        suku: "hi - tam"
+                    }
+                ]
+            }
+        };
+
         /* =========================================================
           2. STATE / VARIABEL UTAMA GAME
         ========================================================== */
         let currentCat = "buah";
+        let selectedGameType = "suku";
         let wordList = [];
         let wordIndex = 0;
         let currentWord = null;
@@ -2066,6 +3180,17 @@
         let score = 0;
         let tries = 0;
         let totalStars = parseInt(localStorage.getItem("tt_kosa_stars") || "0");
+        let sukuCurrentData = [];
+        let selectedBlank = null;
+        let sukuScoreValue = 0;
+        let sukuCorrectValue = 0;
+        let letterCurrentData = [];
+        let letterIndex = 0;
+        let letterScoreValue = 0;
+        let letterCorrectValue = 0;
+        let letterAnswerValue = [];
+        let letterUsedIndexes = [];
+        let currentLetterQuestion = null;
 
         /* =========================================================
           3. AMBIL ELEMEN HTML YANG SERING DIPAKAI
@@ -2106,10 +3231,76 @@
         /* =========================================================
           4. FUNGSI NAVIGASI HALAMAN
         ========================================================== */
+        function showMateri(categoryName, gameType) {
+            currentCat = categoryName;
+            selectedGameType = gameType;
+
+            document.getElementById("category-screen").style.display = "none";
+            document.getElementById("materi-screen").style.display = "block";
+            document.getElementById("suku-game-screen").style.display = "none";
+            document.getElementById("letter-game-screen").style.display = "none";
+            document.getElementById("result-screen").style.display = "none";
+
+            renderMateri(categoryName);
+        }
+
+        function renderMateri(categoryName) {
+            const materi = MATERI_DATA[categoryName] || MATERI_DATA.buah;
+
+            document.getElementById("materiTitle").textContent = materi.title;
+            document.getElementById("materiDesc").textContent = materi.desc;
+
+            const materiList = document.getElementById("materiList");
+            materiList.innerHTML = "";
+
+            materi.items.forEach((item) => {
+                const div = document.createElement("div");
+                div.className = "materi-item";
+
+                div.innerHTML = `
+                    <div class="materi-kata">🔊 ${item.kata}</div>
+                    <span class="materi-suku">${item.suku}</span>
+                `;
+
+                div.onclick = function() {
+                    playMateriAudio(item.audio);
+                };
+
+                materiList.appendChild(div);
+            });
+        }
+
+        let currentMateriAudio = null;
+
+        function playMateriAudio(audioSrc) {
+            if (!audioSrc) {
+                return;
+            }
+
+            if (currentMateriAudio) {
+                currentMateriAudio.pause();
+                currentMateriAudio.currentTime = 0;
+            }
+
+            currentMateriAudio = new Audio(audioSrc);
+            currentMateriAudio.play().catch(() => {
+                console.log("Audio belum bisa diputar.");
+            });
+        }
+
+        function startQuizFromMateri() {
+            if (selectedGameType === "suku") {
+                startSukuCategory(currentCat);
+            } else {
+                startCategory(currentCat);
+            }
+        }
+
         function startSukuCategory(categoryName) {
             currentCat = categoryName;
 
             document.getElementById("category-screen").style.display = "none";
+            document.getElementById("materi-screen").style.display = "none";
             document.getElementById("suku-game-screen").style.display = "block";
             document.getElementById("letter-game-screen").style.display = "none";
             document.getElementById("result-screen").style.display = "none";
@@ -2119,17 +3310,436 @@
             resetSukuGame();
         }
 
+        function resetSukuGame() {
+            sukuScoreValue = 0;
+            sukuCorrectValue = 0;
+            selectedBlank = null;
+            totalStars = 0;
+
+            document.getElementById("sukuScore").textContent = sukuScoreValue;
+            document.getElementById("sukuCorrect").textContent = sukuCorrectValue;
+            starsEl.textContent = totalStars;
+
+            localStorage.setItem("tt_kosa_stars", totalStars);
+
+            renderSukuGame();
+        }
+
+        function renderSukuGame() {
+            const category = SUKU_DATA[currentCat] || SUKU_DATA.buah;
+
+            // acak soal, ambil 5
+            sukuCurrentData = shuffle([...category.soal]).slice(0, 6);
+
+            const leftSukuCards = document.getElementById("leftSukuCards");
+            const rightSukuCards = document.getElementById("rightSukuCards");
+            const sukuOptions = document.getElementById("sukuOptions");
+            const sukuFeedback = document.getElementById("sukuFeedback");
+
+            document.getElementById("sukuCategoryLabel").textContent = category.label;
+            document.getElementById("sukuScore").textContent = sukuScoreValue;
+            document.getElementById("sukuCorrect").textContent = sukuCorrectValue;
+            document.getElementById("sukuTotal").textContent = sukuCurrentData.length;
+
+            leftSukuCards.innerHTML = "";
+            rightSukuCards.innerHTML = "";
+            sukuOptions.innerHTML = "";
+            sukuFeedback.textContent = "";
+
+            selectedBlank = null;
+
+            sukuCurrentData.forEach((item, index) => {
+                const card = document.createElement("div");
+                card.className = `suku-card ${item.warna}`;
+
+                // jawaban benar diambil dari suku yang dikosongkan
+                const jawabanBenar = item.suku[item.kosongIndex];
+
+                // buat kotak suku kata sesuai jumlah array
+                const partsHTML = item.suku.map((bagian, i) => {
+                    if (i === item.kosongIndex) {
+                        return `
+                    <div
+                        class="suku-part suku-blank"
+                        data-answer="${jawabanBenar}"
+                        onclick="selectSukuBlank(this)"
+                    ></div>
+                `;
+                    } else {
+                        return `<div class="suku-part">${bagian}</div>`;
+                    }
+                }).join("");
+
+                card.innerHTML = `
+            <div class="suku-image">
+                <img src="${item.gambar}" alt="${item.nama}">
+            </div>
+
+            <div class="suku-word-row" style="grid-template-columns: repeat(${item.suku.length}, 1fr);">
+                ${partsHTML}
+            </div>
+        `;
+
+                if (index < Math.ceil(sukuCurrentData.length / 2)) {
+                    leftSukuCards.appendChild(card);
+                } else {
+                    rightSukuCards.appendChild(card);
+                }
+            });
+
+            // pilihan jawaban benar
+            const correctChoices = sukuCurrentData.map((item) => item.suku[item.kosongIndex]);
+
+            // gabungkan dengan pilihan salah
+            const MAX_OPTIONS = 10;
+
+            const wrongChoices = shuffle([...category.pilihanSalah]).slice(
+                0,
+                Math.max(0, MAX_OPTIONS - correctChoices.length)
+            );
+
+            const allChoices = shuffle([...correctChoices, ...wrongChoices]);
+
+            allChoices.forEach((choice) => {
+                const button = document.createElement("button");
+                button.className = "suku-option-btn";
+                button.textContent = choice;
+
+                button.onclick = function() {
+                    chooseSukuAnswer(button, choice);
+                };
+
+                sukuOptions.appendChild(button);
+            });
+        }
+
+        function selectSukuBlank(blankElement) {
+            if (blankElement.classList.contains("correct")) {
+                return;
+            }
+
+            document.querySelectorAll(".suku-blank").forEach((blank) => {
+                blank.classList.remove("active");
+            });
+
+            selectedBlank = blankElement;
+            selectedBlank.classList.add("active");
+
+            document.getElementById("sukuFeedback").textContent =
+                "Sekarang pilih suku kata di tengah ya!";
+        }
+
+        function chooseSukuAnswer(button, choice) {
+            const sukuFeedback = document.getElementById("sukuFeedback");
+
+            if (!selectedBlank) {
+                sukuFeedback.textContent = "Klik kotak kosong dulu ya 😊";
+                return;
+            }
+
+            const correctAnswer = selectedBlank.dataset.answer;
+
+            // Isi kotak dengan jawaban yang dipilih user
+            selectedBlank.textContent = choice;
+
+            // Tombol pilihan dibuat tidak bisa dipkai lagi
+            button.classList.add("used");
+
+            if (choice === correctAnswer) {
+                selectedBlank.classList.remove("active", "wrong");
+                selectedBlank.classList.add("correct");
+
+                sukuScoreValue += 10;
+                sukuCorrectValue++;
+                totalStars += 10;
+
+                document.getElementById("sukuScore").textContent = sukuScoreValue;
+                document.getElementById("sukuCorrect").textContent = sukuCorrectValue;
+
+                starsEl.textContent = totalStars;
+                localStorage.setItem("tt_kosa_stars", totalStars);
+
+                sukuFeedback.textContent = "Jawaban kamu benar!";
+            } else {
+                selectedBlank.classList.remove("active", "correct");
+                selectedBlank.classList.add("wrong");
+
+                sukuFeedback.textContent = `Belum tepat. Jawaban yang benar adalah "${correctAnswer}"`;
+            }
+
+            selectedBlank = null;
+
+            const answeredCount = document.querySelectorAll(
+                ".suku-blank.correct, .suku-blank.wrong"
+            ).length;
+
+            if (answeredCount === sukuCurrentData.length) {
+                setTimeout(showSukuResult, 1000);
+            }
+        }
+
+        function showSukuResult() {
+            document.getElementById("suku-game-screen").style.display = "none";
+            document.getElementById("letter-game-screen").style.display = "none";
+            document.getElementById("result-screen").style.display = "block";
+
+            constSoal = sukuCurrentData.length;
+            const nilaiAkhir = Math.round(
+                (sukuCorrectValue / sukuCurrentData.length) * 100
+            );
+
+            // const maxScore = sukuCurrentData.length * 10;
+            let emoji = "💪";
+            let title = "Ayo Coba Lagi!";
+            let stars = "⭐";
+            let message = `Kamu menjawab benar ${sukuCorrectValue} dari ${sukuCurrentData.length} soal!`;
+
+            if (nilaiAkhir === 100) {
+                emoji = "🏆";
+                title = "Hebat Sekali!";
+                stars = "⭐⭐⭐";
+                // message = "Kamu juara kosakata hari ini!";
+            } else if (nilaiAkhir >= 70) {
+                emoji = "🎉";
+                title = "Bagus Sekali!";
+                stars = "⭐⭐";
+                // message = "Hampir sempurna, coba lagi ya!";
+            } else if (nilaiAkhir >= 40) {
+                emoji = "😊";
+                title = "Cukup Bagus!";
+                stars = "⭐";
+                // message = "Latihan lagi untuk jadi lebih baik!";
+            } else {
+                emoji = "😊";
+                title = "Coba lagi ya!";
+                stars = "⭐";
+                // message = "Latihan lagi untuk jadi lebih baik!";
+            }
+            document.getElementById("rEmoji").textContent = emoji;
+            document.getElementById("rTitle").textContent = title;
+            document.getElementById("rStars").textContent = stars;
+            document.getElementById("rScore").textContent = nilaiAkhir;
+            // sukuScoreValue + " / " + maxScore;
+            document.getElementById("rMsg").textContent = message;
+        }
+
         function startCategory(categoryName) {
             currentCat = categoryName;
 
             document.getElementById("category-screen").style.display = "none";
+            document.getElementById("materi-screen").style.display = "none";
             document.getElementById("suku-game-screen").style.display = "none";
             document.getElementById("letter-game-screen").style.display = "block";
             document.getElementById("result-screen").style.display = "none";
 
             headerRight.style.display = "flex";
 
-            switchCategory(categoryName);
+            resetLetterGame();
+        }
+
+        function resetLetterGame() {
+            const category = DATA[currentCat] || DATA.pekerjaan;
+
+            letterCurrentData = shuffle([...category.words]).slice(0, 6);
+            letterIndex = 0;
+            letterScoreValue = 0;
+            letterCorrectValue = 0;
+            letterAnswerValue = [];
+            letterUsedIndexes = [];
+            totalStars = 0;
+
+            document.getElementById("letterCategoryLabel").textContent = category.label;
+            document.getElementById("letterScore").textContent = letterScoreValue;
+            document.getElementById("letterCorrect").textContent = letterCorrectValue;
+            document.getElementById("letterTotal").textContent = letterCurrentData.length;
+
+            starsEl.textContent = totalStars;
+            localStorage.setItem("tt_kosa_stars", totalStars);
+
+            renderLetterQuestion();
+        }
+
+        function renderLetterQuestion() {
+            currentLetterQuestion = letterCurrentData[letterIndex];
+
+            if (!currentLetterQuestion) {
+                showLetterResult();
+                return;
+            }
+
+            letterAnswerValue = [];
+            letterUsedIndexes = [];
+
+            const letterImage = document.getElementById("letterImage");
+            const letterAnswer = document.getElementById("letterAnswer");
+            const letterOptions = document.getElementById("letterOptions");
+            const letterFeedback = document.getElementById("letterFeedback");
+            const letterSukuHint = document.getElementById("letterSukuHint");
+
+            letterAnswer.innerHTML = "";
+            letterOptions.innerHTML = "";
+            letterFeedback.textContent = "";
+
+            letterImage.textContent = currentLetterQuestion.emoji;
+            letterSukuHint.textContent = "Petunjuk: " + currentLetterQuestion.suku.join(" - ");
+
+            const letters = shuffle(currentLetterQuestion.kata.split(""));
+
+            letters.forEach((letter, index) => {
+                const button = document.createElement("button");
+                button.className = "letter-option";
+                button.textContent = letter;
+
+                button.onclick = function() {
+                    chooseLetter(button, letter, index);
+                };
+
+                letterOptions.appendChild(button);
+            });
+        }
+
+        function chooseLetter(button, letter, index) {
+            if (letterUsedIndexes.includes(index)) {
+                return;
+            }
+
+            letterUsedIndexes.push(index);
+            letterAnswerValue.push({
+                letter: letter,
+                index: index
+            });
+
+            button.classList.add("used");
+
+            renderLetterAnswer();
+
+            if (letterAnswerValue.length === currentLetterQuestion.kata.length) {
+                setTimeout(checkLetterAnswer, 400);
+            }
+        }
+
+        function renderLetterAnswer() {
+            const letterAnswer = document.getElementById("letterAnswer");
+            letterAnswer.innerHTML = "";
+
+            letterAnswerValue.forEach((item, answerIndex) => {
+                const div = document.createElement("div");
+                div.className = "answer-letter";
+                div.textContent = item.letter;
+
+                div.onclick = function() {
+                    removeLetterAnswer(answerIndex);
+                };
+
+                letterAnswer.appendChild(div);
+            });
+        }
+
+        function removeLetterAnswer(answerIndex) {
+            const removed = letterAnswerValue[answerIndex];
+
+            letterAnswerValue.splice(answerIndex, 1);
+            letterUsedIndexes = letterUsedIndexes.filter((item) => item !== removed.index);
+
+            const optionButtons = document.querySelectorAll(".letter-option");
+            if (optionButtons[removed.index]) {
+                optionButtons[removed.index].classList.remove("used");
+            }
+
+            renderLetterAnswer();
+            document.getElementById("letterFeedback").textContent = "";
+        }
+
+        function clearLetterAnswer() {
+            letterAnswerValue = [];
+            letterUsedIndexes = [];
+
+            document.querySelectorAll(".letter-option").forEach((button) => {
+                button.classList.remove("used");
+            });
+
+            renderLetterAnswer();
+            document.getElementById("letterFeedback").textContent = "";
+        }
+
+        function checkLetterAnswer() {
+            const letterFeedback = document.getElementById("letterFeedback");
+
+            if (!currentLetterQuestion) {
+                return;
+            }
+
+            if (letterAnswerValue.length < currentLetterQuestion.kata.length) {
+                letterFeedback.textContent = "Susun hurufnya sampai lengkap dulu ya 😊";
+                return;
+            }
+
+            const userAnswer = letterAnswerValue.map((item) => item.letter).join("");
+            const correctAnswer = currentLetterQuestion.kata;
+
+            if (userAnswer === correctAnswer) {
+                letterScoreValue += 10;
+                letterCorrectValue++;
+                totalStars += 10;
+
+                document.getElementById("letterScore").textContent = letterScoreValue;
+                document.getElementById("letterCorrect").textContent = letterCorrectValue;
+
+                starsEl.textContent = totalStars;
+                localStorage.setItem("tt_kosa_stars", totalStars);
+
+                letterFeedback.textContent = "Benar! Hebat sekali 🎉";
+            } else {
+                letterFeedback.textContent = `Belum tepat. Jawaban yang benar adalah ${correctAnswer}`;
+            }
+
+            setTimeout(() => {
+                letterIndex++;
+
+                if (letterIndex >= letterCurrentData.length) {
+                    showLetterResult();
+                } else {
+                    renderLetterQuestion();
+                }
+            }, 1200);
+        }
+
+        function showLetterResult() {
+            document.getElementById("suku-game-screen").style.display = "none";
+            document.getElementById("letter-game-screen").style.display = "none";
+            document.getElementById("result-screen").style.display = "block";
+
+            const totalSoal = letterCurrentData.length;
+            const nilaiAkhir = Math.round((letterCorrectValue / totalSoal) * 100);
+
+            let emoji = "💪";
+            let title = "Ayo Coba Lagi!";
+            let stars = "⭐";
+            let message = `Kamu menjawab benar ${letterCorrectValue} dari ${totalSoal} soal!`;
+
+            if (nilaiAkhir === 100) {
+                emoji = "🏆";
+                title = "Hebat Sekali!";
+                stars = "⭐⭐⭐";
+            } else if (nilaiAkhir >= 70) {
+                emoji = "🎉";
+                title = "Bagus Sekali!";
+                stars = "⭐⭐";
+            } else if (nilaiAkhir >= 40) {
+                emoji = "😊";
+                title = "Cukup Bagus!";
+                stars = "⭐";
+            } else {
+                emoji = "💪";
+                title = "Coba Lagi Ya!";
+                stars = "⭐";
+            }
+
+            document.getElementById("rEmoji").textContent = emoji;
+            document.getElementById("rTitle").textContent = title;
+            document.getElementById("rStars").textContent = stars;
+            document.getElementById("rScore").textContent = nilaiAkhir;
+            document.getElementById("rMsg").textContent = message;
         }
 
         function switchCategory(categoryName) {
@@ -2149,6 +3759,7 @@
 
         function goHome() {
             document.getElementById("category-screen").style.display = "flex";
+            document.getElementById("materi-screen").style.display = "none";
             document.getElementById("suku-game-screen").style.display = "none";
             document.getElementById("letter-game-screen").style.display = "none";
             document.getElementById("result-screen").style.display = "none";
@@ -2166,6 +3777,9 @@
 
         // TOMBOL BACK
         function handleBackButton() {
+            const materiOpen =
+                document.getElementById("materi-screen").style.display === "block";
+
             const sukuGameOpen =
                 document.getElementById("suku-game-screen").style.display === "block";
 
@@ -2176,7 +3790,7 @@
             const resultOpen =
                 document.getElementById("result-screen").style.display === "block";
 
-            if (sukuGameOpen || letterGameOpen || resultOpen) {
+            if (materiOpen || sukuGameOpen || letterGameOpen || resultOpen) {
                 goHome();
             } else {
                 window.location.href = "{{ route('kosa-kata') }}";
@@ -2202,8 +3816,27 @@
 
         restartBtn.addEventListener("click", function() {
             const confirmRestart = confirm("Mulai ulang latihan dari awal?");
-            if (confirmRestart) {
-                restartCurrentGame();
+
+            if (!confirmRestart) {
+                return;
+            }
+
+            const sukuGameOpen =
+                document.getElementById("suku-game-screen").style.display === "block";
+
+            const resultOpen =
+                document.getElementById("result-screen").style.display === "block";
+
+            const letterGameOpen =
+                document.getElementById("letter-game-screen").style.display ===
+                "block";
+
+            if (sukuGameOpen) {
+                resetSukuGame();
+            } else if (letterGameOpen) {
+                resetLetterGame();
+            } else if (resultOpen) {
+                retryCurrentGame();
             }
         });
 
@@ -2240,7 +3873,9 @@
             catBadge.style.color = "white";
 
             syllablesRow.innerHTML = currentWord.suku
-                .map((item) => `<span class="syllable-pill">${item}</span>`)
+                .map((item) => ` < span class = "syllable-pill" > $ {
+                                item
+                            } < /span>`)
                 .join("");
 
             animatePictureCard();
@@ -2495,19 +4130,42 @@
             }
         }
 
-        function retryGame() {
-            score = 0;
-            tries = 0;
-            wordIndex = 0;
-            wordList = shuffle(DATA[currentCat].words.slice());
+        function retrySukuGame() {
+            sukuScoreValue = 0;
+            sukuCorrectValue = 0;
+            selectedBlank = null;
+            totalStars = 0;
 
-            document.getElementById("game-screen").style.display = "block";
+            // wordIndex = 0;
+            // wordList = shuffle(DATA[currentCat].words.slice());
+
+            document.getElementById("sukuScore").textContent = sukuScoreValue;
+            document.getElementById("sukuCorrect").textContent = sukuScoreValue;
+
+            starsEl.textContent = totalStars;
+            localStorage.setItem("tt_kosa_stars", totalStars);
+
             document.getElementById("result-screen").style.display = "none";
+            document.getElementById("category-screen").style.display = "none";
+            document.getElementById("letter-game-screen").style.display = "none";
+            document.getElementById("suku-game-screen").style.display = "block";
 
-            updateScoreboard();
-            loadWord();
+            renderSukuGame();
         }
 
+        function retryCurrentGame() {
+            if (selectedGameType === "suku") {
+                retrySukuGame();
+            } else {
+                document.getElementById("result-screen").style.display = "none";
+                document.getElementById("category-screen").style.display = "none";
+                document.getElementById("materi-screen").style.display = "none";
+                document.getElementById("suku-game-screen").style.display = "none";
+                document.getElementById("letter-game-screen").style.display = "block";
+
+                resetLetterGame();
+            }
+        }
         /* =========================================================
           12. INPUT KEYBOARD
         ========================================================== */
