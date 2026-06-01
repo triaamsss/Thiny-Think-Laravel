@@ -27,6 +27,56 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        .btns {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .theme-btn {
+            padding: 12px 25px;
+            background: #00c1f3;
+            color: #fff;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .theme-btn:hover {
+            background: #00a2c6;
+        }
+
+        .admin-avatar{
+            width:45px;
+            height:45px;
+            border-radius:50%;
+            background:#00c1f3;
+            color:#ffffff !important;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-decoration:none;
+            margin-left:10px;
+            transition:all .3s ease;
+            box-shadow:0 4px 10px rgba(0,193,243,.3);
+        }
+
+        .admin-avatar:hover{
+            background:#00a8d4;
+            color:#ffffff !important;
+            transform:translateY(-2px);
+            box-shadow:0 6px 15px rgba(0,193,243,.4);
+        }
+
+        .admin-avatar i {
+            font-size: 18px;
+        }
+    </style>
+
+    <!-- Font Awesome untuk icon -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -58,30 +108,36 @@
                     <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder">
                         <button class="close-navbar"><i class="ti-close"></i></button>
                         <ul class="nav navbar-nav">
-                            <li class="menu-item-has-children">
+
+                            <li>
                                 <a href="{{ route('home') }}">Beranda</a>
                             </li>
-                            <li><a href="{{ route('about') }}">Tentang</a></li>
-                            <li class="menu-item-has-children">
+                        
+                            <li>
+                                <a href="{{ route('about') }}">Tentang</a>
+                            </li>
+                        
+                            <li>
                                 <a href="{{ route('panduan') }}">Panduan</a>
                             </li>
-                            <li class="menu-item-has-children">
+                        
+                            <li>
                                 <a href="{{ route('service') }}">Modul</a>
-                                <ul class="sub-menu">
-                                    <li><a href="{{ route('hijaiyah') }}">Hijaiyah</a></li>
-                                    <li><a href="{{ route('doa-harian') }}">Doa Harian</a></li>
-                                    <li><a href="{{ route('hadist.menu') }}">Hadist</a></li>
-                                    <li><a href="{{ route('comingsoon') }}">Surat Pendek</a></li>
-                                    <li><a href="{{ route('abjad') }}">Huruf Abjad</a></li>
-                                    <li><a href="{{ route('pencocokkan-abjad') }}">Pencocokan Abjad</a></li>
-                                    <li><a href="{{ route('kosa-kata') }}">Pembuatan Kosa-Kata</a></li>
-                                </ul>
                             </li>
+                        
                         </ul>
                     </div><!-- end of nav-collapse -->
                     <div class="cart-search-contact">
                         <div class="btns">
-                            <a href="{{ route('service') }}" class="theme-btn">Mainkan!</a>
+                    
+                            <a href="{{ route('service') }}" class="theme-btn">
+                                Mainkan!
+                            </a>
+                    
+                            <a href="{{ route('admin.dashboard') }}" class="admin-avatar">
+                                👤
+                            </a>
+                    
                         </div>
                     </div>
                 </div><!-- end of container -->
@@ -236,7 +292,7 @@
                                     <img src="{{ asset('assets/images/service/Hijaiyah.png') }}" alt="">
                                 </div>
                                 <div class="service-text">
-                                    <h2><a href="{{ route('hijaiyah') }}">Huruf Hijaiyah</a></h2>
+                                    <h2><a href="{{ route('hijaiyah') }}">Huruf Hijaiyyah</a></h2>
                                 </div>
                             </div>
                         </div> 
