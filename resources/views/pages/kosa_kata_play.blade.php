@@ -3,9 +3,9 @@
 
 <head>
     <!-- =========================================================
-      INFORMASI DASAR HALAMAN
+      BAGIAN 1: INFORMASI DASAR HALAMAN
       File ini adalah halaman game kosakata TinyThink.
-      Isi halaman: pilih kategori -> susun huruf -> hasil akhir.
+      Isi halaman: pilih kategori -> baca materi -> mulai kuis -> hasil akhir.
     ========================================================== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +18,12 @@
 
     <style>
         /* =========================================================
-        1. VARIABEL WARNA DAN RESET DASAR
+        BAGIAN 2: STYLE / CSS
+        Berisi tampilan halaman, kartu, tombol, game dan responsif
+      ========================================================== */
+
+        /* =========================================================
+        2.1 VARIABEL WARNA DAN RESET DASAR
       ========================================================== */
         *,
         *::before,
@@ -1142,6 +1147,7 @@
         .suku-cards {
             display: grid;
             gap: 18px;
+            justify-items: center;
         }
 
         .suku-card {
@@ -1149,7 +1155,8 @@
             border: 5px solid #ffb6c1;
             border-radius: 16px;
             overflow: hidden;
-            min-height: 210px;
+            width: 255px;
+            height: 175px;
             color: #ffb6c1;
         }
 
@@ -1169,7 +1176,7 @@
         }
 
         .suku-image {
-            height: 145px;
+            height: 115px;
             width: 100%;
             display: flex;
             align-items: center;
@@ -1177,6 +1184,8 @@
             background: #ffffff;
             border-bottom: 5px solid currentColor;
             overflow: hidden;
+            padding: 8px;
+            box-sizing: border-box;
         }
 
         .suku-image img {
@@ -1189,7 +1198,7 @@
 
         .suku-word-row {
             display: grid;
-            min-height: 58px;
+            height: 60px;
         }
 
         .suku-part {
@@ -1197,14 +1206,14 @@
             align-items: center;
             justify-content: center;
             font-family: "Baloo 2", cursive;
-            font-size: 34px;
+            font-size: 30px;
             font-weight: 900;
             color: #ff2727;
             background: #ffffff;
             border-right: 4px solid currentColor;
-            min-height: 58px;
+            height: 60px;
             text-align: center;
-            padding: 6px;
+            padding: 4px;
         }
 
         .suku-part:last-child {
@@ -1331,23 +1340,25 @@ GAME SUSUN HURUF
         }
 
         .letter-image {
-            width: 150px;
+            width: 170px;
             height: 150px;
             margin: 0 auto 14px;
-            background: var(--warm);
+            background: #ffffff;
             border: 4px solid var(--dark);
-            border-radius: 50%;
+            border-radius: 22px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 82px;
             box-shadow: 5px 5px 0 var(--dark);
+            overflow: hidden;
+            padding: 10px;
         }
 
         .letter-image img {
-            max-width: 120px;
-            max-height: 120px;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
+            display: block;
         }
 
         .letter-hint {
@@ -1794,7 +1805,7 @@ GAME SUSUN HURUF
             <div class="letter-game-wrapper">
                 <div class="letter-title-area">
                     <h1 class="letter-title">Susun Huruf</h1>
-                    <p>Susun huruf acak menjadi nama gambar yang benar!</p>
+                    <p>Susun huruf-huruf di bawah ini untuk menemukan nama gambar yang tepat!</p>
                 </div>
 
                 <div class="letter-score-row">
@@ -2024,8 +2035,8 @@ GAME SUSUN HURUF
 
     <script>
         /* ========================================================
-                                                                                                                                                                                                                                                                                1. DATA KOSAKATA
-                                                                                                                                                                                                                                                                                ========================================================== */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    1. DATA KOSAKATA
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ========================================================== */
         const DATA = {
             buah: {
                 label: "🍎 Buah",
@@ -2257,52 +2268,63 @@ GAME SUSUN HURUF
                 words: [{
                         kata: "DOKTER",
                         suku: ["DOK", "TER"],
-                        emoji: "👨‍⚕️"
+                        emoji: "👨‍⚕️",
+                        gambar: "{{ asset('assets/images/kosakata/pekerjaan/dokter.jpg') }}"
                     },
                     {
                         kata: "GURU",
                         suku: ["GU", "RU"],
-                        emoji: "👩‍🏫"
+                        emoji: "👩‍🏫",
+                        gambar: "{{ asset('assets/images/kosakata/pekerjaan/guru.png') }}"
                     },
                     {
                         kata: "POLISI",
                         suku: ["PO", "LI", "SI"],
-                        emoji: "👮"
+                        emoji: "👮",
+                        gambar: "{{ asset('assets/images/kosakata/pekerjaan/polisi.jpg') }}"
                     },
                     {
                         kata: "PETANI",
                         suku: ["PE", "TA", "NI"],
-                        emoji: "👨‍🌾"
+                        emoji: "👨‍🌾",
+                        gambar: "{{ asset('assets/images/kosakata/pekerjaan/petani.png') }}"
                     },
                     {
                         kata: "KOKI",
                         suku: ["KO", "KI"],
-                        emoji: "👨‍🍳"
+                        emoji: "👨‍🍳",
+                        gambar: "{{ asset('assets/images/kosakata/pekerjaan/koki.jpg') }}"
+
                     },
                     {
                         kata: "PILOT",
                         suku: ["PI", "LOT"],
-                        emoji: "👨‍✈️"
+                        emoji: "👨‍✈️",
+                        gambar: "{{ asset('assets/images/kosakata/pekerjaan/pilot.jpg') }}"
                     },
                     {
-                        kata: "SOPIR",
-                        suku: ["SO", "PIR"],
-                        emoji: "🚗"
+                        kata: "MASINIS",
+                        suku: ["MA", "SI", "NIS"],
+                        emoji: "🚗",
+                        gambar: "{{ asset('assets/images/kosakata/pekerjaan/masinis.jpg') }}"
                     },
                     {
                         kata: "NELAYAN",
                         suku: ["NE", "LA", "YAN"],
-                        emoji: "🎣"
+                        emoji: "🎣",
+                        gambar: "{{ asset('assets/images/kosakata/pekerjaan/nelayan.png') }}"
                     },
                     {
                         kata: "PERAWAT",
                         suku: ["PE", "RA", "WAT"],
-                        emoji: "🧑‍⚕️"
+                        emoji: "🧑‍⚕️",
+                        gambar: "{{ asset('assets/images/kosakata/pekerjaan/perawat.png') }}"
                     },
                     {
                         kata: "PEMADAM",
                         suku: ["PE", "MA", "DAM"],
-                        emoji: "👨‍🚒"
+                        emoji: "👨‍🚒",
+                        gambar: "{{ asset('assets/images/kosakata/pekerjaan/pemadam.jpg') }}"
                     },
                 ],
             },
@@ -2313,52 +2335,67 @@ GAME SUSUN HURUF
                 words: [{
                         kata: "MOBIL",
                         suku: ["MO", "BIL"],
-                        emoji: "🚗"
+                        emoji: "🚗",
+                        gambar: "{{ asset('assets/images/kosakata/alat-transportasi/mobil.jpg') }}"
                     },
                     {
                         kata: "MOTOR",
                         suku: ["MO", "TOR"],
-                        emoji: "🏍️"
+                        emoji: "🏍️",
+                        gambar: "{{ asset('assets/images/kosakata/alat-transportasi/motor.jpg') }}"
+
                     },
                     {
                         kata: "BUS",
                         suku: ["BUS"],
-                        emoji: "🚌"
+                        emoji: "🚌",
+                        gambar: "{{ asset('assets/images/kosakata/alat-transportasi/bus.jpg') }}"
+
                     },
                     {
                         kata: "KERETA",
                         suku: ["KE", "RE", "TA"],
-                        emoji: "🚆"
+                        emoji: "🚆",
+                        gambar: "{{ asset('assets/images/kosakata/alat-transportasi/kereta.jpg') }}"
+
                     },
                     {
                         kata: "KAPAL",
                         suku: ["KA", "PAL"],
-                        emoji: "🚢"
+                        emoji: "🚢",
+                        gambar: "{{ asset('assets/images/kosakata/alat-transportasi/kapal.jpg') }}"
+
                     },
                     {
                         kata: "PESAWAT",
                         suku: ["PE", "SA", "WAT"],
-                        emoji: "✈️"
+                        emoji: "✈️",
+                        gambar: "{{ asset('assets/images/kosakata/alat-transportasi/pesawat.jpg') }}"
+
                     },
                     {
                         kata: "SEPEDA",
                         suku: ["SE", "PE", "DA"],
-                        emoji: "🚲"
+                        emoji: "🚲",
+                        gambar: "{{ asset('assets/images/kosakata/alat-transportasi/sepeda.png') }}"
                     },
                     {
                         kata: "BECAK",
                         suku: ["BE", "CAK"],
-                        emoji: "🛺"
+                        emoji: "🛺",
+                        gambar: "{{ asset('assets/images/kosakata/alat-transportasi/becak.jpg') }}"
                     },
                     {
                         kata: "TRUK",
                         suku: ["TRUK"],
-                        emoji: "🚚"
+                        emoji: "🚚",
+                        gambar: "{{ asset('assets/images/kosakata/alat-transportasi/truk.jpg') }}"
                     },
                     {
                         kata: "TAKSI",
                         suku: ["TAK", "SI"],
-                        emoji: "🚕"
+                        emoji: "🚕",
+                        gambar: "{{ asset('assets/images/kosakata/alat-transportasi/taksi.jpg') }}"
                     },
                 ],
             },
@@ -2369,52 +2406,64 @@ GAME SUSUN HURUF
                 words: [{
                         kata: "BAYAM",
                         suku: ["BA", "YAM"],
-                        emoji: "🥬"
+                        emoji: "🥬",
+                        gambar: "{{ asset('assets/images/kosakata/sayuran/bayam.jpg') }}"
+
                     },
                     {
                         kata: "WORTEL",
                         suku: ["WOR", "TEL"],
-                        emoji: "🥕"
+                        emoji: "🥕",
+                        gambar: "{{ asset('assets/images/kosakata/sayuran/wortel.jpg') }}"
+
                     },
                     {
                         kata: "KUBIS",
                         suku: ["KU", "BIS"],
-                        emoji: "🥬"
+                        emoji: "🥬",
+                        gambar: "{{ asset('assets/images/kosakata/sayuran/kubis.jpg') }}"
                     },
                     {
                         kata: "TOMAT",
                         suku: ["TO", "MAT"],
-                        emoji: "🍅"
+                        emoji: "🍅",
+                        gambar: "{{ asset('assets/images/kosakata/sayuran/tomat.jpg') }}"
                     },
                     {
                         kata: "TIMUN",
                         suku: ["TI", "MUN"],
-                        emoji: "🥒"
+                        emoji: "🥒",
+                        gambar: "{{ asset('assets/images/kosakata/sayuran/timun.jpg') }}"
                     },
                     {
                         kata: "TERONG",
                         suku: ["TE", "RONG"],
-                        emoji: "🍆"
+                        emoji: "🍆",
+                        gambar: "{{ asset('assets/images/kosakata/sayuran/terong.jpg') }}"
                     },
                     {
                         kata: "JAGUNG",
                         suku: ["JA", "GUNG"],
-                        emoji: "🌽"
+                        emoji: "🌽",
+                        gambar: "{{ asset('assets/images/kosakata/sayuran/jagung.jpg') }}"
                     },
                     {
                         kata: "KENTANG",
                         suku: ["KEN", "TANG"],
-                        emoji: "🥔"
+                        emoji: "🥔",
+                        gambar: "{{ asset('assets/images/kosakata/sayuran/kentang.jpg') }}"
                     },
                     {
                         kata: "BROKOLI",
                         suku: ["BRO", "KO", "LI"],
-                        emoji: "🥦"
+                        emoji: "🥦",
+                        gambar: "{{ asset('assets/images/kosakata/sayuran/brokoli.jpg') }}"
                     },
                     {
                         kata: "LABU",
                         suku: ["LA", "BU"],
-                        emoji: "🎃"
+                        emoji: "🎃",
+                        gambar: "{{ asset('assets/images/kosakata/sayuran/labu.jpg') }}"
                     },
                 ],
             },
@@ -2425,52 +2474,63 @@ GAME SUSUN HURUF
                 words: [{
                         kata: "MERAH",
                         suku: ["ME", "RAH"],
-                        emoji: "🔴"
+                        emoji: "🔴",
+                        gambar: "{{ asset('assets/images/kosakata/warna/merah.jpg') }}"
+
                     },
                     {
                         kata: "HIJAU",
                         suku: ["HI", "JAU"],
-                        emoji: "🟢"
+                        emoji: "🟢",
+                        gambar: "{{ asset('assets/images/kosakata/warna/hijau.jpg') }}"
                     },
                     {
                         kata: "BIRU",
                         suku: ["BI", "RU"],
-                        emoji: "🔵"
+                        emoji: "🔵",
+                        gambar: "{{ asset('assets/images/kosakata/warna/biru.jpg') }}"
                     },
                     {
                         kata: "KUNING",
                         suku: ["KU", "NING"],
-                        emoji: "🟡"
+                        emoji: "🟡",
+                        gambar: "{{ asset('assets/images/kosakata/warna/kuning.jpg') }}"
                     },
                     {
                         kata: "PUTIH",
                         suku: ["PU", "TIH"],
-                        emoji: "⚪"
+                        emoji: "⚪",
+                        gambar: "{{ asset('assets/images/kosakata/warna/putih.jpg') }}"
                     },
                     {
                         kata: "ABUABU",
                         suku: ["A", "BU", "A", "BU"],
-                        emoji: "⚫"
+                        emoji: "⚫",
+                        gambar: "{{ asset('assets/images/kosakata/warna/abu-abu.jpg') }}"
                     },
                     {
                         kata: "ORANGE",
                         suku: ["O", "RANGE"],
-                        emoji: "🟠"
+                        emoji: "🟠",
+                        gambar: "{{ asset('assets/images/kosakata/warna/oranye.jpg') }}"
                     },
                     {
                         kata: "UNGU",
                         suku: ["U", "NGU"],
-                        emoji: "🟣"
+                        emoji: "🟣",
+                        gambar: "{{ asset('assets/images/kosakata/warna/ungu.jpg') }}"
                     },
                     {
                         kata: "COKLAT",
                         suku: ["COK", "LAT"],
-                        emoji: "🟤"
+                        emoji: "🟤",
+                        gambar: "{{ asset('assets/images/kosakata/warna/coklat.jpg') }}"
                     },
                     {
                         kata: "HITAM",
                         suku: ["HI", "TAM"],
-                        emoji: "⚫"
+                        emoji: "⚫",
+                        gambar: "{{ asset('assets/images/kosakata/warna/hitam.jpg') }}"
                     },
                 ],
             },
@@ -2558,70 +2618,70 @@ GAME SUSUN HURUF
                 pilihanSalah: ["ma", "sa", "tu", "fa", "li", "ri", "na", "ko"],
                 soal: [{
                         nama: "Kucing",
-                        gambar: "{{ asset('assets/images/kosakata/hewan/kucing.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/kucing.jpg') }}",
                         suku: ["ku", "cing"],
                         kosongIndex: 1,
                         warna: "purple"
                     },
                     {
                         nama: "Ayam",
-                        gambar: "{{ asset('assets/images/kosakata/hewan/ayam.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/ayam.jpg') }}",
                         suku: ["a", "yam"],
                         kosongIndex: 1,
                         warna: "green"
                     },
                     {
                         nama: "Ikan",
-                        gambar: "{{ asset('assets/images/kosakata/hewan/ikan.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/ikan.jpg') }}",
                         suku: ["i", "kan"],
                         kosongIndex: 1,
                         warna: "yellow"
                     },
                     {
                         nama: "Gajah",
-                        gambar: "{{ asset('assets/images/kosakata/hewan/gajah.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/gajah.jpg') }}",
                         suku: ["ga", "jah"],
                         kosongIndex: 1,
                         warna: "purple"
                     },
                     {
                         nama: "Kelinci",
-                        gambar: "{{ asset('assets/images/kosakata/hewan/kelinci.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/kelinci.jpg') }}",
                         suku: ["ke", "lin", "ci"],
                         kosongIndex: 2,
                         warna: "green"
                     },
                     {
                         nama: "Burung",
-                        gambar: "{{ asset('assets/images/kosakata/hewan/burung.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/burung.jpg') }}",
                         suku: ["bu", "rung"],
                         kosongIndex: 1,
                         warna: "yellow"
                     },
                     {
                         nama: "Sapi",
-                        gambar: "{{ asset('assets/images/kosakata/hewan/sapi.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/sapi.jpg') }}",
                         suku: ["sa", "pi"],
                         kosongIndex: 1,
                         warna: "purple"
                     },
                     {
                         nama: "Kambing",
-                        gambar: "{{ asset('assets/images/kosakata/hewan/kambing.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/kambing.jpg') }}",
                         suku: ["kam", "bing"],
                         kosongIndex: 1,
                         warna: "green"
                     },
                     {
                         nama: "Singa",
-                        gambar: "{{ asset('assets/images/kosakata/hewan/singa.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/singa.jpg') }}",
                         suku: ["si", "nga"],
                         kosongIndex: 1,
                         warna: "yellow"
                     },
                     {
                         nama: "Anjing",
-                        gambar: "{{ asset('assets/images/kosakata/hewan/anjing.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/hewan/anjing.jpg') }}",
                         suku: ["an", "jing"],
                         kosongIndex: 1,
                         warna: "purple"
@@ -2633,70 +2693,70 @@ GAME SUSUN HURUF
                 pilihanSalah: ["ma", "sa", "tu", "fa", "li", "ri", "na", "ko"],
                 soal: [{
                         nama: "Bola",
-                        gambar: "{{ asset('assets/images/kosakata/benda/bola.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/benda/bola.jpg') }}",
                         suku: ["bo", "la"],
                         kosongIndex: 1,
                         warna: "purple"
                     },
                     {
                         nama: "Buku",
-                        gambar: "{{ asset('assets/images/kosakata/benda/buku.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/benda/buku.jpg') }}",
                         suku: ["bu", "ku"],
                         kosongIndex: 1,
                         warna: "green"
                     },
                     {
                         nama: "Kursi",
-                        gambar: "{{ asset('assets/images/kosakata/benda/kursi.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/benda/kursi.jpg') }}",
                         suku: ["kur", "si"],
                         kosongIndex: 1,
                         warna: "yellow"
                     },
                     {
                         nama: "Pintu",
-                        gambar: "{{ asset('assets/images/kosakata/benda/pintu.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/benda/pintu.jpg') }}",
                         suku: ["pin", "tu"],
                         kosongIndex: 1,
                         warna: "purple"
                     },
                     {
                         nama: "Piring",
-                        gambar: "{{ asset('assets/images/kosakata/benda/piring.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/benda/piring.jpg') }}",
                         suku: ["pi", "ring"],
                         kosongIndex: 1,
                         warna: "green"
                     },
                     {
                         nama: "Meja",
-                        gambar: "{{ asset('assets/images/kosakata/benda/meja.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/benda/meja.jpg') }}",
                         suku: ["me", "ja"],
                         kosongIndex: 1,
                         warna: "yellow"
                     },
                     {
                         nama: "Pensil",
-                        gambar: "{{ asset('assets/images/kosakata/benda/pensil.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/benda/pensil.jpg') }}",
                         suku: ["pen", "sil"],
                         kosongIndex: 1,
                         warna: "purple"
                     },
                     {
                         nama: "Sepatu",
-                        gambar: "{{ asset('assets/images/kosakata/benda/sepatu.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/benda/sepatu.jpg') }}",
                         suku: ["se", "pa", "tu"],
                         kosongIndex: 2,
                         warna: "green"
                     },
                     {
                         nama: "Sendok",
-                        gambar: "{{ asset('assets/images/kosakata/benda/sendok.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/benda/sendok.jpg') }}",
                         suku: ["sen", "dok"],
                         kosongIndex: 1,
                         warna: "yellow"
                     },
                     {
                         nama: "Topi",
-                        gambar: "{{ asset('assets/images/kosakata/benda/topi.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/benda/topi.jpg') }}",
                         suku: ["to", "pi"],
                         kosongIndex: 1,
                         warna: "purple"
@@ -2709,215 +2769,80 @@ GAME SUSUN HURUF
                 pilihanSalah: ["ma", "sa", "tu", "fa", "li", "ri", "na", "ko"],
                 soal: [{
                         nama: "Bunga",
-                        gambar: "{{ asset('assets/images/kosakata/alam/bunga.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/alam/bunga.jpg') }}",
                         suku: ["bu", "nga"],
                         kosongIndex: 1,
                         warna: "purple"
                     },
                     {
                         nama: "Pohon",
-                        gambar: "{{ asset('assets/images/kosakata/alam/pohon.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/alam/pohon.jpg') }}",
                         suku: ["po", "hon"],
                         kosongIndex: 1,
                         warna: "green"
                     },
                     {
                         nama: "Hujan",
-                        gambar: "{{ asset('assets/images/kosakata/alam/hujan.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/alam/hujan.jpg') }}",
                         suku: ["hu", "jan"],
                         kosongIndex: 1,
                         warna: "yellow"
                     },
                     {
                         nama: "Bulan",
-                        gambar: "{{ asset('assets/images/kosakata/alam/bulan.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/alam/bulan.jpg') }}",
                         suku: ["bu", "lan"],
                         kosongIndex: 1,
                         warna: "purple"
                     },
                     {
                         nama: "Bintang",
-                        gambar: "{{ asset('assets/images/kosakata/alam/bintang.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/alam/bintang.jpg') }}",
                         suku: ["bin", "tang"],
                         kosongIndex: 1,
                         warna: "green"
                     },
                     {
                         nama: "Matahari",
-                        gambar: "{{ asset('assets/images/kosakata/alam/matahari.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/alam/matahari.jpg') }}",
                         suku: ["ma", "ta", "ha", "ri"],
                         kosongIndex: 3,
                         warna: "yellow"
                     },
                     {
                         nama: "Awan",
-                        gambar: "{{ asset('assets/images/kosakata/alam/awan.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/alam/awan.jpg') }}",
                         suku: ["a", "wan"],
                         kosongIndex: 1,
                         warna: "purple"
                     },
                     {
                         nama: "Gunung",
-                        gambar: "{{ asset('assets/images/kosakata/alam/gunung.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/alam/gunung.jpg') }}",
                         suku: ["gu", "nung"],
                         kosongIndex: 1,
                         warna: "green"
                     },
                     {
                         nama: "Laut",
-                        gambar: "{{ asset('assets/images/kosakata/alam/laut.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/alam/laut.jpg') }}",
                         suku: ["la", "ut"],
                         kosongIndex: 1,
                         warna: "yellow"
                     },
                     {
                         nama: "Api",
-                        gambar: "{{ asset('assets/images/kosakata/alam/api.png') }}",
+                        gambar: "{{ asset('assets/images/kosakata/alam/api.jpg') }}",
                         suku: ["a", "pi"],
                         kosongIndex: 1,
                         warna: "purple"
-                    }
+                    },
                 ]
             },
-            pekerjaan: {
-                label: "👩‍⚕️ Pekerjaan",
-                pilihanSalah: ["mi", "ca", "no", "lu"],
-                soal: [{
-                        nama: "Dokter",
-                        gambar: "{{ asset('assets/images/kosakata/pekerjaan/dokter.png') }}",
-                        awal: "dok",
-                        jawaban: "ter",
-                        warna: "purple"
-                    },
-                    {
-                        nama: "Guru",
-                        gambar: "{{ asset('assets/images/kosakata/pekerjaan/guru.png') }}",
-                        awal: "gu",
-                        jawaban: "ru",
-                        warna: "green"
-                    },
-                    {
-                        nama: "Polisi",
-                        gambar: "{{ asset('assets/images/kosakata/pekerjaan/polisi.png') }}",
-                        awal: "po",
-                        jawaban: "lisi",
-                        warna: "yellow"
-                    },
-                    {
-                        nama: "Koki",
-                        gambar: "{{ asset('assets/images/kosakata/pekerjaan/koki.png') }}",
-                        awal: "ko",
-                        jawaban: "ki",
-                        warna: "purple"
-                    }
-                ]
-            },
-
-            transportasi: {
-                label: "🚗 Transportasi",
-                pilihanSalah: ["ka", "do", "ni", "se"],
-                soal: [{
-                        nama: "Mobil",
-                        gambar: "{{ asset('assets/images/kosakata/transportasi/mobil.png') }}",
-                        awal: "mo",
-                        jawaban: "bil",
-                        warna: "purple"
-                    },
-                    {
-                        nama: "Motor",
-                        gambar: "{{ asset('assets/images/kosakata/transportasi/motor.png') }}",
-                        awal: "mo",
-                        jawaban: "tor",
-                        warna: "green"
-                    },
-                    {
-                        nama: "Kapal",
-                        gambar: "{{ asset('assets/images/kosakata/transportasi/kapal.png') }}",
-                        awal: "ka",
-                        jawaban: "pal",
-                        warna: "yellow"
-                    },
-                    {
-                        nama: "Pesawat",
-                        gambar: "{{ asset('assets/images/kosakata/transportasi/pesawat.png') }}",
-                        awal: "pe",
-                        jawaban: "sawat",
-                        warna: "purple"
-                    }
-                ]
-            },
-
-            sayuran: {
-                label: "🥦 Sayuran",
-                pilihanSalah: ["si", "na", "po", "mu"],
-                soal: [{
-                        nama: "Wortel",
-                        gambar: "{{ asset('assets/images/kosakata/sayuran/wortel.png') }}",
-                        awal: "wor",
-                        jawaban: "tel",
-                        warna: "purple"
-                    },
-                    {
-                        nama: "Tomat",
-                        gambar: "{{ asset('assets/images/kosakata/sayuran/tomat.png') }}",
-                        awal: "to",
-                        jawaban: "mat",
-                        warna: "green"
-                    },
-                    {
-                        nama: "Jagung",
-                        gambar: "{{ asset('assets/images/kosakata/sayuran/jagung.png') }}",
-                        awal: "ja",
-                        jawaban: "gung",
-                        warna: "yellow"
-                    },
-                    {
-                        nama: "Brokoli",
-                        gambar: "{{ asset('assets/images/kosakata/sayuran/brokoli.png') }}",
-                        awal: "bro",
-                        jawaban: "koli",
-                        warna: "purple"
-                    }
-                ]
-            },
-
-            warna: {
-                label: "🎨 Warna",
-                pilihanSalah: ["la", "co", "mi", "pa"],
-                soal: [{
-                        nama: "Merah",
-                        gambar: "{{ asset('assets/images/kosakata/warna/merah.png') }}",
-                        awal: "me",
-                        jawaban: "rah",
-                        warna: "purple"
-                    },
-                    {
-                        nama: "Hijau",
-                        gambar: "{{ asset('assets/images/kosakata/warna/hijau.png') }}",
-                        awal: "hi",
-                        jawaban: "jau",
-                        warna: "green"
-                    },
-                    {
-                        nama: "Biru",
-                        gambar: "{{ asset('assets/images/kosakata/warna/biru.png') }}",
-                        awal: "bi",
-                        jawaban: "ru",
-                        warna: "yellow"
-                    },
-                    {
-                        nama: "Kuning",
-                        gambar: "{{ asset('assets/images/kosakata/warna/kuning.png') }}",
-                        awal: "ku",
-                        jawaban: "ning",
-                        warna: "purple"
-                    }
-                ]
-            }
         };
 
         /* =========================================================
-          UNTUK MATERI DATA
+          UNTUK MATERI DATA & AUDIO
         ========================================================== */
         const MATERI_DATA = {
             buah: {
@@ -2926,7 +2851,7 @@ GAME SUSUN HURUF
                 items: [{
                         kata: "Jeruk",
                         suku: "je-ruk",
-                        audio: "{{ asset('assets/audio/kosakata/buah/jeruk.mp3') }}"
+                        audio: "{{ asset('assets/audio/kosakata/buah/jeruk.mp4') }}"
                     },
                     {
                         kata: "Apel",
@@ -2936,23 +2861,43 @@ GAME SUSUN HURUF
                     {
                         kata: "Pisang",
                         suku: "pi-sang",
-                        audio: "{{ asset('assets/audio/kosakata/buah/pisang.mp3') }}"
+                        audio: "{{ asset('assets/audio/kosakata/buah/pisang.mp4') }}"
                     },
                     {
                         kata: "Semangka",
                         suku: "se-mang-ka",
-                        audio: "{{ asset('assets/audio/kosakata/buah/semangka.mp3') }}"
+                        audio: "{{ asset('assets/audio/kosakata/buah/semangka.mp4') }}"
                     },
                     {
                         kata: "Durian",
                         suku: "du-ri-an",
-                        audio: "{{ asset('assets/audio/kosakata/buah/durian.mp3') }}"
+                        audio: "{{ asset('assets/audio/kosakata/buah/durian.mp4') }}"
                     },
                     {
                         kata: "Alpukat",
                         suku: "al-pu-kat",
-                        audio: "{{ asset('assets/audio/kosakata/buah/alpukat.mp3') }}"
-                    }
+                        audio: "{{ asset('assets/audio/kosakata/buah/alpukat.mp4') }}"
+                    },
+                    {
+                        kata: "Anggur",
+                        suku: "ang-gur",
+                        audio: "{{ asset('assets/audio/kosakata/buah/anggur.mp4') }}"
+                    },
+                    {
+                        kata: "Mangga",
+                        suku: "mang-ga",
+                        audio: "{{ asset('assets/audio/kosakata/buah/mangga.mp4') }}"
+                    },
+                    {
+                        kata: "Salak",
+                        suku: "sa-lak",
+                        audio: "{{ asset('assets/audio/kosakata/buah/salak.mp4') }}"
+                    },
+                    {
+                        kata: "Melon",
+                        suku: "me-lon",
+                        audio: "{{ asset('assets/audio/kosakata/buah/melon.mp4') }}"
+                    },
                 ]
             },
 
@@ -2960,29 +2905,55 @@ GAME SUSUN HURUF
                 title: "🐾 Hewan",
                 desc: "Hewan adalah makhluk hidup yang ada di sekitar kita. Hewan dapat hidup di darat, air, atau udara.",
                 items: [{
-                        kata: "Kucing",
-                        suku: "ku - cing"
+                        kata: "KUCING",
+                        suku: "ku-cing",
+                        audio: "{{ asset('assets/audio/kosakata/hewan/kucing.mp4') }}"
                     },
                     {
-                        kata: "Ayam",
-                        suku: "a - yam"
+                        kata: "ANJING",
+                        suku: "an-jing",
+                        audio: "{{ asset('assets/audio/kosakata/hewan/anjing.mp4') }}"
                     },
                     {
-                        kata: "Ikan",
-                        suku: "i - kan"
+                        kata: "KELINCI",
+                        suku: "ke-lin-ci",
+                        audio: "{{ asset('assets/audio/kosakata/hewan/kelinci.mp4') }}"
                     },
                     {
-                        kata: "Gajah",
-                        suku: "ga - jah"
+                        kata: "GAJAH",
+                        suku: "ga-jah",
+                        audio: "{{ asset('assets/audio/kosakata/hewan/gajah.mp4') }}"
                     },
                     {
-                        kata: "Kelinci",
-                        suku: "ke - lin - ci"
+                        kata: "SINGA",
+                        suku: "si-nga",
+                        audio: "{{ asset('assets/audio/kosakata/hewan/singa.mp4') }}"
                     },
                     {
-                        kata: "Burung",
-                        suku: "bu - rung"
-                    }
+                        kata: "IKAN",
+                        suku: "i-kan",
+                        audio: "{{ asset('assets/audio/kosakata/hewan/ikan.mp4') }}"
+                    },
+                    {
+                        kata: "AYAM",
+                        suku: "a-yam",
+                        audio: "{{ asset('assets/audio/kosakata/hewan/ayam.mp4') }}"
+                    },
+                    {
+                        kata: "SAPI",
+                        suku: "sa-pi",
+                        audio: "{{ asset('assets/audio/kosakata/hewan/sapi.mp4') }}"
+                    },
+                    {
+                        kata: "KAMBING",
+                        suku: "kam-bing",
+                        audio: "{{ asset('assets/audio/kosakata/hewan/kambing.mp4') }}"
+                    },
+                    {
+                        kata: "BURUNG",
+                        suku: "bu-rung",
+                        audio: "{{ asset('assets/audio/kosakata/hewan/burung.mp4') }}"
+                    },
                 ]
             },
 
@@ -2990,29 +2961,55 @@ GAME SUSUN HURUF
                 title: "🏠 Benda",
                 desc: "Benda adalah sesuatu yang dapat kita lihat dan gunakan dalam kehidupan sehari-hari.",
                 items: [{
-                        kata: "Bola",
-                        suku: "bo - la"
+                        kata: "BUKU",
+                        suku: "bu-ku",
+                        audio: "{{ asset('assets/audio/kosakata/benda/buku.mp4') }}"
                     },
                     {
-                        kata: "Buku",
-                        suku: "bu - ku"
+                        kata: "KURSI",
+                        suku: "kur-si",
+                        audio: "{{ asset('assets/audio/kosakata/benda/kursi.mp4') }}"
                     },
                     {
-                        kata: "Kursi",
-                        suku: "kur - si"
+                        kata: "MEJA",
+                        suku: "me-ja",
+                        audio: "{{ asset('assets/audio/kosakata/benda/meja.mp4') }}"
                     },
                     {
-                        kata: "Pintu",
-                        suku: "pin - tu"
+                        kata: "PENSIL",
+                        suku: "pen-sil",
+                        audio: "{{ asset('assets/audio/kosakata/benda/pensil.mp4') }}"
                     },
                     {
-                        kata: "Piring",
-                        suku: "pi - ring"
+                        kata: "TOPI",
+                        suku: "to-pi",
+                        audio: "{{ asset('assets/audio/kosakata/benda/topi.mp4') }}"
                     },
                     {
-                        kata: "Pensil",
-                        suku: "pen - sil"
-                    }
+                        kata: "SEPATU",
+                        suku: "se-pa-tu",
+                        audio: "{{ asset('assets/audio/kosakata/benda/sepatu.mp4') }}"
+                    },
+                    {
+                        kata: "BOLA",
+                        suku: "bo-la",
+                        audio: "{{ asset('assets/audio/kosakata/benda/bola.mp4') }}"
+                    },
+                    {
+                        kata: "PINTU",
+                        suku: "pin-tu",
+                        audio: "{{ asset('assets/audio/kosakata/benda/pintu.mp4') }}"
+                    },
+                    {
+                        kata: "SENDOK",
+                        suku: "sen-dok",
+                        audio: "{{ asset('assets/audio/kosakata/benda/sendok.mp4') }}"
+                    },
+                    {
+                        kata: "PIRING",
+                        suku: "pi-ring",
+                        audio: "{{ asset('assets/audio/kosakata/benda/piring.mp4') }}"
+                    },
                 ]
             },
 
@@ -3020,59 +3017,110 @@ GAME SUSUN HURUF
                 title: "🌿 Alam",
                 desc: "Alam adalah lingkungan di sekitar kita, seperti tumbuhan, langit, hujan, bulan, dan bintang.",
                 items: [{
-                        kata: "Bunga",
-                        suku: "bu - nga"
+                        kata: "BUNGA",
+                        suku: "bu-nga",
+                        audio: "{{ asset('assets/audio/kosakata/alam/bunga.mp4') }}"
                     },
                     {
-                        kata: "Pohon",
-                        suku: "po - hon"
+                        kata: "POHON",
+                        suku: "po-hon",
+                        audio: "{{ asset('assets/audio/kosakata/alam/pohon.mp4') }}"
                     },
                     {
-                        kata: "Hujan",
-                        suku: "hu - jan"
+                        kata: "HUJAN",
+                        suku: "hu-jan",
+                        audio: "{{ asset('assets/audio/kosakata/alam/hujan.mp4') }}"
                     },
                     {
-                        kata: "Bulan",
-                        suku: "bu - lan"
+                        kata: "BINTANG",
+                        suku: "bin-tang",
+                        audio: "{{ asset('assets/audio/kosakata/alam/bintang.mp4') }}"
                     },
                     {
-                        kata: "Bintang",
-                        suku: "bin - tang"
+                        kata: "BULAN",
+                        suku: "bu-lan",
+                        audio: "{{ asset('assets/audio/kosakata/alam/bulan.mp4') }}"
                     },
                     {
-                        kata: "Matahari",
-                        suku: "ma - ta - ha - ri"
-                    }
+                        kata: "MATAHARI",
+                        suku: "ma-ta-ha-ri",
+                        audio: "{{ asset('assets/audio/kosakata/alam/matahari.mp4') }}"
+                    },
+                    {
+                        kata: "AWAN",
+                        suku: "a-wan",
+                        audio: "{{ asset('assets/audio/kosakata/alam/awan.mp4') }}"
+                    },
+                    {
+                        kata: "GUNUNG",
+                        suku: "gu-nung",
+                        audio: "{{ asset('assets/audio/kosakata/alam/gunung.mp4') }}"
+                    },
+                    {
+                        kata: "LAUT",
+                        suku: "la-ut",
+                        audio: "{{ asset('assets/audio/kosakata/alam/laut.mp4') }}"
+                    },
+                    {
+                        kata: "API",
+                        suku: "a-pi",
+                        audio: "{{ asset('assets/audio/kosakata/alam/api.mp4') }}"
+                    },
                 ]
             },
-
             pekerjaan: {
                 title: "👩‍⚕️ Pekerjaan",
                 desc: "Pekerjaan adalah kegiatan yang dilakukan seseorang. Setiap pekerjaan memiliki tugas yang berbeda.",
                 items: [{
-                        kata: "Dokter",
-                        suku: "dok - ter"
+                        kata: "DOKTER",
+                        suku: "dok-ter",
+                        audio: "{{ asset('assets/audio/kosakata/pekerjaan/dokter.mp4') }}"
                     },
                     {
-                        kata: "Guru",
-                        suku: "gu - ru"
+                        kata: "GURU",
+                        suku: "gu-ru",
+                        audio: "{{ asset('assets/audio/kosakata/pekerjaan/guru.mp4') }}"
                     },
                     {
-                        kata: "Polisi",
-                        suku: "po - li - si"
+                        kata: "POLISI",
+                        suku: "po-li-si",
+                        audio: "{{ asset('assets/audio/kosakata/pekerjaan/polisi.mp4') }}"
                     },
                     {
-                        kata: "Petani",
-                        suku: "pe - ta - ni"
+                        kata: "PETANI",
+                        suku: "pe-ta-ni",
+                        audio: "{{ asset('assets/audio/kosakata/pekerjaan/petani.mp4') }}"
                     },
                     {
-                        kata: "Koki",
-                        suku: "ko - ki"
+                        kata: "KOKI",
+                        suku: "ko-ki",
+                        audio: "{{ asset('assets/audio/kosakata/pekerjaan/koki.mp4') }}"
                     },
                     {
-                        kata: "Pilot",
-                        suku: "pi - lot"
-                    }
+                        kata: "PILOT",
+                        suku: "pi-lot",
+                        audio: "{{ asset('assets/audio/kosakata/pekerjaan/pilot.mp4') }}"
+                    },
+                    {
+                        kata: "MASINIS",
+                        suku: "ma-si-nis",
+                        audio: "{{ asset('assets/audio/kosakata/pekerjaan/masinis.mp4') }}"
+                    },
+                    {
+                        kata: "NELAYAN",
+                        suku: "ne-la-yan",
+                        audio: "{{ asset('assets/audio/kosakata/pekerjaan/nelayan.mp4') }}"
+                    },
+                    {
+                        kata: "PERAWAT",
+                        suku: "pe-ra-wat",
+                        audio: "{{ asset('assets/audio/kosakata/pekerjaan/perawat.mp4') }}"
+                    },
+                    {
+                        kata: "PEMADAM",
+                        suku: "pe-ma-dam",
+                        audio: "{{ asset('assets/audio/kosakata/pekerjaan/pemadam.mp4') }}"
+                    },
                 ]
             },
 
@@ -3080,29 +3128,55 @@ GAME SUSUN HURUF
                 title: "🚗 Alat Transportasi",
                 desc: "Alat transportasi digunakan untuk berpindah dari satu tempat ke tempat lain.",
                 items: [{
-                        kata: "Mobil",
-                        suku: "mo - bil"
+                        kata: "MOBIL",
+                        suku: "mo-bil",
+                        audio: "{{ asset('assets/audio/kosakata/alat-transportasi/mobil.mp4') }}"
                     },
                     {
-                        kata: "Motor",
-                        suku: "mo - tor"
+                        kata: "MOTOR",
+                        suku: "mo-tor",
+                        audio: "{{ asset('assets/audio/kosakata/alat-transportasi/motor.mp4') }}"
                     },
                     {
-                        kata: "Kereta",
-                        suku: "ke - re - ta"
+                        kata: "BUS",
+                        suku: "bus",
+                        audio: "{{ asset('assets/audio/kosakata/alat-transportasi/bus.mp4') }}"
                     },
                     {
-                        kata: "Kapal",
-                        suku: "ka - pal"
+                        kata: "KERETA",
+                        suku: "ke-re-ta",
+                        audio: "{{ asset('assets/audio/kosakata/alat-transportasi/kereta.mp4') }}"
                     },
                     {
-                        kata: "Pesawat",
-                        suku: "pe - sa - wat"
+                        kata: "KAPAL",
+                        suku: "ka-pal",
+                        audio: "{{ asset('assets/audio/kosakata/alat-transportasi/kapal.mp4') }}"
                     },
                     {
-                        kata: "Sepeda",
-                        suku: "se - pe - da"
-                    }
+                        kata: "PESAWAT",
+                        suku: "pe-sa-wat",
+                        audio: "{{ asset('assets/audio/kosakata/alat-transportasi/pesawat.mp4') }}"
+                    },
+                    {
+                        kata: "SEPEDA",
+                        suku: "se-pe-da",
+                        audio: "{{ asset('assets/audio/kosakata/alat-transportasi/sepeda.mp4') }}"
+                    },
+                    {
+                        kata: "BECAK",
+                        suku: "be-cak",
+                        audio: "{{ asset('assets/audio/kosakata/alat-transportasi/becak.mp4') }}"
+                    },
+                    {
+                        kata: "TRUK",
+                        suku: "truk",
+                        audio: "{{ asset('assets/audio/kosakata/alat-transportasi/truk.mp4') }}"
+                    },
+                    {
+                        kata: "TAKSI",
+                        suku: "tak-si",
+                        audio: "{{ asset('assets/audio/kosakata/alat-transportasi/taksi.mp4') }}"
+                    },
                 ]
             },
 
@@ -3110,29 +3184,55 @@ GAME SUSUN HURUF
                 title: "🥦 Sayuran",
                 desc: "Sayuran adalah makanan sehat yang berasal dari tumbuhan. Sayuran baik untuk tubuh.",
                 items: [{
-                        kata: "Wortel",
-                        suku: "wor - tel"
+                        kata: "BAYAM",
+                        suku: "ba-yam",
+                        audio: "{{ asset('assets/audio/kosakata/sayuran/bayam.mp4') }}"
                     },
                     {
-                        kata: "Tomat",
-                        suku: "to - mat"
+                        kata: "WORTEL",
+                        suku: "wor-tel",
+                        audio: "{{ asset('assets/audio/kosakata/sayuran/wortel.mp4') }}"
                     },
                     {
-                        kata: "Jagung",
-                        suku: "ja - gung"
+                        kata: "KUBIS",
+                        suku: "ku-bis",
+                        audio: "{{ asset('assets/audio/kosakata/sayuran/kubis.mp4') }}"
                     },
                     {
-                        kata: "Brokoli",
-                        suku: "bro - ko - li"
+                        kata: "TOMAT",
+                        suku: "to-mat",
+                        audio: "{{ asset('assets/audio/kosakata/sayuran/tomat.mp4') }}"
                     },
                     {
-                        kata: "Bayam",
-                        suku: "ba - yam"
+                        kata: "TIMUN",
+                        suku: "ti-mun",
+                        audio: "{{ asset('assets/audio/kosakata/sayuran/timun.mp4') }}"
                     },
                     {
-                        kata: "Timun",
-                        suku: "ti - mun"
-                    }
+                        kata: "TERONG",
+                        suku: "te-rong",
+                        audio: "{{ asset('assets/audio/kosakata/sayuran/terong.mp4') }}"
+                    },
+                    {
+                        kata: "JAGUNG",
+                        suku: "ja-gung",
+                        audio: "{{ asset('assets/audio/kosakata/sayuran/jagung.mp4') }}"
+                    },
+                    {
+                        kata: "KENTANG",
+                        suku: "ken-tang",
+                        audio: "{{ asset('assets/audio/kosakata/sayuran/kentang.mp4') }}"
+                    },
+                    {
+                        kata: "BROKOLI",
+                        suku: "bro-ko-li",
+                        audio: "{{ asset('assets/audio/kosakata/sayuran/brokoli.mp4') }}"
+                    },
+                    {
+                        kata: "LABU",
+                        suku: "la-bu",
+                        audio: "{{ asset('assets/audio/kosakata/sayuran/labu.mp4') }}"
+                    },
                 ]
             },
 
@@ -3140,29 +3240,55 @@ GAME SUSUN HURUF
                 title: "🎨 Warna",
                 desc: "Warna membuat benda terlihat berbeda dan menarik. Kita dapat mengenal warna dari benda di sekitar.",
                 items: [{
-                        kata: "Merah",
-                        suku: "me - rah"
+                        kata: "MERAH",
+                        suku: "me-rah",
+                        audio: "{{ asset('assets/audio/kosakata/warna/merah.mp4') }}"
                     },
                     {
-                        kata: "Hijau",
-                        suku: "hi - jau"
+                        kata: "HIJAU",
+                        suku: "hi-jau",
+                        audio: "{{ asset('assets/audio/kosakata/warna/hijau.mp4') }}"
                     },
                     {
-                        kata: "Biru",
-                        suku: "bi - ru"
+                        kata: "BIRU",
+                        suku: "bi-ru",
+                        audio: "{{ asset('assets/audio/kosakata/warna/biru.mp4') }}"
                     },
                     {
-                        kata: "Kuning",
-                        suku: "ku - ning"
+                        kata: "KUNING",
+                        suku: "ku-ning",
+                        audio: "{{ asset('assets/audio/kosakata/warna/kuning.mp4') }}"
                     },
                     {
-                        kata: "Ungu",
-                        suku: "u - ngu"
+                        kata: "PUTIH",
+                        suku: "pu-tih",
+                        audio: "{{ asset('assets/audio/kosakata/warna/putih.mp4') }}"
                     },
                     {
-                        kata: "Hitam",
-                        suku: "hi - tam"
-                    }
+                        kata: "ABU-ABU",
+                        suku: "a-bu-a-bu",
+                        audio: "{{ asset('assets/audio/kosakata/warna/abuabu.mp4') }}"
+                    },
+                    {
+                        kata: "ORANYE",
+                        suku: "o-ran-ye",
+                        audio: "{{ asset('assets/audio/kosakata/warna/oranye.mp4') }}"
+                    },
+                    {
+                        kata: "UNGU",
+                        suku: "u-ngu",
+                        audio: "{{ asset('assets/audio/kosakata/warna/ungu.mp4') }}"
+                    },
+                    {
+                        kata: "COKLAT",
+                        suku: "cok-lat",
+                        audio: "{{ asset('assets/audio/kosakata/warna/coklat.mp4') }}"
+                    },
+                    {
+                        kata: "HITAM",
+                        suku: "hi-tam",
+                        audio: "{{ asset('assets/audio/kosakata/warna/hitam.mp4') }}"
+                    },
                 ]
             }
         };
@@ -3540,7 +3666,7 @@ GAME SUSUN HURUF
         function resetLetterGame() {
             const category = DATA[currentCat] || DATA.pekerjaan;
 
-            letterCurrentData = shuffle([...category.words]).slice(0, 6);
+            letterCurrentData = shuffle([...category.words]).slice(0, 5);
             letterIndex = 0;
             letterScoreValue = 0;
             letterCorrectValue = 0;
@@ -3580,7 +3706,9 @@ GAME SUSUN HURUF
             letterOptions.innerHTML = "";
             letterFeedback.textContent = "";
 
-            letterImage.textContent = currentLetterQuestion.emoji;
+            letterImage.innerHTML = `
+            <img src="${currentLetterQuestion.gambar}" alt="${currentLetterQuestion.kata}">
+            `;
             letterSukuHint.textContent = "Petunjuk: " + currentLetterQuestion.suku.join(" - ");
 
             const letters = shuffle(currentLetterQuestion.kata.split(""));
