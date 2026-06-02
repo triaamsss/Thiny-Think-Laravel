@@ -64,6 +64,9 @@ Route::view('/abjad/play', 'pages.abjad_play')->name('abjad.play');
 Route::view('/pencocokkan-abjad', 'pages.pencocokkan_abjad')->name('pencocokkan-abjad');
 Route::view('/pencocokkan-abjad/play', 'pages.pencocokkan_abjad_play')->name('pencocokkan-abjad.play');
 
+Route::view('/surat-pendek', 'pages.surat_pendek')->name('surat-pendek');
+Route::view('/surat-pendek/play', 'pages.surat_pendek_play')->name('surat-pendek.play');    
+
 Route::view('/kosa-kata', 'pages.kosa_kata')->name('kosa-kata');
 
 Route::get('/kosa-kata/play', function () {
@@ -133,6 +136,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('lessons', LessonController::class);
         Route::resource('hadist', HadistController::class);
         Route::resource('doa-harian', DoaHarianController::class);
+        Route::resource('surat-pendek', SuratPendekController::class);
         Route::resource('quiz', QuizController::class);
         Route::resource('kosa-kata', KosaKataController::class);
     });
