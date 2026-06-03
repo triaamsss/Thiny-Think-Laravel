@@ -6,9 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('kosa_kata', function (Blueprint $table) {
@@ -16,16 +13,14 @@ return new class extends Migration
             $table->string('kategori');
             $table->string('label')->nullable();
             $table->string('kata');
-            $table->json('suku');
+            $table->json('suku')->nullable();
             $table->string('emoji')->nullable();
-            $table->string('tipe_game')->default('suku');
+            $table->string('audio')->nullable();
+            $table->string('tipe_game')->nullable();
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('kosa_kata');

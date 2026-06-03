@@ -55,7 +55,7 @@
       BELAJAR HIJAIYAH
     </h1>
     <h1 class="btn-start" data-aos="zoom-in" data-aos-delay="200">
-      <a href="{{ route('hijaiyah.play') }}">MULAI</a>
+      <a href="{{ route('welcome') }}">MULAI</a>
     </h1>
   </div>
 
