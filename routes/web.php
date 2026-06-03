@@ -24,6 +24,9 @@ use App\Models\DoaHarian;
 use App\Models\Quiz;
 use App\Models\KosaKata;
 
+
+
+
 /*
 |--------------------------------------------------------------------------
 | PUBLIC ROUTES
