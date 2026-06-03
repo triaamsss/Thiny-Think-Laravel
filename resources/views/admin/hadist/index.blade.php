@@ -51,7 +51,7 @@
                     <td style="padding:14px;">
                         @if($hadist->video)
                             <video controls style="width:180px;border-radius:10px;">
-                                <source src="{{ asset('storage/' . $hadist->video) }}" type="video/mp4">
+                                <source src="{{ asset($hadist->video) }}" type="video/mp4">
                             </video>
                         @else
                             Tidak ada video

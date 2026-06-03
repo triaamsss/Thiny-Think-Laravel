@@ -54,21 +54,22 @@
 
             <label>Video Sekarang</label>
 
-            @if($hadist->video)
+                @if($hadist->video)
 
-                <video
-                    controls
-                    style="
-                        width:220px;
-                        border-radius:16px;
-                        margin-bottom:16px;
-                        display:block;
-                    "
-                >
-                    <source src="{{ asset('storage/' . $hadist->video) }}">
-                </video>
+                    <video
+                        controls
+                        style="
+                            width:100%;
+                            max-width:320px; /* Diperlebar sedikit agar lebih pas */
+                            border-radius:16px;
+                            margin-bottom:16px;
+                            display:block;
+                        "
+                    >
+                        <source src="{{ asset($hadist->video) }}" type="video/mp4">
+                    </video>
 
-            @endif
+                @endif
 
             <label>Ganti Video</label>
             <input type="file" name="video">

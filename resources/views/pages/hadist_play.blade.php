@@ -652,20 +652,20 @@ video{
 
     const quizData = @json($quizzes).map((quiz) => ({
         question: quiz.question,
-        audio: quiz.audio ? "/storage/" + quiz.audio : "",
+        audio: quiz.audio ? "/" + quiz.audio : "",
         options: [
             {
-                image: quiz.option_a_image ? "/storage/" + quiz.option_a_image : "",
+                image: quiz.option_a_image ? "/" + quiz.option_a_image : "",
                 text: quiz.option_a,
                 correct: quiz.correct_answer === "A"
             },
             {
-                image: quiz.option_b_image ? "/storage/" + quiz.option_b_image : "",
+                image: quiz.option_b_image ? "/" + quiz.option_b_image : "",
                 text: quiz.option_b,
                 correct: quiz.correct_answer === "B"
             },
             {
-                image: quiz.option_c_image ? "/storage/" + quiz.option_c_image : "",
+                image: quiz.option_c_image ? "/" + quiz.option_c_image : "",
                 text: quiz.option_c,
                 correct: quiz.correct_answer === "C"
             }
@@ -720,7 +720,7 @@ video{
         videoHadist.currentTime = 0;
 
         if (hadist.video) {
-            videoHadist.src = "/storage/" + hadist.video;
+            videoHadist.src = "/" + hadist.video;
             videoHadist.load();
         } else {
             videoHadist.removeAttribute("src");
