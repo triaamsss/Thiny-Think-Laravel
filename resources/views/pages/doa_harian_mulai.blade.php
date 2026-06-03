@@ -252,7 +252,8 @@
         arab:" بِسْمِا للَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى اللَّهِ رَبِّنَا تَوَكَّلْنَا",
         latin:"Bismillaahi walajnaa, wa bismillaahi khorojnaa, wa ‘alallaahi robbinaa tawakkalnaa.",
         arti:"Dengan menyebut nama Allah kami masuk, dengan menyebut nama Allah kami keluar, dan kepada Allah Tuhan kami, kami bertawakal.",
-        audio:"/assets/audio/Doa Harian audio/1.mp3",
+        audio:"{{ asset('assets/audio/Doa Harian audio/1.mp4') }}",
+        quizAudio:"{{ asset('assets/audio/Doa Harian audio/quiz/1.mp4') }}",
         scene:"Anak sedang masuk kelas atau ruangan.",
         question:"Kegiatan mana yang cocok dengan doa masuk kelas?",
         startLatin:"Bismillaahi walajnaa",
@@ -264,7 +265,8 @@
         arab:"بِاسْمِ اللهِ تَوَكَّلْتُ عَلَى اللهِ، لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
         latin:"Bismillahi tawakkaltu 'ala Allahi wa laa hawla wa laa quwwata illa bi Allahi",
         arti:"Dengan menyebut nama Allah, aku bertawakal kepada Allah, tiada daya dan tiada kekuatan kecuali dengan pertolongan Allah.",
-        audio:"/assets/audio/Doa Harian audio/2.mp3",
+        audio:"{{ asset('assets/audio/Doa Harian audio/2.mp4') }}",
+        quizAudio:"{{ asset('assets/audio/Doa Harian audio/quiz/2.mp4') }}",
         scene:"Anak selesai belajar dan keluar kelas.",
         question:"Kegiatan mana yang cocok dengan doa keluar kelas?",
         startLatin:"Bismillahi tawakkaltu 'ala Allahi",
@@ -276,7 +278,8 @@
         arab:"اللَّهُمَّ افْتَحْ لي أبْوَابَ رَحْمَتِكَ",
         latin:"Allahummaftha lii abwaaba rahmatik",
         arti:"Ya Allah, bukalah pintu-pintu rahmat-Mu untukku.",
-        audio:"/assets/audio/Doa Harian audio/3.mp3",
+        audio:"{{ asset('assets/audio/Doa Harian audio/3.mp4') }}",
+        quizAudio:"{{ asset('assets/audio/Doa Harian audio/quiz/3.mp4') }}",
         scene:"Anak mau masuk masjid.",
         question:"Kegiatan mana yang cocok dengan doa masuk masjid?",
         startLatin:"Allahummaftha lii",
@@ -288,7 +291,8 @@
         arab:"اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ",
         latin:"Allaahumma innii as'aluka min fadhlik",
         arti:"Ya Allah, sesungguhnya aku memohon fadilah kepada-Mu.",
-        audio:"assets/audio/doa/doa_keluar_masjid.mp3",
+        audio:"{{ asset('assets/audio/Doa Harian audio/4.mp4') }}",
+        quizAudio:"{{ asset('assets/audio/Doa Harian audio/quiz/4.mp4') }}",
         scene:"Anak selesai salat dan mau keluar masjid.",
         question:"Kegiatan mana yang cocok dengan doa keluar masjid?",
         startLatin:"Allaahumma innii",
@@ -300,7 +304,8 @@
         arab:"اَشْهَدُ اَنْ لَااِلٰهَ اِلَّااللهُ وَحْدَهُ لاَشَرِيْكَ لَهُ وَاَشْهَدُ اَنَّ مُحَمَّدًاعَبْدُهُ وَرَسُوْلُهُ. اَللّٰهُمَّ اجْعَلْنِىْ مِنَ التَّوَّابِيْنَ وَاجْعَلْنِىْ مِنَ الْمُتَطَهِّرِيْنَ، وَجْعَلْنِيْ مِنْ عِبَادِكَ الصَّالِحِيْنَ",
         latin:"Asyhadu allaa ilaahah illallaah wahdahuu laa syariika lahuu wa asyhadu anna muhammadan 'abduhuu wa rosuuluh. Allaahummaj'alnii minat tawwaabiina waj'alnii minal mutathahhiriina, waj'alnii min 'ibadikash shaalihiin.",
         arti:"Aku bersaksi, tiada Tuhan selain Allah Yang Maha Tunggal, tiada sekutu bagi-Nya. Dan aku bersaksi bahwa Nabi Muhammad adalah hamba dan Utusan-Nya. Ya Allah, jadikanlah aku orang yang bertaubat dan jadikanlah aku orang yang suci dan jadikanlah aku dari golongan hamba-hamba Mu yang shalih.",
-        audio:"assets/audio/doa/doa_sesudah_wudhu.mp3",
+        audio:"{{ asset('assets/audio/Doa Harian audio/5.mp4') }}",
+        quizAudio:"{{ asset('assets/audio/Doa Harian audio/quiz/5.mp4') }}",
         scene:"Anak sudah selesai berwudhu.",
         question:"Kegiatan mana yang cocok dengan doa sesudah wudhu?",
         startLatin:"Asyhadu allaa ilaahah",
@@ -312,7 +317,8 @@
         arab:"اَللّٰهُمَّ رَبَّ هٰذِهِ الدَّعْوَةِ التَّامَّةِ، وَالصَّلَاةِ الْقَائِمَةِ، آتِ مُحَمَّدًا الْوَسِيلَةَ وَالْفَضِيلَةَ، وَابْعَثْهُ مَقَامًا مَحْمُودًا الَّذِي وَعَدْتَهُ",
         latin:"Allaahumma robba haadzihid-da’watiit-taammah, wash-sholaatil-qoo-imah. Aati muhammadanil-wasiilata wal-fadhiilah, wab’atshu maqoomam mahmuudan alladzii wa’adtah.",
         arti:"Ya Allah, Tuhan pemilik seruan yang sempurna ini dan salat yang sedang ditegakkan, berilah Nabi Muhammad wasilah dan keutamaan, serta bangkitkanlah beliau pada kedudukan yang terpuji sebagaimana yang telah Engkau janjikan.",
-        audio:"assets/audio/doa/doa_sesudah_adzan.mp3",
+        audio:"{{ asset('assets/audio/Doa Harian audio/6.mp4') }}",
+        quizAudio:"{{ asset('assets/audio/Doa Harian audio/quiz/6.mp4') }}",
         scene:"Anak selesai mendengar adzan.",
         question:"Kegiatan mana yang cocok dengan doa sesudah adzan?",
         startLatin:"Allaahumma robba haadzihid-da’watiit-taammah",
@@ -324,7 +330,8 @@
         arab:"سُبْحَانَ الَّذِي سَخَّرَ لَنَا هٰذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَىٰ رَبِّنَا لَمُنْقَلِبُونَ",
         latin:"Subhaanalladzii sakh-khoro lanaa haadzaa wa maa kunnaa lahu muqriniin. Wa innaa ilaa robbinaa lamunqolibuun.",
         arti:"Maha Suci Allah yang telah menundukkan kendaraan ini untuk kami, padahal kami sebelumnya tidak mampu menguasainya. Dan sesungguhnya kepada Tuhan kami, kami akan kembali.",
-        audio:"assets/audio/doa/doa_naik_kendaraan.mp3",
+        audio:"{{ asset('assets/audio/Doa Harian audio/7.mp4') }}",
+        quizAudio:"{{ asset('assets/audio/Doa Harian audio/quiz/7.mp4') }}",
         scene:"Anak sedang naik kendaraan.",
         question:"Kegiatan mana yang cocok dengan doa naik kendaraan?",
         startLatin:"Subhaanalladzii sakh-khoro lanaa haadzaa",
@@ -336,7 +343,8 @@
         arab:"اللَّهُمَّ صَيِّبًا نَافِعًا",
         latin:"Allahumma shayyiban naafi'an.",
         arti:"Ya Allah, turunkanlah hujan yang bermanfaat.",
-        audio:"assets/audio/doa/doa_turun_hujan.mp3",
+        audio:"{{ asset('assets/audio/Doa Harian audio/8.mp4') }}",
+        quizAudio:"{{ asset('assets/audio/Doa Harian audio/quiz/8.mp4') }}",
         scene:"Anak melihat hujan turun.",
         question:"Kegiatan mana yang cocok dengan doa ketika turun hujan?",
         startLatin:"Allahumma",
@@ -348,7 +356,8 @@
         arab:"ذَهَبَ الظَّمَأُ وَابْتَلَّتِ الْعُرُوقُ وَثَبَتَ الْأَجْرُ إِنْ شَاءَ اللَّهُ",
         latin:"Dzahabaz zhama'u wabtallatil 'uruuqu wa tsabatal ajru in syaa Allah.",
         arti:"Telah hilang rasa haus, urat-urat telah basah, dan pahala telah tetap, insya Allah.",
-        audio:"assets/audio/doa/doa_berbuka_puasa.mp3",
+        audio:"{{ asset('assets/audio/Doa Harian audio/9.mp4') }}",
+        quizAudio:"{{ asset('assets/audio/Doa Harian audio/quiz/9.mp4') }}",
         scene:"Anak-anak sedang berbuka puasa.",
         question:"Kegiatan mana yang cocok dengan doa berbuka puasa?",
         startLatin:"Dzahabaz zhama'u",
@@ -360,7 +369,8 @@
         arab:"بِسْمِ اللهِ مَجْرَهَا وَمُرْسَهَآاِنَّ رَبِّىْ لَغَفُوْرٌرَّحِيْمٌ",
         latin:"Bismillaahi majrahaa wa mursaahaa inna robbii laghofuurur rohiim",
         arti:"Dengan nama Allah yang menjalankan kendaraan ini berlayar dan berlabuh, sesungguhnya Tuhanku benar-benar Maha Pengampun lagi Maha Penyayang.",
-        audio:"assets/audio/doa/doa_kendaraan_berjalan.mp3",
+        audio:"{{ asset('assets/audio/Doa Harian audio/10.mp4') }}",
+        quizAudio:"{{ asset('assets/audio/Doa Harian audio/quiz/10.mp4') }}",
         scene:"Kendaraan sudah mulai berjalan.",
         question:"Kegiatan mana yang cocok dengan doa kendaraan sudah berjalan?",
         startLatin:"Bismillaahi majrahaa",
@@ -512,7 +522,17 @@
     render(getFiltered());
   });
 
-  player.addEventListener("ended", () => setAudioBtn(false));
+  player.addEventListener("ended", () => {
+
+  setAudioBtn(false);
+
+  const quizBtn = document.getElementById("quizAudioBtn");
+
+  if (quizBtn){
+    quizBtn.textContent = "▶️ Putar Audio";
+  }
+
+});
   modalClose.addEventListener("click", closeDoa);
   doaModal.addEventListener("click", e => { if (e.target === doaModal) closeDoa(); });
   toggleArtiBtn.addEventListener("click", () => { artiVisible = !artiVisible; applyArti(); });
@@ -606,7 +626,7 @@
       {
         type:"bacaan",
         mode:"📖 Tebak Bacaan",
-        title:"Kalau kegiatannya seperti gambar di samping, mana bacaan doa yang benar?",
+        title:"Jika kegiatannya seperti gambar di samping, mana bacaan doa yang benar yaa?",
         hint:"Lihat gambarnya, lalu pilih bacaan latin yang sesuai.",
         image:(doa.quizImage || doa.image),
         audio:null,
@@ -618,14 +638,13 @@
         title:"Dengarkan suara doa ini. Itu doa apa ya?",
         hint:"Klik tombol audio dulu, lalu pilih nama doa yang kamu dengar.",
         image:(doa.quizImage || doa.image),
-        audio:doa.audio,
+        audio:doa.quizAudio || doa.audio,
         options:titleOptions(doa, pool)
       },
       {
         type:"sambung",
         mode:"🧩 Sambung Doa",
-        title:`Lanjutkan bacaan ini: “${doa.startLatin} ...”`,
-        hint:"Pilih lanjutannya saja. Jangan pilih bacaan dari awal.",
+        title:`Ayoo Lanjutkan bacaan ini: “${doa.startLatin} ...”`,
         image:(doa.quizImage || doa.image),
         audio:null,
         options:continuationOptions(doa, pool)
@@ -748,12 +767,37 @@
     `;
 
     if (q.audio){
-      document.getElementById("quizAudioBtn").addEventListener("click", () => {
-        player.pause();
-        player.src = q.audio;
-        player.play().catch(() => alert("Audio tidak ditemukan. Pastikan file mp3 ada."));
-      });
+      const quizBtn = document.getElementById("quizAudioBtn");
+
+  quizBtn.addEventListener("click", () => {
+
+    if (currentSrc !== q.audio){
+      currentSrc = q.audio;
+      player.src = q.audio;
+
+      player.play()
+        .then(() => {
+          quizBtn.textContent = "⏸️ Pause Audio";
+        })
+        .catch(() => {
+          alert("Audio tidak ditemukan. Pastikan file audio ada.");
+        });
+
+    } else if (player.paused){
+
+      player.play()
+        .then(() => {
+          quizBtn.textContent = "⏸️ Pause Audio";
+        });
+
+    } else {
+
+      player.pause();
+      quizBtn.textContent = "▶️ Putar Audio";
+
     }
+    });
+  }
 
     const opts = document.getElementById("quizOptions");
     q.options.forEach((opt, idx) => {

@@ -33,6 +33,8 @@
 
     <div class="modal-title" id="title"></div>
 
+    <div class="surat-total" id="suratTotal"></div>
+
     <div class="ayat-no" id="ayatNo"></div>
 
     <div class="modal-arab" id="arab"></div>
@@ -45,16 +47,21 @@
   <button class="btn eye" onclick="toggleArti()">👁 Arti</button>
 
   <button class="btn prev" onclick="prevAyat()">
-    ⬅ Back
+    ⬅ 
   </button>
 
   <button class="btn next" onclick="nextAyat()">
-    Next ➡
+     ➡
   </button>
 
-  <button class="btn play-btn" onclick="playAudio()">
-    🔊 Play
-  </button>
+  <button id="playBtn" class="btn play-btn" onclick="playAudio()">
+  🔇
+</button>
+
+  <button class="btn quiz-btn" onclick="startQuiz()">
+  🧩 Quiz
+</button>
+  
 </div>
 
   </div>
@@ -83,47 +90,22 @@
 
   <div class="modal-card">
 
-  <img 
-    src="{{ asset('assets/images/slider/karakter.png') }}" 
-    class="modal-character"
-  >
-  <div class="modal" id="modal">
+    <span class="close" onclick="closeQuiz()">✖</span>
 
-  <div class="modal-card">
-
-    <img 
-      src="{{ asset('assets/images/slider/karakter.png') }}" 
-      class="modal-character" alt="Karakter"
-    >
-    <span class="close" onclick="closeModal()">✖</span>
-
-    <div class="modal-title" id="title"></div>
-
-    <div class="ayat-no" id="ayatNo"></div>
-
-    <div class="modal-arab" id="arab"></div>
-
-    <div class="modal-latin" id="latin"></div>
-
-    <div class="modal-arti" id="arti"></div>
-
-    <div class="btn-group">
-      <button class="btn prev" onclick="prevAyat()">⬅ Back</button>
-      <button class="btn next" onclick="nextAyat()">Next ➡</button>
-      <button class="btn eye" onclick="toggleArti()">👁 Arti</button>
-      <button class="btn play-btn" onclick="playAudio()">🔊 Play</button>
-    </div>
-
-  </div>
-
-</div>
-
-    <h2 class="modal-title">
+      <h2 class="modal-title">
       Quiz Surat Pendek
     </h2>
 
     <div class="quiz-question" id="quizQuestion"></div>
 
+<button
+  id="quizAudioBtn"
+  class="btn play-btn quiz-audio-btn"
+  onclick="playQuizAudio()"
+  style="display:none;"
+>
+  🔊 Dengarkan Audio
+</button>
     <div id="quizOptions"></div>
 
     <div class="quiz-score" id="quizScore"></div>

@@ -209,14 +209,14 @@
     }
 
     .modal-box {
-      background: white;
-      width: 95%;
-      max-width: 820px;
-      border-radius: 24px;
-      padding: 22px;
-      text-align: center;
-      position: relative;
-    }
+  background: white;
+  width: 92%;
+  max-width: 560px;
+  border-radius: 22px;
+  padding: 16px 18px;
+  text-align: center;
+  position: relative;
+}
 
     .close-x {
       position: absolute;
@@ -239,10 +239,12 @@
     }
 
     video{
-      width:100%;
-      border-radius:18px;
-      margin-top:10px;
-    }
+  width:100%;
+  max-height:220px;
+  object-fit:cover;
+  border-radius:16px;
+  margin-top:8px;
+}
 
     
 
@@ -402,6 +404,17 @@
 
 .close-x{
   position:absolute;
+  top:14px;
+  right:14px;
+  width:46px;
+  height:46px;
+  border:none;
+  border-radius:14px;
+  cursor:pointer;
+  font-size:24px;
+  font-weight:900;
+  background:#ff6b81;
+  color:white;
   z-index:2000;
 }
 
@@ -608,7 +621,9 @@ video{
   <!-- MODAL HADIST -->
   <div id="modal" onclick="klikOverlay(event)">
     <div class="modal-box">
-      <button class="close-x" onclick="tutup()">✕</button>
+      <button class="close-x" onclick="tutup()">
+        ✕
+      </button>
 
       <h2 id="judul"></h2>
 
@@ -620,507 +635,286 @@ video{
         <p>🎬 Tonton video pembelajaran</p>
       
         <video id="videoHadist" controls width="100%" style="border-radius:16px;">
-          <source src="assets/video/hadist/hadist-1.mp4" type="video/mp4">
+          <source src="" type="video/mp4">
         </video>
       </div>
 
       <div id="arab"></div>
       <div id="latin"></div>
       <div id="arti"></div>
-      <p id="pesan"></p>
 
       <button class="btn-tutup" onclick="tutup()">Tutup</button>
     </div>
   </div>
 
   <script>
-    const hadistList = [
-    {
-      key: "ilmu",
-      title: "Menuntut Ilmu",
-      emoji: "📚",
-      video: "/assets/video/hadist/hadist-4.mp4",
-      arab: "طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ",
-      latin: "Thalabul ‘ilmi faridhatun ‘alaa kulli muslimin",
-      arti: "Menuntut ilmu wajib bagi setiap muslim",
-      pesan: "Ayo semangat belajar setiap hari."
-    },
-    {
-      key: "malu",
-      title: "Malu",
-      emoji: "😊",
-      video: "/assets/video/hadist/hadist-6.mp4",
-      arab: "الْحَيَاءُ مِنَ الْإِيمَانِ",
-      latin: "Al-hayaa’u minal iimaan",
-      arti: "Malu adalah sebagian dari iman",
-      pesan: "Malu berbuat salah membuat kita semakin baik."
-    },
-    {
-      key: "bersih",
-      title: "Kebersihan",
-      emoji: "🫧",
-      video: "/assets/video/hadist/hadist-5.mp4",
-      arab: "النَّظَافَةُ مِنَ الْإِيمَانِ",
-      latin: "An-nazhafatu minal iman",
-      arti: "Kebersihan adalah sebagian iman",
-      pesan: "Cuci tangan dan rapikan tempat bermain."
-    },
-    {
-      key: "berdiri",
-      title: "Minum Berdiri",
-      emoji: "🥤",
-      video: "/assets/video/hadist/hadist-10.mp4",
-      arab: "لَا يَشْرَبَنَّ أَحَدُكُمْ قَائِمًا",
-      latin: "Laa yasyrabanna ahadukum qaa-iman",
-      arti: "Janganlah salah seorang di antara kalian minum sambil berdiri",
-      pesan: "Biasakan duduk saat minum."
-    },
-    {
-      key: "indah",
-      title: "Keindahan",
-      emoji: "🌸",
-      video: "/assets/video/hadist/hadist-2.mp4",
-      arab: "إِنَّ اللَّهَ جَمِيلٌ يُحِبُّ الْجَمَالَ",
-      latin: "Innallaha jamiilun yuhibbul jamaal",
-      arti: "Sesungguhnya Allah itu indah dan menyukai keindahan",
-      pesan: "Jaga kerapian dan keindahan sekitar."
-    },
-    {
-      key: "makan",
-      title: "Adab Makan",
-      emoji: "🍽️",
-      video: "/assets/video/hadist/hadist-1.mp4",
-      arab: "سَمِّ اللَّهَ وَكُلْ بِيَمِينِكَ",
-      latin: "Sammillaah wa kul biyamiinik",
-      arti: "Bacalah bismillah dan makanlah dengan tangan kanan",
-      pesan: "Sebelum makan, baca bismillah."
-    },
-    {
-      key: "senyum",
-      title: "Tersenyum",
-      emoji: "😄",
-      video: "/assets/video/hadist/hadist-8.mp4",
-      arab: "تَبَسُّمُكَ فِي وَجْهِ أَخِيكَ صَدَقَةٌ",
-      latin: "Tabassumuka fii wajhi akhiika shadaqah",
-      arti: "Senyummu kepada saudaramu adalah sedekah",
-      pesan: "Berikan senyum manis kepada teman dan keluarga."
-    },
-    {
-      key: "iman",
-      title: "Sebaik-baik Iman",
-      emoji: "💚",
-      video: "/assets/video/hadist/hadist-3.mp4",
-      arab: "أَفْضَلُ الْإِيمَانِ أَنْ تُحِبَّ لِلَّهِ وَتُبْغِضَ لِلَّهِ",
-      latin: "Afdhalul iimaan an tuhibba lillaahi wa tubghidha lillaah.",
-      arti: "Iman yang paling utama adalah mencintai karena Allah dan membenci karena Allah",
-      pesan: "Berakhlak baik kepada siapa saja."
-    },
-    {
-      key: "quran",
-      title: "Belajar Al-Qur'an",
-      emoji: "📖",
-      video: "/assets/video/hadist/hadist-9.mp4",
-      arab: "خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ",
-      latin: "Khairukum man ta‘allamal Qur’aana wa ‘allamahu",
-      arti: "Sebaik-baik kalian adalah yang belajar Al-Quran dan mengajarkannya",
-      pesan: "Belajar membaca Al-Qur'an sedikit demi sedikit."
-    },
-    {
-      key: "hadiah",
-      title: "Memberi Hadiah",
-      emoji: "🎁",
-      video: "/assets/video/hadist/hadist-13.mp4",
-      arab: "تَهَادَوْا تَحَابُّوا",
-      latin: "Tahaadu tahaabuu",
-      arti: "Saling memberi hadiah akan membuat saling mencintai",
-      pesan: "Hadiah kecil bisa membuat teman bahagia."
-    },
-    {
-      key: "islam",
-      title: "Ketinggian Islam",
-      emoji: "🕌",
-      video: "/assets/video/hadist/hadist-14.mp4",
-      arab: "الْإِسْلَامُ يَعْلُو وَلَا يُعْلَى عَلَيْهِ",
-      latin: "Al-islaamu ya‘luu wa laa yu‘laa ‘alaihi",
-      arti: "Islam itu tinggi dan tidak ada yang lebih tinggi darinya",
-      pesan: "Bangga menjadi anak yang berakhlak Islami."
-    },
-    {
-      key: "pintar",
-      title: "Membaca Al-Qur'an",
-      emoji: "📘",
-      video: "/assets/video/hadist/hadist-12.mp4",
-      arab: "الْمَاهِرُ بِالْقُرْآنِ مَعَ السَّفَرَةِ الْكِرَامِ الْبَرَرَةِ",
-      latin: "Al-maahiru bil qur-aani ma’as safaratil kiraamil bararah.",
-      arti: "Orang yang mahir membaca Al-Quran akan bersama para malaikat yang mulia dan taat",
-      pesan: "Latihan membaca Al-Qur'an dengan sabar."
-    },
-    {
-      key: "terima",
-      title: "Berterima Kasih",
-      emoji: "🤲",
-      video: "/assets/video/hadist/hadist-11.mp4",
-      arab: "مَنْ لَا يَشْكُرِ النَّاسَ لَا يَشْكُرِ اللَّهَ",
-      latin: "Man laa yasykurin naasa laa yasykurillaah",
-      arti: "Siapa yang tidak berterima kasih kepada manusia, maka ia tidak bersyukur kepada Allah",
-      pesan: "Biasakan mengucapkan terima kasih."
-    },
-    {
-      key: "sayang",
-      title: "Menyayangi Sesama",
-      emoji: "💞",
-      video: "/assets/video/hadist/hadist-7.mp4",
-      arab: "ارْحَمُوا مَنْ فِي الْأَرْضِ يَرْحَمْكُمْ مَنْ فِي السَّمَاءِ",
-      latin: "Irhamuu man fil ardhi yarhamkum man fis samaa-i.",
-      arti: "Sayangilah makhluk yang ada di bumi, maka kalian akan disayangi oleh yang di langit",
-      pesan: "Sayangi keluarga, teman, hewan, dan tanaman."
-    }
-  ];
- const quizData = [
-      {
-        question: "Sedekah yang paling mudah adalah?",
-        image: "assets/images/hadist/Senyum.png",
-        options: [
-          { image: "assets/images/hadist/senyum jawaban.jpg", text: "Senyum", correct: true },
-          { image: "assets/images/hadist/marah.png", text: "Marah", correct: false },
-          { image: "assets/images/hadist/nangis.png", text: "Menangis", correct: false }
-        ]
-      },
-      {
-        question: "Cara minum yang baik menurut Rasullah.saw adalah ?",
-        image: "",
-        options: [
-          { image: "assets/images/hadist/minum diri.png", text: "Berdiri", correct: false },
-          { image: "assets/images/hadist/minum duduk.png", text: "Duduk", correct: true },
-          { image: "assets/images/hadist/minum tiduran.png", text: "Tiduran", correct: false }
-        ]
-      },
-      {
-        question: "Jika diberi sesuatu, kita harus bilang ?",
-        image: "",
-        options: [
-        {emoji: "😊🙏",text: "Terima kasih",correct: true},
-        {emoji: "😶",text: "Diam saja",correct: false},
-        {emoji: "😡",text: "Marah",correct: false}
-        ]
-      },
-      {
-        question: "Malu sebagian dari ?",
-        image: "",
-        options: [
-        {emoji: "⚽🏃",text: "Olahraga",correct: false},
-        {emoji: "😡💢",text: "Kemarahan",correct: false},
-        {emoji: "😊💖",text: "Iman",correct: true}
-        ]
-      },
-      {
-        question: "Lengkapi hadist berikut:\n\n ... الْحَيَاءُ مِنَ ",
-        image: "",
+    const hadistList = @json($hadists);
+
+    const quizData = @json($quizzes).map((quiz) => ({
+        question: quiz.question,
+        audio: quiz.audio ? "/storage/" + quiz.audio : "",
         options: [
             {
-          arab: "الإِيمَانِ",
-          latin: "Al-Imaan",
-          indo: "Iman",
-          correct: true
-        },
-        {
-          arab: "الرِّيَاضَةِ",
-          latin: "Ar-Riyaadhah",
-          indo: "Olahraga",
-          correct: false
-        },
-        {
-          arab: "الْغَضَبِ",
-          latin: "Al-Ghadhab",
-          indo: "Marah",
-          correct: false
-        }
+                image: quiz.option_a_image ? "/storage/" + quiz.option_a_image : "",
+                text: quiz.option_a,
+                correct: quiz.correct_answer === "A"
+            },
+            {
+                image: quiz.option_b_image ? "/storage/" + quiz.option_b_image : "",
+                text: quiz.option_b,
+                correct: quiz.correct_answer === "B"
+            },
+            {
+                image: quiz.option_c_image ? "/storage/" + quiz.option_c_image : "",
+                text: quiz.option_c,
+                correct: quiz.correct_answer === "C"
+            }
         ]
-      },
+    }));
 
-      {
-        question: "Saat teman kita terjatuh, kita harus ?",
-        image: "assets/images/hadist/Menolong teman.png",
-        options: [
-        {emoji: "🤝",text: "Menolong",correct: true},
-        {emoji: "😂",text: "Menertawakan",correct: false},
-        {emoji: "🏃",text: "Pergi",correct: false}
-      ]
-      },
-      {
-        question: "Allah suka tempat yang ?",
-        image: "",
-        options: [
-          { emoji: "✨🧼", text: "Bersih", correct: true },
-          { emoji: "🗑️", text: "Kotor", correct: false },
-          { emoji: "😵", text: "Berantakan", correct: false }
-        ]
-      }
-    ];
-
-    // Acak Soal
     function shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
     }
 
-    // Acak semua soal, lalu ambil 5 soal saja
-    shuffleArray(quizData);
-    let selectedQuiz = quizData.slice(0, 5);
+    let selectedQuiz = [];
+    let currentQuestion = 0;
+    let score = 0;
+    let answered = false;
 
     const modal = document.getElementById("modal");
     const videoHadist = document.getElementById("videoHadist");
     const hadistContainer = document.getElementById("hadistContainer");
     const searchInput = document.getElementById("searchInput");
 
-    let currentQuestion = 0;
-    let score = 0;
-    let answered = false;
-
     function renderHadistCards() {
-      hadistContainer.innerHTML = "";
+        hadistContainer.innerHTML = "";
 
-      hadistList.forEach((hadist) => {
-        const card = document.createElement("div");
-        card.className = "hadist-card";
-        card.onclick = () => buka(hadist.key);
+        hadistList.forEach((hadist) => {
+            const card = document.createElement("div");
+            card.className = "hadist-card";
+            card.onclick = () => buka(hadist.key);
 
-        card.innerHTML = `
-          <div class="icon-box">${hadist.emoji}</div>
-          <h3>${hadist.title}</h3>
-        `;
+            card.innerHTML = `
+                <div class="icon-box">${hadist.emoji}</div>
+                <h3>${hadist.title}</h3>
+            `;
 
-        hadistContainer.appendChild(card);
-      });
+            hadistContainer.appendChild(card);
+        });
     }
 
     function buka(key) {
-
-    const hadist =
-        hadistList.find((item) => item.key === key);
-
+        const hadist = hadistList.find((item) => item.key === key);
         if (!hadist) return;
 
-        document.getElementById("judul").innerText =
-        hadist.title;
+        document.getElementById("judul").innerText = hadist.title;
+        document.getElementById("emojiBesar").innerText = hadist.emoji;
+        document.getElementById("arab").innerText = hadist.arab;
+        document.getElementById("latin").innerText = hadist.latin;
+        document.getElementById("arti").innerText = hadist.arti;
 
-        document.getElementById("emojiBesar").innerText =
-        hadist.emoji;
-
-        document.getElementById("arab").innerText =
-        hadist.arab;
-
-        document.getElementById("latin").innerText =
-        hadist.latin;
-
-        document.getElementById("arti").innerText =
-        hadist.arti;
-
-        document.getElementById("pesan").innerText =
-        hadist.pesan;
-
-// RESET AUDIO
         videoHadist.pause();
         videoHadist.currentTime = 0;
-        videoHadist.src = hadist.video;
-        videoHadist.load();
-        modal.style.display = "flex";
-        videoHadist.play().catch(() => {
-          console.log("Autoplay diblok browser");
-        });
 
-}
+        if (hadist.video) {
+            videoHadist.src = "/storage/" + hadist.video;
+            videoHadist.load();
+        } else {
+            videoHadist.removeAttribute("src");
+            videoHadist.load();
+        }
+
+        modal.style.display = "flex";
+    }
 
     function tutup() {
-      videoHadist.pause();
-      videoHadist.removeAttribute("src");
-      videoHadist.load();
-      modal.style.display = "none";
+        videoHadist.pause();
+        videoHadist.removeAttribute("src");
+        videoHadist.load();
+        modal.style.display = "none";
     }
 
     function klikOverlay(event) {
-      if (event.target.id === "modal") tutup();
+        if (event.target.id === "modal") tutup();
     }
 
     function cari() {
-      const keyword = searchInput.value.trim().toLowerCase();
+        const keyword = searchInput.value.trim().toLowerCase();
 
-      document.querySelectorAll(".hadist-card").forEach((card) => {
-        const title = card.querySelector("h3").innerText.toLowerCase();
-        card.style.display = title.includes(keyword) ? "" : "none";
-      });
+        document.querySelectorAll(".hadist-card").forEach((card) => {
+            const title = card.querySelector("h3").innerText.toLowerCase();
+            card.style.display = title.includes(keyword) ? "" : "none";
+        });
     }
 
     function resetCari() {
-      searchInput.value = "";
+        searchInput.value = "";
 
-      document.querySelectorAll(".hadist-card").forEach((card) => {
-        card.style.display = "";
-      });
+        document.querySelectorAll(".hadist-card").forEach((card) => {
+            card.style.display = "";
+        });
     }
 
     searchInput.addEventListener("keydown", function (event) {
-      if (event.key === "Enter") cari();
+        if (event.key === "Enter") cari();
     });
 
     function bukaKuis() {
-      document.getElementById("halamanHadist").style.display = "none";
-      document.getElementById("halamanKuis").style.display = "block";
-      restartQuiz();
+        if (quizData.length === 0) {
+            alert("Belum ada quiz. Tambahkan quiz dulu dari admin.");
+            return;
+        }
+
+        document.getElementById("halamanHadist").style.display = "none";
+        document.getElementById("halamanKuis").style.display = "block";
+
+        restartQuiz();
     }
 
     function kembaliKeHadist() {
-      document.getElementById("halamanKuis").style.display = "none";
-      document.getElementById("halamanHadist").style.display = "block";
+        document.getElementById("halamanKuis").style.display = "none";
+        document.getElementById("halamanHadist").style.display = "block";
     }
 
     function loadQuestion() {
-      answered = false;
-
-      const q = selectedQuiz[currentQuestion];
-
-      document.getElementById("questionNumber").innerText =
-        `Soal ${currentQuestion + 1} dari ${selectedQuiz.length}`;
-
-      document.getElementById("questionText").innerText = q.question;
-      if(q.image){
-
-      document.getElementById("questionEmoji")
-      .innerHTML = `
-        <img
-          src="${q.image}"
-          class="question-image"
-        >
-      `;
-      }else{
-      document.getElementById("questionEmoji")
-      .innerHTML = "";
-
-      };
-
-      const optionsBox = document.getElementById("optionsBox");
-      optionsBox.innerHTML = "";
-
-      document.getElementById("feedback").innerText = "";
-      document.getElementById("nextBtn").style.display = "none";
-
-      q.options.forEach((option) => {
-        const button = document.createElement("button");
-        button.className = "option-btn";
-        if(option.image){
-
-      button.innerHTML = `
-
-        <img
-          src="${option.image}"
-          class="option-image"
-        >
-        <p class="option-text">
-          ${option.text}
-        </p>
-        
-      `;
-
-      }else if(option.emoji){
-
-      button.innerHTML = `<div class="option-emoji">${option.emoji}</div>
-      <p class="option-text">${option.text}</p>`;
-
-      }else if(option.arab){
-
-      button.innerHTML = `
-        <div class="option-arab">${option.arab}</div>
-        <div class="option-latin">(${option.latin})</div>
-        <div class="option-indo">${option.indo}</div>
-      `;
-
-      }else{
-      button.innerHTML = `<p class="option-text-only">${option.text}</p>
-      `;
-}
-        button.onclick = () => checkAnswer(button, option.correct);
-        optionsBox.appendChild(button);
-      });
-    }
-
-    function checkAnswer(button, correct) {
-      if (answered) return;
-      answered = true;
-
-      const buttons = document.querySelectorAll(".option-btn");
-
-      buttons.forEach((btn) => {
-        btn.disabled = true;
-      });
-
-      if (correct) {
-        score += 20;
-        button.classList.add("correct");
-
-        document.getElementById("score").innerText = score;
-        document.getElementById("feedback").innerText = "🎉 Hebat! Jawaban benar";
-        document.getElementById("feedback").style.color = "#16a34a";
-      } else {
-        button.classList.add("wrong");
-
-        document.getElementById("feedback").innerText = "😊 Belum tepat, coba ingat lagi";
-        document.getElementById("feedback").style.color = "#dc2626";
+        answered = false;
 
         const q = selectedQuiz[currentQuestion];
-        buttons.forEach((btn, index) => {
-          if (q.options[index].correct) {
-            btn.classList.add("correct");
-          }
-        });
-      }
 
-      document.getElementById("nextBtn").style.display = "inline-block";
+        document.getElementById("questionNumber").innerText =
+            `Soal ${currentQuestion + 1} dari ${selectedQuiz.length}`;
+
+        let audioHTML = "";
+
+        if (q.audio) {
+    audioHTML = `
+        <audio class="quiz-audio" controls>
+            <source src="${q.audio}">
+        </audio>
+    `;
+}
+
+        document.getElementById("questionText").innerHTML = `
+            ${q.question}
+            <br>
+            ${audioHTML}
+        `;
+
+        document.getElementById("questionEmoji").innerHTML = "";
+
+        const optionsBox = document.getElementById("optionsBox");
+        optionsBox.innerHTML = "";
+
+        document.getElementById("feedback").innerText = "";
+        document.getElementById("nextBtn").style.display = "none";
+
+        const shuffledOptions = [...q.options];
+        shuffleArray(shuffledOptions);
+
+        shuffledOptions.forEach((option) => {
+            const button = document.createElement("button");
+            button.className = "option-btn";
+
+            if (option.image) {
+                button.innerHTML = `
+                    <img src="${option.image}" class="option-image">
+                    <p class="option-text">${option.text}</p>
+                `;
+            } else {
+                button.innerHTML = `
+                    <p class="option-text-only">${option.text}</p>
+                `;
+            }
+
+            button.onclick = () => checkAnswer(button, option.correct);
+
+            optionsBox.appendChild(button);
+        });
+    }
+
+    
+
+    function checkAnswer(button, correct) {
+        if (answered) return;
+
+        answered = true;
+
+        const buttons = document.querySelectorAll(".option-btn");
+
+        buttons.forEach((btn) => {
+            btn.disabled = true;
+        });
+
+        if (correct) {
+            score += 20;
+            button.classList.add("correct");
+
+            document.getElementById("score").innerText = score;
+            document.getElementById("feedback").innerText = "🎉 Hebat! Jawaban benar";
+            document.getElementById("feedback").style.color = "#16a34a";
+        } else {
+            button.classList.add("wrong");
+
+            document.getElementById("feedback").innerText = "😊 Belum tepat, coba ingat lagi";
+            document.getElementById("feedback").style.color = "#dc2626";
+
+            buttons.forEach((btn) => {
+                if (btn.onclick && btn !== button) {
+                    // warna jawaban benar ditangani lewat option.correct saat klik berikutnya tidak aktif
+                }
+            });
+        }
+
+        document.getElementById("nextBtn").style.display = "inline-block";
     }
 
     function nextQuestion() {
-      currentQuestion++;
+        currentQuestion++;
 
-      if (currentQuestion < selectedQuiz.length) {
-        loadQuestion();
-      } else {
-        finishQuiz();
-      }
+        if (currentQuestion < selectedQuiz.length) {
+            loadQuestion();
+        } else {
+            finishQuiz();
+        }
     }
 
     function finishQuiz() {
-      document.getElementById("quizBox").style.display = "none";
-      document.getElementById("finishBox").style.display = "block";
-      document.getElementById("finalScore").innerText =
-        `Skor Kamu: ${score} dari ${selectedQuiz.length * 20}`;
+        document.getElementById("quizBox").style.display = "none";
+        document.getElementById("finishBox").style.display = "block";
+
+        document.getElementById("finalScore").innerText =
+            `Skor Kamu: ${score} dari ${selectedQuiz.length * 20}`;
     }
 
     function restartQuiz() {
-      currentQuestion = 0;
-      score = 0;
-      answered = false;
+        currentQuestion = 0;
+        score = 0;
+        answered = false;
 
-      // Acak ulang soal setiap mulai kuis
-      shuffleArray(quizData);
-      selectedQuiz = quizData.slice(0, 5);
+        const copiedQuiz = [...quizData];
+        shuffleArray(copiedQuiz);
 
-      document.getElementById("score").innerText = "0";
-      document.getElementById("quizBox").style.display = "block";
-      document.getElementById("finishBox").style.display = "none";
+        selectedQuiz = copiedQuiz.slice(0, 5);
 
-      loadQuestion();
+        document.getElementById("score").innerText = "0";
+        document.getElementById("quizBox").style.display = "block";
+        document.getElementById("finishBox").style.display = "none";
+
+        loadQuestion();
     }
 
     function goBack() {
-      if (document.getElementById("halamanKuis").style.display === "block") {
-        kembaliKeHadist();
-      } else {
-        window.history.back();
-      }
+        if (document.getElementById("halamanKuis").style.display === "block") {
+            kembaliKeHadist();
+        } else {
+            window.history.back();
+        }
     }
 
     renderHadistCards();
-  </script>
+</script>
 </body>
 </html>

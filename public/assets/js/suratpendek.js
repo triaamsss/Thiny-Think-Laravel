@@ -5,12 +5,6 @@ const suratData = [
   arabTitle: "الفاتحة",
   ayat: [
     {
-      no: "",
-      arab: "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
-      latin: "A'ūdzu billāhi minas-syaithānir-rajīm",
-      arti: "Aku berlindung kepada Allah dari godaan setan yang terkutuk."
-    },
-    {
       no: 1,
       audio: "/assets/audio/Surat_Pendek/Al-Fatihah/1.mp3",
       arab: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
@@ -63,75 +57,332 @@ const suratData = [
 },
 
 {
-judul:"Al-Quraisy (Keluarga Quraisy)",
-arabTitle:"قريش",
-ayat:[
-{no:1,arab:"لِإِيلَافِ قُرَيْشٍ",latin:"Li ilaafi quraisy",arti:"Karena kebiasaan orang-orang Quraisy"},
-{no:2,arab:"إِيلَافِهِمْ رِحْلَةَ الشِّتَاءِ وَالصَّيْفِ",latin:"Ilaafihim rihlatasy syita'i wash shaif",arti:"(yaitu) kebiasaan mereka bepergian pada musim dingin dan musim panas"},
-{no:3,arab:"فَلْيَعْبُدُوا رَبَّ هَٰذَا الْبَيْتِ",latin:"Falya'budu rabba hadzal bait",arti:"Maka hendaklah mereka menyembah Tuhan pemilik rumah ini (Ka'bah),"},
-{no:4,arab:"الَّذِي أَطْعَمَهُمْ مِنْ جُوعٍ وَآمَنَهُمْ مِنْ خَوْفٍ",latin:"Allażī aṭ'amahum min jū'in wa āmanahum min khauf'",arti:"Yang telah memberi makanan kepada mereka untuk menghilangkan lapar dan mengamankan mereka dari rasa takut."}
-]
+  judul: "Al-Quraisy (Keluarga Quraisy)",
+  arabTitle: "قريش",
+  ayat: [
+  {
+    no: 1,
+      audio: "/assets/audio/Surat_Pendek/Al-Quraisy/0.mp3",
+      arab: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+      latin: "Bismillahirrahmanirrahim",
+      arti: "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang"
+  },
+    {
+      no: 1,
+      audio: "/assets/audio/Surat_Pendek/Al-Quraisy/1.mp3",
+      arab: "لِإِيلَافِ قُرَيْشٍ",
+      latin: "Li ilaafi quraisy",
+      arti: "Karena kebiasaan orang-orang Quraisy"
+    },
+    {
+      no: 2,
+      audio: "/assets/audio/Surat_Pendek/Al-Quraisy/2.mp3",
+      arab: "إِيلَافِهِمْ رِحْلَةَ الشِّتَاءِ وَالصَّيْفِ",
+      latin: "Ilaafihim rihlatasy syita'i wash shaif",
+      arti: "(yaitu) kebiasaan mereka bepergian pada musim dingin dan musim panas"
+    },
+    {
+      no: 3,
+      audio: "/assets/audio/Surat_Pendek/Al-Quraisy/3.mp3",
+      arab: "فَلْيَعْبُدُوا رَبَّ هَٰذَا الْبَيْتِ",
+      latin: "Falya'budu rabba hadzal bait",
+      arti: "Maka hendaklah mereka menyembah Tuhan pemilik rumah ini (Ka'bah)"
+    },
+    {
+      no: 4,
+      audio: "/assets/audio/Surat_Pendek/Al-Quraisy/4.mp3",
+      arab: "الَّذِي أَطْعَمَهُمْ مِنْ جُوعٍ وَآمَنَهُمْ مِنْ خَوْفٍ",
+      latin: "Alladzi ath'amahum min juu'in wa aamanahum min khauf",
+      arti: "Yang telah memberi makanan kepada mereka untuk menghilangkan lapar dan mengamankan mereka dari rasa takut."
+    }
+  ]
 },
 
 {
-judul:"Al-Fil (Tentara Bergajah)",
-arabTitle:"الفيل",
-ayat:[
-{no:1,arab:"أَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِأَصْحَابِ الْفِيلِ",latin:"Alam tara kaifa fa'ala rabbuka bi aṣḥābil-fīl",arti:"Tidakkah kamu melihat bagaimana Tuhanmu memperlakukan tentara bergajah"},
-{no:2,arab:"أَلَمْ يَجْعَلْ كَيْدَهُمْ فِي تَضْلِيلٍ",latin:"Alam yaj'al kaidahum fī taḍlīl",arti:"Bukankah Dia telah menjadikan tipu daya mereka sia-sia?"},
-{no:3,arab:"وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَابِيلَ",latin:"Wa arsala 'alaihim ṭairan abābīl",arti:"Dan Dia mengirimkan kepada mereka burung yang berbondong-bondong,"},
-{no:4,arab:"تَرْمِيهِمْ بِحِجَارَةٍ مِنْ سِجِّيلٍ",latin:"Tarmīhim biḥijāratim min sijjīl",arti:"Yang melempari mereka dengan batu dari tanah yang terbakar,"},
-{no:5,arab:"فَجَعَلَهُمْ كَعَصْفٍ مَأْكُولٍ",latin:"Faja'alahum ka'aṣfim ma'kūl",arti:"Sehingga mereka dijadikan-Nya seperti daun-daun yang dimakan ulat."}
-]
+  judul: "Al-Fiil (Tentara Bergajah)",
+  arabTitle: "الفيل",
+  ayat: [
+    {
+      no: "",
+      audio: "/assets/audio/Surat_Pendek/Al-Fiil/0.mp3",
+      arab: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+      latin: "Bismillahirrahmanirrahim",
+      arti: "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang"
+    },
+    {
+      no: 1,
+      audio: "/assets/audio/Surat_Pendek/Al-Fiil/1.mp3",
+      arab: "أَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِأَصْحَابِ الْفِيلِ",
+      latin: "Alam tara kaifa fa'ala rabbuka bi aṣḥābil-fīl",
+      arti: "Tidakkah kamu melihat bagaimana Tuhanmu memperlakukan tentara bergajah"
+    },
+    {
+      no: 2,
+      audio: "/assets/audio/Surat_Pendek/Al-Fiil/2.mp3",
+      arab: "أَلَمْ يَجْعَلْ كَيْدَهُمْ فِي تَضْلِيلٍ",
+      latin: "Alam yaj'al kaidahum fī taḍlīl",
+      arti: "Bukankah Dia telah menjadikan tipu daya mereka sia-sia?"
+    },
+    {
+      no: 3,
+      audio: "/assets/audio/Surat_Pendek/Al-Fiil/3.mp3",
+      arab: "وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَابِيلَ",
+      latin: "Wa arsala 'alaihim ṭairan abābīl",
+      arti: "Dan Dia mengirimkan kepada mereka burung yang berbondong-bondong"
+    },
+    {
+      no: 4,
+      audio: "/assets/audio/Surat_Pendek/Al-Fiil/4.mp3",
+      arab: "تَرْمِيهِمْ بِحِجَارَةٍ مِنْ سِجِّيلٍ",
+      latin: "Tarmīhim biḥijāratim min sijjīl",
+      arti: "Yang melempari mereka dengan batu dari tanah yang terbakar"
+    },
+    {
+      no: 5,
+      audio: "/assets/audio/Surat_Pendek/Al-Fiil/5.mp3",
+      arab: "فَجَعَلَهُمْ كَعَصْفٍ مَأْكُولٍ",
+      latin: "Faja'alahum ka'aṣfim ma'kūl",
+      arti: "Sehingga mereka dijadikan-Nya seperti daun-daun yang dimakan ulat."
+    }
+  ]
 },
 
 {
-judul:"Al-Humazah (Pengumpat)",
-arabTitle:"الهمزة",
-ayat:[
-{no:1,arab:"وَيْلٌ لِكُلِّ هُمَزَةٍ لُمَزَةٍ",latin:"Wailul likulli humazatil lumazah",arti:"Celakalah bagi setiap pengumpat dan pencela"},
-{no:2,arab:"الَّذِي جَمَعَ مَالًا وَعَدَّدَهُ",latin:"Allażī jama'a mālaw wa 'addadah",arti:"Yang mengumpulkan harta dan menghitung-hitungnya"},
-{no:3,arab:"يَحْسَبُ أَنَّ مَالَهُ أَخْلَدَهُ",latin:"Yaḥsabu anna mālahu akhladah",arti:"Dia mengira bahwa hartanya itu dapat mengekalkannya"},
-{no:4,arab:"كَلَّا ۖ لَيُنْبَذَنَّ فِي الْحُطَمَةِ",latin:"Kallā layunbażanna fil-ḥuṭamah",arti:"Sekali-kali tidak! Pasti dia akan dilemparkan ke dalam (neraka) Huthamah"},
-{no:5,arab:"وَمَا أَدْرَاكَ مَا الْحُطَمَةُ",latin:"Wa mā adrāka mal-ḥuṭamah",arti:"Tahukah kamu apakah Huthamah itu?"},
-{no:6,arab:"نَارُ اللَّهِ الْمُوقَدَةُ",latin:"Nārullāhil-mūqadah",arti:"(Yaitu) api (azab) Allah yang dinyalakan"},
-{no:7,arab:"الَّتِي تَطَّلِعُ عَلَى الْأَفْئِدَةِ",latin:"Allatī taṭṭali'u 'alal-af'idah",arti:"Yang membakar sampai ke hati"},
-{no:8,arab:"إِنَّهَا عَلَيْهِمْ مُؤْصَدَةٌ",latin:"Innahā 'alaihim mu'ṣadah",arti:"Sungguh, api itu ditutup rapat atas mereka"},
-{no:9,arab:"فِي عَمَدٍ مُمَدَّدَةٍ",latin:"Fī 'amadim mumaddadah",arti:"Sedang mereka diikat pada tiang-tiang yang panjang."}
-]
+  judul: "Al-Humazah (Pengumpat)",
+  arabTitle: "الهمزة",
+  ayat: [
+    {
+      no: "",
+      audio: "/assets/audio/Surat_Pendek/Al-Humazah/0.mp3",
+      arab: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+      latin: "Bismillahirrahmanirrahim",
+      arti: "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang"
+    },
+    {
+      no: 1,
+      audio: "/assets/audio/Surat_Pendek/Al-Humazah/1.mp3",
+      arab: "وَيْلٌ لِكُلِّ هُمَزَةٍ لُمَزَةٍ",
+      latin: "Wailul likulli humazatil lumazah",
+      arti: "Celakalah bagi setiap pengumpat dan pencela"
+    },
+    {
+      no: 2,
+      audio: "/assets/audio/Surat_Pendek/Al-Humazah/2.mp3",
+      arab: "الَّذِي جَمَعَ مَالًا وَعَدَّدَهُ",
+      latin: "Allażī jama'a mālaw wa 'addadah",
+      arti: "Yang mengumpulkan harta dan menghitung-hitungnya"
+    },
+    {
+      no: 3,
+      audio: "/assets/audio/Surat_Pendek/Al-Humazah/3.mp3",
+      arab: "يَحْسَبُ أَنَّ مَالَهُ أَخْلَدَهُ",
+      latin: "Yaḥsabu anna mālahu akhladah",
+      arti: "Dia mengira bahwa hartanya itu dapat mengekalkannya"
+    },
+    {
+      no: 4,
+      audio: "/assets/audio/Surat_Pendek/Al-Humazah/4.mp3",
+      arab: "كَلَّا ۖ لَيُنْبَذَنَّ فِي الْحُطَمَةِ",
+      latin: "Kallā layunbażanna fil-ḥuṭamah",
+      arti: "Sekali-kali tidak! Pasti dia akan dilemparkan ke dalam (neraka) Huthamah"
+    },
+    {
+      no: 5,
+      audio: "/assets/audio/Surat_Pendek/Al-Humazah/5.mp3",
+      arab: "وَمَا أَدْرَاكَ مَا الْحُطَمَةُ",
+      latin: "Wa mā adrāka mal-ḥuṭamah",
+      arti: "Tahukah kamu apakah Huthamah itu?"
+    },
+    {
+      no: 6,
+      audio: "/assets/audio/Surat_Pendek/Al-Humazah/6.mp3",
+      arab: "نَارُ اللَّهِ الْمُوقَدَةُ",
+      latin: "Nārullāhil-mūqadah",
+      arti: "(Yaitu) api (azab) Allah yang dinyalakan"
+    },
+    {
+      no: 7,
+      audio: "/assets/audio/Surat_Pendek/Al-Humazah/7.mp3",
+      arab: "الَّتِي تَطَّلِعُ عَلَى الْأَفْئِدَةِ",
+      latin: "Allatī taṭṭali'u 'alal-af'idah",
+      arti: "Yang membakar sampai ke hati"
+    },
+    {
+      no: 8,
+      audio: "/assets/audio/Surat_Pendek/Al-Humazah/8.mp3",
+      arab: "إِنَّهَا عَلَيْهِمْ مُؤْصَدَةٌ",
+      latin: "Innahā 'alaihim mu'ṣadah",
+      arti: "Sungguh, api itu ditutup rapat atas mereka"
+    },
+    {
+      no: 9,
+      audio: "/assets/audio/Surat_Pendek/Al-Humazah/9.mp3",
+      arab: "فِي عَمَدٍ مُمَدَّدَةٍ",
+      latin: "Fī 'amadim mumaddadah",
+      arti: "Sedang mereka diikat pada tiang-tiang yang panjang."
+    }
+  ]
 },
 
 {
-judul:"At-Takaatsur (Bermegah-megahan)",
-arabTitle:"التكاثر",
-ayat:[
-{no:1,arab:"أَلْهَاكُمُ التَّكَاثُرُ",latin:"Alhakumut takatsur",arti:"Bermegah-megahan telah melalaikan kamu"},
-{no:2,arab:"حَتَّىٰ زُرْتُمُ الْمَقَابِرَ",latin:"Ḥattā zurtumul-maqābir",arti:"Sampai kamu masuk ke dalam kubur"},
-{no:3,arab:"كَلَّا سَوْفَ تَعْلَمُونَ",latin:"Kallā saufa ta'lamūn",arti:"Sekali-kali tidak! Kelak kamu akan mengetahui."},
-{no:4,arab:"ثُمَّ كَلَّا سَوْفَ تَعْلَمُونَ",latin:"Ṡumma kallā saufa ta'lamūn",arti:"Kemudian sekali-kali tidak! Kelak kamu akan mengetahui"},
-{no:5,arab:"كَلَّا لَوْ تَعْلَمُونَ عِلْمَ الْيَقِينِ",latin:"Kallā lau ta'lamūna 'ilmal-yaqīn",arti:"Sekali-kali tidak! Sekiranya kamu mengetahui dengan pasti"},
-{no:6,arab:"لَتَرَوُنَّ الْجَحِيمَ",latin:"Latarawunnal-jaḥīm",arti:"Niscaya kamu benar-benar akan melihat neraka Jahim"},
-{no:7,arab:"ثُمَّ لَتَرَوُنَّهَا عَيْنَ الْيَقِينِ",latin:"Ṡumma latarawunnahā 'ainal-yaqīn",arti:"Kemudian kamu benar-benar akan melihatnya dengan mata kepala sendiri"},
-{no:8,arab:"ثُمَّ لَتُسْأَلُنَّ يَوْمَئِذٍ عَنِ النَّعِيمِ",latin:"Ṡumma latus'alunna yauma'iżin 'anin-na'īm",arti:"Kemudian kamu benar-benar akan ditanya pada hari itu tentang kenikmatan."}
-]
+  judul: "At-Takasuur (Bermegah-megahan)",
+  arabTitle: "التكاثر",
+  ayat: [
+    {
+      no: "",
+      audio: "/assets/audio/Surat_Pendek/At-Takasuur/0.mp3",
+      arab: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+      latin: "Bismillahirrahmanirrahim",
+      arti: "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang"
+    },
+    {
+      no: 1,
+      audio: "/assets/audio/Surat_Pendek/At-Takasuur/1.mp3",
+      arab: "أَلْهَاكُمُ التَّكَاثُرُ",
+      latin: "Alhakumut takatsur",
+      arti: "Bermegah-megahan telah melalaikan kamu"
+    },
+    {
+      no: 2,
+      audio: "/assets/audio/Surat_Pendek/At-Takasuur/2.mp3",
+      arab: "حَتَّىٰ زُرْتُمُ الْمَقَابِرَ",
+      latin: "Ḥattā zurtumul-maqābir",
+      arti: "Sampai kamu masuk ke dalam kubur"
+    },
+    {
+      no: 3,
+      audio: "/assets/audio/Surat_Pendek/At-Takasuur/3.mp3",
+      arab: "كَلَّا سَوْفَ تَعْلَمُونَ",
+      latin: "Kallā saufa ta'lamūn",
+      arti: "Sekali-kali tidak! Kelak kamu akan mengetahui."
+    },
+    {
+      no: 4,
+      audio: "/assets/audio/Surat_Pendek/At-Takasuur/4.mp3",
+      arab: "ثُمَّ كَلَّا سَوْفَ تَعْلَمُونَ",
+      latin: "Ṡumma kallā saufa ta'lamūn",
+      arti: "Kemudian sekali-kali tidak! Kelak kamu akan mengetahui"
+    },
+    {
+      no: 5,
+      audio: "/assets/audio/Surat_Pendek/At-Takasuur/5.mp3",
+      arab: "كَلَّا لَوْ تَعْلَمُونَ عِلْمَ الْيَقِينِ",
+      latin: "Kallā lau ta'lamūna 'ilmal-yaqīn",
+      arti: "Sekali-kali tidak! Sekiranya kamu mengetahui dengan pasti"
+    },
+    {
+      no: 6,
+      audio: "/assets/audio/Surat_Pendek/At-Takasuur/6.mp3",
+      arab: "لَتَرَوُنَّ الْجَحِيمَ",
+      latin: "Latarawunnal-jaḥīm",
+      arti: "Niscaya kamu benar-benar akan melihat neraka Jahim"
+    },
+    {
+      no: 7,
+      audio: "/assets/audio/Surat_Pendek/At-Takasuur/7.mp3",
+      arab: "ثُمَّ لَتَرَوُنَّهَا عَيْنَ الْيَقِينِ",
+      latin: "Ṡumma latarawunnahā 'ainal-yaqīn",
+      arti: "Kemudian kamu benar-benar akan melihatnya dengan mata kepala sendiri"
+    },
+    {
+      no: 8,
+      audio: "/assets/audio/Surat_Pendek/At-Takasuur/8.mp3",
+      arab: "ثُمَّ لَتُسْأَلُنَّ يَوْمَئِذٍ عَنِ النَّعِيمِ",
+      latin: "Ṡumma latus'alunna yauma'iżin 'anin-na'īm",
+      arti: "Kemudian kamu benar-benar akan ditanya pada hari itu tentang kenikmatan."
+    }
+  ]
 },
 
 {
-judul:"Al-Adiyat (Kuda Perang)",
-arabTitle:"العاديات",
-ayat:[
-{no:1,arab:"وَالْعَادِيَاتِ ضَبْحًا",latin:"Wal-'ādiyāti ḍabḥā",arti:"Demi kuda perang yang berlari kencang terengah-engah"},
-{no:2,arab:"فَالْمُورِيَاتِ قَدْحًا",latin:"Fal-mūriyāti qadḥā",arti:"Dan yang memercikkan bunga api"},
-{no:3,arab:"فَالْمُغِيرَاتِ صُبْحًا",latin:"Fal-mugīrāti ṣubḥā",arti:"Dan yang menyerang dengan tiba-tiba di waktu pagi"},
-{no:4,arab:"فَأَثَرْنَ بِهِ نَقْعًا",latin:"Fa aṡarna bihī naq'ā",arti:"Sehingga menerbangkan debu"},
-{no:5,arab:"فَوَسَطْنَ بِهِ جَمْعًا",latin:"Fawasaṭna bihī jam'ā",arti:"Lalu menyerbu ke tengah-tengah kumpulan musuh"},
-{no:6,arab:"إِنَّ الْإِنْسَانَ لِرَبِّهِ لَكَنُودٌ",latin:"Innal-insāna lirabbihī lakanūd",arti:"Sungguh manusia itu sangat ingkar kepada Tuhannya"},
-{no:7,arab:"وَإِنَّهُ عَلَىٰ ذَٰلِكَ لَشَهِيدٌ",latin:"Wa innahū 'alā żālika lasyahīd",arti:"Dan sesungguhnya dia menyaksikan keingkarannya itu,"},
-{no:8,arab:"وَإِنَّهُ لِحُبِّ الْخَيْرِ لَشَدِيدٌ",latin:"Wa innahū liḥubbil-khairi lasyadīd",arti:"Dan sesungguhnya cintanya kepada harta benar-benar berlebihan"},
-{no:9,arab:"فَلَا يَعْلَمُ إِذَا بُعْثِرَ مَا فِي الْقُبُورِ",latin:"Afalā ya'lamu iżā bu'ṡira mā fil-qubūr",arti:"Maka tidakkah dia mengetahui apabila apa yang di dalam kubur dikeluarkan"},
-{no:10,arab:"وَحُصِّلَ مَا فِي الصُّدُورِ",latin:"Wa ḥuṣṣila mā fiṣ-ṣudūr",arti:"Dan apa yang tersimpan di dalam dada dilahirkan,"},
-{no:11,arab:"إِنَّ رَبَّهُمْ بِهِمْ يَوْمَئِذٍ لَخَبِيرٌ",latin:"Inna rabbahum bihim yauma'iżil lakhabīr",arti:"Sungguh Tuhan mereka pada hari itu Maha Mengetahui keadaan mereka."}
-]
+  judul: "Al-Adiyat (Kuda Perang)",
+  arabTitle: "العاديات",
+  ayat: [
+    {
+      no: "",
+      audio: "/assets/audio/Surat_Pendek/Al-Adiyat/0.mp3",
+      arab: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+      latin: "Bismillahirrahmanirrahim",
+      arti: "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang"
+    },
+    {
+      no: 1,
+      audio: "/assets/audio/Surat_Pendek/Al-Adiyat/1.mp3",
+      arab: "وَالْعَادِيَاتِ ضَبْحًا",
+      latin: "Wal-'ādiyāti ḍabḥā",
+      arti: "Demi kuda perang yang berlari kencang terengah-engah"
+    },
+    {
+      no: 2,
+      audio: "/assets/audio/Surat_Pendek/Al-Adiyat/2.mp3",
+      arab: "فَالْمُورِيَاتِ قَدْحًا",
+      latin: "Fal-mūriyāti qadḥā",
+      arti: "Dan yang memercikkan bunga api"
+    },
+    {
+      no: 3,
+      audio: "/assets/audio/Surat_Pendek/Al-Adiyat/3.mp3",
+      arab: "فَالْمُغِيرَاتِ صُبْحًا",
+      latin: "Fal-mugīrāti ṣubḥā",
+      arti: "Dan yang menyerang dengan tiba-tiba di waktu pagi"
+    },
+    {
+      no: 4,
+      audio: "/assets/audio/Surat_Pendek/Al-Adiyat/4.mp3",
+      arab: "فَأَثَرْنَ بِهِ نَقْعًا",
+      latin: "Fa aṡarna bihī naq'ā",
+      arti: "Sehingga menerbangkan debu"
+    },
+    {
+      no: 5,
+      audio: "/assets/audio/Surat_Pendek/Al-Adiyat/5.mp3",
+      arab: "فَوَسَطْنَ بِهِ جَمْعًا",
+      latin: "Fawasaṭna bihī jam'ā",
+      arti: "Lalu menyerbu ke tengah-tengah kumpulan musuh"
+    },
+    {
+      no: 6,
+      audio: "/assets/audio/Surat_Pendek/Al-Adiyat/6.mp3",
+      arab: "إِنَّ الْإِنْسَانَ لِرَبِّهِ لَكَنُودٌ",
+      latin: "Innal-insāna lirabbihī lakanūd",
+      arti: "Sungguh manusia itu sangat ingkar kepada Tuhannya"
+    },
+    {
+      no: 7,
+      audio: "/assets/audio/Surat_Pendek/Al-Adiyat/7.mp3",
+      arab: "وَإِنَّهُ عَلَىٰ ذَٰلِكَ لَشَهِيدٌ",
+      latin: "Wa innahū 'alā żālika lasyahīd",
+      arti: "Dan sesungguhnya dia menyaksikan keingkarannya itu"
+    },
+    {
+      no: 8,
+      audio: "/assets/audio/Surat_Pendek/Al-Adiyat/8.mp3",
+      arab: "وَإِنَّهُ لِحُبِّ الْخَيْرِ لَشَدِيدٌ",
+      latin: "Wa innahū liḥubbil-khairi lasyadīd",
+      arti: "Dan sesungguhnya cintanya kepada harta benar-benar berlebihan"
+    },
+    {
+      no: 9,
+      audio: "/assets/audio/Surat_Pendek/Al-Adiyat/9.mp3",
+      arab: "فَلَا يَعْلَمُ إِذَا بُعْثِرَ مَا فِي الْقُبُورِ",
+      latin: "Afalā ya'lamu iżā bu'ṡira mā fil-qubūr",
+      arti: "Maka tidakkah dia mengetahui apabila apa yang di dalam kubur dikeluarkan"
+    },
+    {
+      no: 10,
+      audio: "/assets/audio/Surat_Pendek/Al-Adiyat/10.mp3",
+      arab: "وَحُصِّلَ مَا فِي الصُّدُورِ",
+      latin: "Wa ḥuṣṣila mā fiṣ-ṣudūr",
+      arti: "Dan apa yang tersimpan di dalam dada dilahirkan"
+    },
+    {
+      no: 11,
+      audio: "/assets/audio/Surat_Pendek/Al-Adiyat/11.mp3",
+      arab: "إِنَّ رَبَّهُمْ بِهِمْ يَوْمَئِذٍ لَخَبِيرٌ",
+      latin: "Inna rabbahum bihim yauma'iżil lakhabīr",
+      arti: "Sungguh Tuhan mereka pada hari itu Maha Mengetahui keadaan mereka."
+    }
+  ]
 },
 
 {
@@ -140,7 +391,23 @@ arabTitle:"آية الكرسي",
 ayat:[
 
 {
+      no: "",
+      audio: "/assets/audio/Surat_Pendek/Ayat-Kursi/00.mp3",
+      arab: "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
+      latin: "A'ūdzu billāhi minas-syaithānir-rajīm",
+      arti: "Aku berlindung kepada Allah dari godaan setan yang terkutuk."
+    },
+    {
+      no: 1,
+      audio: "/assets/audio/Surat_Pendek/Ayat-Kursi/0.mp3",
+      arab: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+      latin: "Bismillahirrahmanirrahim",
+      arti: "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang"
+    },
+
+{
 no:"",
+audio: "/assets/audio/Surat_Pendek/Ayat-Kursi/1.mp3",
 arab:"اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ",
 latin:"Allāhu lā ilāha illā huwal-ḥayyul-qayyūm",
 arti:"Allah, tidak ada Tuhan selain Dia, Yang Maha Hidup, Yang terus-menerus mengurus makhluk-Nya"
@@ -148,6 +415,7 @@ arti:"Allah, tidak ada Tuhan selain Dia, Yang Maha Hidup, Yang terus-menerus men
 
 {
 no:"",
+audio: "/assets/audio/Surat_Pendek/Ayat-Kursi/2.mp3",
 arab:"لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ",
 latin:"Lā ta'khużuhū sinatuw walā naum",
 arti:"Tidak mengantuk dan tidak tidur"
@@ -155,6 +423,7 @@ arti:"Tidak mengantuk dan tidak tidur"
 
 {
 no:"",
+audio: "/assets/audio/Surat_Pendek/Ayat-Kursi/3.mp3",
 arab:"لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ",
 latin:"Lahū mā fis-samāwāti wa mā fil-arḍ",
 arti:"Milik-Nya apa yang ada di langit dan di bumi"
@@ -162,6 +431,7 @@ arti:"Milik-Nya apa yang ada di langit dan di bumi"
 
 {
 no:"",
+audio: "/assets/audio/Surat_Pendek/Ayat-Kursi/4.mp4",
 arab:"مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ",
 latin:"Man żallażī yasyfa'u 'indahū illā bi'iżnih",
 arti:"Tidak ada yang dapat memberi syafaat di sisi-Nya tanpa izin-Nya"
@@ -169,6 +439,7 @@ arti:"Tidak ada yang dapat memberi syafaat di sisi-Nya tanpa izin-Nya"
 
 {
 no:"",
+audio: "/assets/audio/Surat_Pendek/Ayat-Kursi/5.mp3",
 arab:"يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ",
 latin:"Ya'lamu mā baina aidīhim wa mā khalfahum",
 arti:"Dia mengetahui apa yang di hadapan mereka dan apa yang di belakang mereka"
@@ -176,6 +447,7 @@ arti:"Dia mengetahui apa yang di hadapan mereka dan apa yang di belakang mereka"
 
 {
 no:"",
+audio: "/assets/audio/Surat_Pendek/Ayat-Kursi/6.mp3",
 arab:"وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ",
 latin:"Wa lā yuḥīṭūna bisyai'im min 'ilmihī illā bimā syā'",
 arti:"Mereka tidak mengetahui sesuatu apa pun dari ilmu-Nya melainkan apa yang Dia kehendaki"
@@ -183,6 +455,7 @@ arti:"Mereka tidak mengetahui sesuatu apa pun dari ilmu-Nya melainkan apa yang D
 
 {
 no:"",
+audio: "/assets/audio/Surat_Pendek/Ayat-Kursi/7.mp3",
 arab:"وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ",
 latin:"Wasi'a kursiyyuhus-samāwāti wal-arḍ",
 arti:"Kursi-Nya meliputi langit dan bumi"
@@ -190,6 +463,7 @@ arti:"Kursi-Nya meliputi langit dan bumi"
 
 {
 no:255,
+audio: "/assets/audio/Surat_Pendek/Ayat-Kursi/8.mp3",
 arab:"وَلَا يَئُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ ۚ",
 latin:"Wa lā ya'ūdūhū ḥifẓuhumā wa huwal-'aliyyul-'aẓīm",
 arti:"Dan Dia tidak merasa berat memelihara keduanya dan Dia Maha Tinggi lagi Maha Agung"
@@ -203,6 +477,7 @@ arti:"Dan Dia tidak merasa berat memelihara keduanya dan Dia Maha Tinggi lagi Ma
 let currentSurat=null;
 let index=0;
 let artiVisible=true;
+let isAudioPlaying = false;
 
 function render(){
 const list=document.getElementById("list");
@@ -230,7 +505,6 @@ function openModal(i){
 currentSurat = suratData[i];
 index = 0;
 update();
-playAudio();
 document.getElementById("modal")
 .classList.add("show");
 }
@@ -244,6 +518,11 @@ const ayat=currentSurat.ayat[index];
 
 document.getElementById("title").innerHTML=
 currentSurat.arabTitle+"<br><small>"+currentSurat.judul+"</small>";
+
+const totalAyat = currentSurat.ayat.filter(a => a.no !== "").length;
+
+document.getElementById("suratTotal").innerText =
+"📖 " + totalAyat + " Ayat";
 
 document.getElementById("ayatNo").innerText =
 ayat.no ? "Ayat " + ayat.no : "";
@@ -265,6 +544,11 @@ if(index < currentSurat.ayat.length - 1){
   index++;
   update();
 
+  isAudioPlaying = false;
+
+document.getElementById("playBtn")
+.innerHTML = "🔇";
+
 }else{
 
   document.getElementById("finishPopup")
@@ -282,7 +566,12 @@ function prevAyat(){
 if(index > 0){
 index--;
 update();
-playAudio();
+
+isAudioPlaying = false;
+
+document.getElementById("playBtn")
+.innerHTML = "🔇";
+
 }else{
 alert("Ini ayat pertama 😊");
 }
@@ -309,14 +598,15 @@ const quizData = {
 "Al-Fatihah (Pembukaan)":[
 
 {
-question:"Ayat setelah الْحَمْدُ لِلَّهِ adalah...",
-options:[
-"الرَّحْمَٰنِ الرَّحِيمِ",
-"رَبِّ الْعَالَمِينَ",
-"إِيَّاكَ نَعْبُدُ",
-"الضَّالِّينَ"
-],
-answer:"رَبِّ الْعَالَمِينَ"
+  question: "Dengarkan audio berikut, bacaan apakah ini?",
+  audio: "/assets/audio/Surat_Pendek/Al-Fatihah/2.mp3",
+  options: [
+    "Alhamdu lillahi rabbil 'alamin",
+    "Arrahmanir rahim",
+    "Maliki yaumiddin",
+    "Ihdinas siratal mustaqim"
+  ],
+  answer: "Alhamdu lillahi rabbil 'alamin"
 },
 
 {
@@ -337,14 +627,15 @@ answer:"Pembukaan"
 },
 
 {
-question:"Ayat terakhir Al-Fatihah adalah...",
-options:[
-"الْعَالَمِينَ",
-"قُرَيْشٍ",
-"وَلَا الضَّالِّينَ",
-"الْفِيلِ"
-],
-answer:"وَلَا الضَّالِّينَ"
+  question:"Dengarkan audio berikut, apa arti ayat ini?",
+  audio:"/assets/audio/Surat_Pendek/Al-Fatihah/7.mp3",
+  options:[
+    "Jalan orang-orang yang Engkau beri nikmat",
+    "Segala puji bagi Allah",
+    "Yang Maha Pengasih",
+    "Pemilik hari pembalasan"
+  ],
+  answer:"Jalan orang-orang yang Engkau beri nikmat"
 }
 
 ],
@@ -352,61 +643,47 @@ answer:"وَلَا الضَّالِّينَ"
 "Al-Quraisy (Keluarga Quraisy)":[
 
 {
-question:"Lanjutan dari ayat لِإِيلَافِ adalah...",
-options:[
-"قُرَيْشٍ",
-"الْفِيلِ",
-"الضَّالِّينَ",
-"الصَّيْفِ"
-],
-answer:"قُرَيْشٍ"
+  question:"Dengarkan audio berikut, bacaan apakah ini?",
+  audio:"/assets/audio/Surat_Pendek/Al-Quraisy/2.mp3",
+  options:[
+    "Ilaafihim rihlatasy syita'i wash shaif",
+    "Li ilaafi quraisy",
+    "Falya'budu rabba hadzal bait",
+    "Alladzi ath'amahum min juu'in"
+  ],
+  answer:"Ilaafihim rihlatasy syita'i wash shaif"
 },
 
 {
-question:"Surat Quraisy memiliki berapa ayat?",
-options:["5","7","4","9"],
-answer:"4"
+  question:"Surat Quraisy memiliki berapa ayat?",
+  options:["5","7","4","9"],
+  answer:"4"
 },
 
 {
-question:"Apa arti Al-Quraisy?",
-options:[
-"Gajah",
-"Keluarga Quraisy",
-"Api",
-"Kuda"
-],
-answer:"Keluarga Quraisy"
+  question:"Apa arti Al-Quraisy?",
+  options:["Gajah","Keluarga Quraisy","Api","Kuda"],
+  answer:"Keluarga Quraisy"
 },
 
 {
-question:"Ayat terakhir Al-Quraisy adalah...",
-options:[
-"الصَّيْفِ",
-"الْبَيْتِ",
-"مِنْ خَوْفٍ",
-"قُرَيْشٍ"
-],
-answer:"مِنْ خَوْفٍ"
-},
-
-{
-question:"Lanjutan dari ayat رِحْلَةَ الشِّتَاءِ adalah...",
-options:[
-"وَالصَّيْفِ",
-"الْعَالَمِينَ",
-"الضَّالِّينَ",
-"قَدْحًا"
-],
-answer:"وَالصَّيْفِ"
+  question:"Dengarkan audio berikut, apa arti ayat ini?",
+  audio:"/assets/audio/Surat_Pendek/Al-Quraisy/4.mp3",
+  options:[
+    "Yang telah memberi makanan kepada mereka",
+    "Maka hendaklah mereka menyembah",
+    "Karena kebiasaan orang Quraisy",
+    "Perjalanan musim panas dan dingin"
+  ],
+  answer:"Yang telah memberi makanan kepada mereka"
 }
 
 ],
 
-"Al-Fil (Tentara Bergajah)":[
+"Al-Fiil (Tentara Bergajah)":[
 
 {
-question:"Apa arti Al-Fil?",
+question:"Apa arti Al-Fiil?",
 options:[
 "Api",
 "Tentara Bergajah",
@@ -417,14 +694,15 @@ answer:"Tentara Bergajah"
 },
 
 {
-question:"Lanjutan dari ayat أَلَمْ تَرَ adalah...",
-options:[
-"كَيْفَ فَعَلَ",
-"قُرَيْشٍ",
-"الضَّالِّينَ",
-"الصَّيْفِ"
-],
-answer:"كَيْفَ فَعَلَ"
+  question:"Dengarkan audio berikut, bacaan apakah ini?",
+  audio:"/assets/audio/Surat_Pendek/Al-Fiil/1.mp3",
+  options:[
+    "Alam tara kaifa fa'ala rabbuka bi ashabil fil",
+    "Wa arsala alaihim thairan ababil",
+    "Alam yaj'al kaidahum fi tadhlil",
+    "Faja'alahum ka'asfim ma'kul"
+  ],
+  answer:"Alam tara kaifa fa'ala rabbuka bi ashabil fil"
 },
 
 {
@@ -445,15 +723,16 @@ answer:"5"
 },
 
 {
-question:"Ayat terakhir Al-Fil adalah...",
-options:[
-"الْفِيلِ",
-"الصَّيْفِ",
-"الْعَالَمِينَ",
-"مَأْكُولٍ"
-],
-answer:"مَأْكُولٍ"
-}
+  question:"Dengarkan audio berikut, apa arti ayat ini?",
+  audio:"/assets/audio/Surat_Pendek/Al-Fiil/3.mp3",
+  options:[
+    "Dan Dia mengirimkan kepada mereka burung yang berbondong-bondong",
+    "Bukankah Dia menjadikan tipu daya mereka sia-sia",
+    "Sehingga mereka dijadikan seperti daun yang dimakan ulat",
+    "Tidakkah kamu melihat"
+  ],
+  answer:"Dan Dia mengirimkan kepada mereka burung yang berbondong-bondong"
+},
 
 ],
 
@@ -471,14 +750,15 @@ answer:"Pengumpat"
 },
 
 {
-question:"Lanjutan dari ayat وَيْلٌ لِكُلِّ adalah...",
-options:[
-"الْعَالَمِينَ",
-"الضَّالِّينَ",
-"هُمَزَةٍ لُمَزَةٍ",
-"قُرَيْشٍ"
-],
-answer:"هُمَزَةٍ لُمَزَةٍ"
+  question:"Dengarkan audio berikut, bacaan apakah ini?",
+  audio:"/assets/audio/Surat_Pendek/Al-Humazah/1.mp3",
+  options:[
+    "Wailul likulli humazatil lumazah",
+    "Yaḥsabu anna mālahu akhladah",
+    "Innaha alaihim mu'sadah",
+    "Narullahil muqadah"
+  ],
+  answer:"Wailul likulli humazatil lumazah"
 },
 
 {
@@ -499,22 +779,23 @@ answer:"الْمُوقَدَةُ"
 },
 
 {
-question:"Ayat terakhir Al-Humazah adalah...",
-options:[
-"الضَّالِّينَ",
-"قُرَيْشٍ",
-"الصَّيْفِ",
-"مُمَدَّدَةٍ"
-],
-answer:"مُمَدَّدَةٍ"
+  question:"Dengarkan audio berikut, apa arti ayat ini?",
+  audio:"/assets/audio/Surat_Pendek/Al-Humazah/6.mp3",
+  options:[
+    "Api Allah yang dinyalakan",
+    "Yang membakar sampai ke hati",
+    "Celakalah bagi setiap pengumpat",
+    "Pasti dilemparkan ke Huthamah"
+  ],
+  answer:"Api Allah yang dinyalakan"
 }
 
 ],
 
-"At-Takatsur (Bermegah-megahan)":[
+"At-Takasuur (Bermegah-megahan)":[
 
 {
-question:"Apa arti surat At-Takatsur?",
+question:"Apa arti surat At-Takasuur?",
 options:[
 "Pembukaan",
 "Gajah",
@@ -525,18 +806,19 @@ answer:"Bermegah-megahan"
 },
 
 {
-question:"Lanjutan dari ayat أَلْهَاكُمُ adalah...",
-options:[
-"التَّكَاثُرُ",
-"الضَّالِّينَ",
-"قُرَيْشٍ",
-"الصَّيْفِ"
-],
-answer:"التَّكَاثُرُ"
+  question:"Dengarkan audio berikut, bacaan apakah ini?",
+  audio:"/assets/audio/Surat_Pendek/At-Takasuur/1.mp3",
+  options:[
+    "Alhakumut takatsur",
+    "Hatta zurtumul maqabir",
+    "Latarawunnal jahim",
+    "Kalla saufa ta'lamun"
+  ],
+  answer:"Alhakumut takatsur"
 },
 
 {
-question:"Surat At-Takatsur memiliki berapa ayat?",
+question:"Surat At-Takasuur memiliki berapa ayat?",
 options:["4","5","8","7"],
 answer:"8"
 },
@@ -553,14 +835,15 @@ answer:"الْجَحِيمَ"
 },
 
 {
-question:"Ayat terakhir At-Takatsur adalah...",
-options:[
-"الْفِيلِ",
-"النَّعِيمِ",
-"الصَّيْفِ",
-"الضَّالِّينَ"
-],
-answer:"النَّعِيمِ"
+  question:"Dengarkan audio berikut, apa arti ayat ini?",
+  audio:"/assets/audio/Surat_Pendek/At-Takasuur/6.mp3",
+  options:[
+    "Niscaya kamu benar-benar akan melihat neraka Jahim",
+    "Sampai kamu masuk ke kubur",
+    "Bermegah-megahan telah melalaikan kamu",
+    "Kamu akan ditanya tentang kenikmatan"
+  ],
+  answer:"Niscaya kamu benar-benar akan melihat neraka Jahim"
 }
 
 ],
@@ -579,14 +862,15 @@ answer:"Kuda Perang"
 },
 
 {
-question:"Lanjutan dari ayat وَالْعَادِيَاتِ adalah...",
-options:[
-"ضَبْحًا",
-"الْفِيلِ",
-"الصَّيْفِ",
-"قُرَيْشٍ"
-],
-answer:"ضَبْحًا"
+  question:"Dengarkan audio berikut, bacaan apakah ini?",
+  audio:"/assets/audio/Surat_Pendek/Al-Adiyat/1.mp3",
+  options:[
+    "Wal-'ādiyāti ḍabḥā",
+    "Fal-muriyati qadha",
+    "Fawasathna bihi jam'a",
+    "Innal insana lirabbihi lakanud"
+  ],
+  answer:"Wal-'ādiyāti ḍabḥā"
 },
 
 {
@@ -607,14 +891,15 @@ answer:"Tuhannya"
 },
 
 {
-question:"Ayat terakhir Al-Adiyat adalah...",
-options:[
-"الضَّالِّينَ",
-"لَخَبِيرٌ",
-"قُرَيْشٍ",
-"الصَّيْفِ"
-],
-answer:"لَخَبِيرٌ"
+  question:"Dengarkan audio berikut, apa arti ayat ini?",
+  audio:"/assets/audio/Surat_Pendek/Al-Adiyat/11.mp3",
+  options:[
+    "Sungguh Tuhan mereka pada hari itu Maha Mengetahui keadaan mereka",
+    "Manusia sangat ingkar kepada Tuhannya",
+    "Lalu menyerbu ke tengah musuh",
+    "Menerbangkan debu"
+  ],
+  answer:"Sungguh Tuhan mereka pada hari itu Maha Mengetahui keadaan mereka"
 }
 
 ],
@@ -633,14 +918,15 @@ answer:"Al-Baqarah"
 },
 
 {
-question:"Lanjutan dari اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ adalah...",
-options:[
-"الْحَيُّ الْقَيُّومُ",
-"الْفِيلِ",
-"الضَّالِّينَ",
-"الصَّيْفِ"
-],
-answer:"الْحَيُّ الْقَيُّومُ"
+  question:"Dengarkan audio berikut, bacaan apakah ini?",
+  audio:"/assets/audio/Surat_Pendek/Ayat-Kursi/1.mp3",
+  options:[
+    "Allāhu lā ilāha illā huwal-ḥayyul-qayyūm",
+    "Lā ta'khużuhū sinatuw walā naum",
+    "Wasi'a kursiyyuhus-samāwāti wal-arḍ",
+    "Ya'lamu mā baina aidīhim wa mā khalfahum"
+  ],
+  answer:"Allāhu lā ilāha illā huwal-ḥayyul-qayyūm"
 },
 
 {
@@ -649,9 +935,9 @@ options:[
 "makan",
 "berjalan",
 "bermain",
-"mengantuk"
+"tidur"
 ],
-answer:"mengantuk"
+answer:"tidur"
 },
 
 {
@@ -666,15 +952,16 @@ answer:"langit dan bumi"
 },
 
 {
-question:"Ayat terakhir Ayat Kursi adalah...",
-options:[
-"الضَّالِّينَ",
-"الْعَظِيمُ",
-"قُرَيْشٍ",
-"الصَّيْفِ"
-],
-answer:"الْعَظِيمُ"
-}
+  question:"Dengarkan audio berikut, apa arti ayat ini?",
+  audio:"/assets/audio/Surat_Pendek/Ayat-Kursi/7.mp3",
+  options:[
+    "Kursi-Nya meliputi langit dan bumi",
+    "Tidak ada yang dapat memberi syafaat",
+    "Allah tidak tidur dan tidak mengantuk",
+    "Dia mengetahui apa yang di hadapan mereka"
+  ],
+  answer:"Kursi-Nya meliputi langit dan bumi"
+},
 ]
 };
 
@@ -687,6 +974,13 @@ function startQuiz(){
 currentQuiz = quizData[currentSurat.judul];
 
 if(!currentQuiz){
+
+alert(
+"Quiz untuk surat " +
+currentSurat.judul +
+" belum tersedia"
+);
+
 return;
 }
 
@@ -703,29 +997,28 @@ function showQuiz(){
 
 const q = currentQuiz[quizIndex];
 
-document.getElementById("quizQuestion")
-.innerText = q.question;
+document.getElementById("quizQuestion").innerText = q.question;
+document.getElementById("quizScore").innerText = "Skor: " + score;
 
-document.getElementById("quizScore")
-.innerText = "Skor: " + score;
+const audioBtn = document.getElementById("quizAudioBtn");
 
-const optionBox =
-document.getElementById("quizOptions");
+if(q.audio){
+  audioBtn.style.display = "inline-block";
+  audioBtn.innerHTML = "🔊 Dengarkan Audio";
+}else{
+  audioBtn.style.display = "none";
+  audioBtn.innerHTML = "";
+}
 
+const optionBox = document.getElementById("quizOptions");
 optionBox.innerHTML = "";
 
 q.options.forEach(option=>{
-
-const btn = document.createElement("button");
-
-btn.className = "quiz-option";
-
-btn.innerText = option;
-
-btn.onclick = ()=>checkAnswer(btn, option);
-
-optionBox.appendChild(btn);
-
+  const btn = document.createElement("button");
+  btn.className = "quiz-option";
+  btn.innerText = option;
+  btn.onclick = ()=>checkAnswer(btn, option);
+  optionBox.appendChild(btn);
 });
 
 }
@@ -767,6 +1060,9 @@ showQuiz();
 
 }else{
 
+document.getElementById("quizAudioBtn")
+.style.display = "none";
+
 document.getElementById("quizQuestion")
 .innerHTML =
 "🎉 Horeee Quiz Selesai!";
@@ -789,7 +1085,11 @@ if(index < currentSurat.ayat.length - 1){
 
   index++;
   update();
-  playAudio();
+
+  isAudioPlaying = false;
+
+document.getElementById("playBtn")
+.innerHTML = "🔇";
 
 }else{
 
@@ -815,28 +1115,51 @@ document.getElementById("quizPopup")
 
 function playAudio(){
 
-console.log(currentSurat);
-
-console.log(index);
-
 const ayat = currentSurat.ayat[index];
-
-console.log(ayat);
-
-console.log(ayat.audio);
 
 if(!ayat.audio){
   alert("Audio belum ada");
   return;
 }
 
-const player =
-document.getElementById("audioPlayer");
+const player = document.getElementById("audioPlayer");
+const btn = document.getElementById("playBtn");
 
-player.src = ayat.audio;
 
+if(isAudioPlaying){
+
+  player.pause();
+
+  isAudioPlaying = false;
+
+  btn.innerHTML = "🔇";
+
+}else{
+
+  player.src = ayat.audio;
+
+  player.load();
+
+  player.play();
+
+  isAudioPlaying = true;
+
+  btn.innerHTML = "🔊";
+
+}
+
+}
+
+function playQuizAudio(){
+
+const q = currentQuiz[quizIndex];
+
+if(!q.audio) return;
+
+const player = document.getElementById("audioPlayer");
+
+player.src = q.audio;
 player.load();
-
 player.play();
 
 }

@@ -78,6 +78,20 @@ body{
 .arab{font-weight:900}
 .latin{font-size:13px;color:#6a74a8}
 
+.surat-total{
+  display:inline-block;
+  background:#eef5ff;
+  color:#534df7;
+  padding:6px 14px;
+  border-radius:20px;
+  font-weight:700;
+  margin:8px auto;
+}
+
+.modal-card{
+  text-align:center;
+}
+
 .play{
   width:40px;height:40px;border-radius:50%;
   background:linear-gradient(90deg,#46b4ff,#62e6b0);
@@ -105,13 +119,10 @@ body{
 
 .modal-character{
   position:absolute;
-  top:-85px;
-  left:20px;
+  top:50%;
+  right:-130px;
+  transform:translateY(-50%);
   width:170px;
-  z-index:9999;
-  display:block;
-
-  animation:floatChar 3s ease-in-out infinite;
 }
 
 @keyframes floatChar{
@@ -366,25 +377,17 @@ body{
   background:#ffa8a8 !important;
 }
 
-.modal-character{
-  position:absolute;
-  top:-45px;
-  left:20px;
-  width:155px;
-  z-index:2;
-  pointer-events:none;
-
-  animation:floatChar 3s ease-in-out infinite;
+.quiz-audio-btn{
+  display:block;
+  margin:15px auto 25px auto;
 }
 
-@keyframes floatChar{
-  0%{
-    transform:translateY(0);
-  }
-  50%{
-    transform:translateY(-6px);
-  }
-  100%{
-    transform:translateY(0);
-  }
+#quizOptions{
+  margin-top:10px;
+}
+
+.quiz-btn{
+  background:#20c997;
+  color:white;
+  box-shadow:0 0 15px rgba(32,201,151,.5);
 }
