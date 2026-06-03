@@ -109,7 +109,7 @@
                         <button class="close-navbar"><i class="ti-close"></i></button>
                         <ul class="nav navbar-nav">
 
-                            <li>
+                            <li class="menu-item-has-children">
                                 <a href="{{ route('home') }}">Beranda</a>
                             </li>
                         
@@ -121,8 +121,17 @@
                                 <a href="{{ route('panduan') }}">Panduan</a>
                             </li>
                         
-                            <li>
+                            <li class="menu-item-has-children">
                                 <a href="{{ route('service') }}">Modul</a>
+                                <ul class="sub-menu">
+                                    <li><a href="{{ route('hijaiyah') }}">Hijaiyah</a></li>
+                                    <li><a href="{{ route('doa-harian') }}">Doa Harian</a></li>
+                                    <li><a href="{{ route('hadist.menu') }}">Hadist</a></li>
+                                    <li><a href="{{ route('surat-pendek') }}">Surat Pendek</a></li>
+                                    <li><a href="{{ route('abjad') }}">Huruf Abjad</a></li>
+                                    <li><a href="{{ route('pencocokkan-abjad') }}">Pencocokan Abjad</a></li>
+                                    <li><a href="{{ route('kosa-kata') }}">Pembuatan Kosa-Kata</a></li>
+                                </ul>
                             </li>
                         
                         </ul>
@@ -299,7 +308,7 @@
                     </div>
                 </div>
                 <p></p>
-                <div class="btns" style="text-align: center;">
+                <div class="btns" style="display: flex; justify-content: center; margin-top: 20px;">
                 <a href="{{ route('service') }}" class="theme-btn">Lihat Selengkapnya</a>
                 </div>
             </div>
