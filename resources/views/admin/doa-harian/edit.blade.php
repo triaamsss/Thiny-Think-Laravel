@@ -69,6 +69,18 @@
         <label>Ganti Gambar</label>
         <input type="file" name="image">
 
+        <label>Gambar Kuis Sekarang</label>
+        <div class="preview">
+            @if($doaHarian->quiz_image)
+                <img src="{{ asset('storage/' . $doaHarian->quiz_image) }}" width="120">
+            @else
+                <p>Belum ada gambar kuis</p>
+            @endif
+        </div>
+
+        <label>Ganti Gambar Kuis</label>
+        <input type="file" name="quiz_image">
+
         <label>Audio Sekarang</label>
         <div class="preview">
             @if($doaHarian->audio)
@@ -82,6 +94,19 @@
 
         <label>Ganti Audio MP3</label>
         <input type="file" name="audio">
+
+        <label>Audio Kuis Sekarang</label>
+        <div class="preview">
+            @if($doaHarian->quiz_audio)
+                <audio controls>
+                    <source src="{{ asset('storage/' . $doaHarian->quiz_audio) }}">
+                </audio>
+            @else
+                <p>Belum ada audio kuis</p>
+            @endif
+        </div>
+        <label>Ganti Audio Kuis</label>
+        <input type="file" name="quiz_audio">
 
         <label>Arab</label>
         <textarea name="arab">{{ $doaHarian->arab }}</textarea>

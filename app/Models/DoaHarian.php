@@ -11,9 +11,11 @@ class DoaHarian extends Model
         'key',
         'tag',
         'image',
+        'quiz_image',
         'audio',
+        'quiz_audio',
         'arab',
         'latin',
         'arti',
-    ];
+];
 }

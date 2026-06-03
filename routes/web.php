@@ -50,7 +50,7 @@ Route::view('/hijaiyah/play', 'pages.hijaiyah_play')->name('hijaiyah.play');
 
 Route::view('/doa-harian', 'pages.doa_harian')->name('doa-harian');
 Route::get('/doa-harian/mulai', function () {
-    $doaHarians = collect([]);
+    $doaHarians = DoaHarian::latest()->get();
     return view('pages.doa_harian_mulai', compact('doaHarians'));
 })->name('doa-harian.mulai');
 
