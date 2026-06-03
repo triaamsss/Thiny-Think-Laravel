@@ -401,8 +401,8 @@
             : ''),
           'scene' => 'Kegiatan sesuai dengan ' . $doa->title,
           'question' => 'Kegiatan mana yang cocok dengan ' . $doa->title . '?',
-          'startLatin' => $doa->latin ?: '',
-          'continueLatin' => $doa->latin ?: '',
+          'startLatin' => collect(explode(' ', $doa->latin))->take(max(1, ceil(count(explode(' ', $doa->latin)) / 2)))->implode(' '),
+          'continueLatin' => collect(explode(' ', $doa->latin))->skip(max(1, ceil(count(explode(' ', $doa->latin)) / 2)))->implode(' '),
       ];
   })->values(), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!};
 
