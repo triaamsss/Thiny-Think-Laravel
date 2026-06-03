@@ -295,6 +295,17 @@ body {
 </head>
 <body>
 
+<!-- BGM & SFX -->
+<audio id="bg-music" loop preload="auto">
+  <source src="{{ asset('assets/audio/bgm.mp3') }}" type="audio/mpeg">
+</audio>
+<audio id="sfx-correct" preload="auto">
+  <source src="{{ asset('assets/audio/Hadist/benar.mp3') }}" type="audio/mpeg">
+</audio>
+<audio id="sfx-wrong" preload="auto">
+  <source src="{{ asset('assets/audio/Hadist/salah.mp3') }}" type="audio/mpeg">
+</audio>
+
 <canvas class="firework-canvas" id="fwCanvas"></canvas>
 
 <div class="bg-scene">
@@ -313,6 +324,7 @@ body {
 </a>
     <button class="back-btn" id="backBtn" onclick="goHome()">← Kembali</button>
     <div class="header-stars">
+      <button class="mute-btn" id="btnMute" onclick="toggleMute()" style="background: var(--sun); border: 2px solid var(--dark); border-radius: 10px; padding: 4px 12px; font-family: 'Fredoka One', cursive; font-size: 16px; color: var(--dark); box-shadow: 2px 2px 0 var(--dark); cursor: pointer; display: flex; align-items: center; justify-content: center; margin-right: 8px; user-select: none;">🔊</button>
       <div class="star-badge">⭐ <span id="totalStars">0</span></div>
     </div>
   </header>
@@ -430,6 +442,75 @@ const totalStarsEl = document.getElementById('totalStars');
 
 totalStarsEl.textContent = totalStars;
 
+/* AUDIO DOM & LOGIC */
+const music = document.getElementById('bg-music');
+const btnMute = document.getElementById('btnMute');
+const sfxCorrect = document.getElementById('sfx-correct');
+const sfxWrong = document.getElementById('sfx-wrong');
+
+let isMuted = localStorage.getItem('tt_bgm_muted') === 'true';
+
+function updateMuteIcon() {
+  if (isMuted) {
+    btnMute.textContent = '🔇';
+    music.muted = true;
+  } else {
+    btnMute.textContent = '🔊';
+    music.muted = false;
+  }
+}
+
+function toggleMute() {
+  isMuted = !isMuted;
+  localStorage.setItem('tt_bgm_muted', isMuted);
+  updateMuteIcon();
+  if (!isMuted && music.paused) {
+    music.play().catch(() => {});
+  }
+}
+
+function startBGM() {
+  music.muted = isMuted;
+  music.play().catch(() => {
+    // Autoplay blocked, play on first interaction
+    const playBGMOnInteract = () => {
+      music.muted = isMuted;
+      music.play().catch(() => {});
+      document.removeEventListener('click', playBGMOnInteract);
+      document.removeEventListener('touchstart', playBGMOnInteract);
+      document.removeEventListener('keydown', playBGMOnInteract);
+    };
+    document.addEventListener('click', playBGMOnInteract);
+    document.addEventListener('touchstart', playBGMOnInteract);
+    document.addEventListener('keydown', playBGMOnInteract);
+  });
+}
+
+window.addEventListener('load', () => {
+  updateMuteIcon();
+  startBGM();
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.getVoices();
+  }
+});
+
+/* ══════════════════════════════
+   TEXT TO SPEECH (TTS)
+══════════════════════════════ */
+function speakText(text) {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'id-ID';
+    u.rate = 0.85;
+    u.pitch = 1.1;
+    const voices = window.speechSynthesis.getVoices();
+    const v = voices.find(voice => voice.lang.startsWith('id')) || voices.find(voice => voice.lang.startsWith('ms')) || null;
+    if (v) u.voice = v;
+    window.speechSynthesis.speak(u);
+  }
+}
+
 /* ══════════════════════════════
    LEVEL START
 ══════════════════════════════ */
@@ -493,9 +574,18 @@ function renderQuestion() {
 
   if (!q) { showResult(); return; }
 
-  if (q.type === 'besar_kecil') renderBesarKecil(q, container);
-  else if (q.type === 'kata_huruf') renderKataHuruf(q, container);
-  else if (q.type === 'pasangkan') renderPasangkan(q, container);
+  if (q.type === 'besar_kecil') {
+    renderBesarKecil(q, container);
+    speakText('Huruf ' + q.letter);
+  }
+  else if (q.type === 'kata_huruf') {
+    renderKataHuruf(q, container);
+    speakText(q.kata);
+  }
+  else if (q.type === 'pasangkan') {
+    renderPasangkan(q, container);
+    speakText('Pasangkan huruf besar dengan huruf kecil');
+  }
 }
 
 /* ── A: Besar–Kecil ── */
@@ -504,7 +594,7 @@ function renderBesarKecil(q, container) {
     <div class="question-area">
       <div class="question-label">Huruf kecil mana yang cocok? 🤔</div>
       <div class="letter-pair">
-        <div class="big-letter">${q.letter}</div>
+        <div class="big-letter" onclick="speakText('Huruf ' + '${q.letter}')" style="cursor: pointer; user-select: none;">${q.letter}</div>
         <div class="pair-arrow">→</div>
         <div class="big-letter" style="background:#E3F2FD; font-size:68px">?</div>
       </div>
@@ -536,7 +626,7 @@ function renderKataHuruf(q, container) {
   container.innerHTML = `
     <div class="question-area">
       <div class="question-label">Huruf pertama dari kata ini adalah... 🔍</div>
-      <div class="word-display">
+      <div class="word-display" onclick="speakText('${q.kata}')" style="cursor: pointer; user-select: none;">
         <span class="word-emoji">${q.emoji}</span>
         <div>
           <div class="word-text">${q.kata}</div>
@@ -602,6 +692,8 @@ function pairSelect(side, letter) {
   const el = document.getElementById(id);
   if (el.classList.contains('matched')) return;
 
+  speakText('Huruf ' + letter);
+
   if (!pairing.selected) {
     // first pick
     if (pairing.prevEl) pairing.prevEl.classList.remove('selected-left');
@@ -635,6 +727,7 @@ function pairSelect(side, letter) {
       pairing.matched[bigL] = true;
       pairing.correct++;
       setFb('Benar! 🎉', 'ok');
+      sfxCorrect.play().catch(() => {});
       if (pairing.correct === pairing.letters.length) {
         score += pairing.correct;
         document.getElementById('liveScore').textContent = score;
@@ -644,6 +737,7 @@ function pairSelect(side, letter) {
       bigEl.classList.add('wrong-flash'); smEl.classList.add('wrong-flash');
       setTimeout(() => { bigEl.classList.remove('wrong-flash'); smEl.classList.remove('wrong-flash'); }, 400);
       setFb('Belum tepat, coba lagi! 💪', 'err');
+      sfxWrong.play().catch(() => {});
     }
   }
 }
@@ -656,9 +750,11 @@ function onAnswer(isOk) {
     score++;
     document.getElementById('liveScore').textContent = score;
     setFb('Hebat! Kamu benar! 🎉', 'ok');
+    sfxCorrect.play().catch(() => {});
     if (score % 3 === 0) launchFireworks();
   } else {
     setFb('Belum tepat, coba lagi ya! 💪', 'err');
+    sfxWrong.play().catch(() => {});
   }
   document.getElementById('nextBtn').style.display = 'block';
 }

@@ -30,8 +30,15 @@
         Pencocokan Huruf
     </a>
 
-    <a href="/admin/hijaiyah">
+    <a href="{{ route('admin.hijaiyah.dashboard') }}"
+    class="{{ request()->is('admin/hijaiyah') ? 'active' : '' }}">
         Huruf Hijaiyah
+    </a>
+
+    <a href="{{ route('admin.hijaiyah.scores') }}"
+       class="{{ request()->is('admin/hijaiyah/scores*') ? 'active' : '' }}"
+       style="padding-left:28px;font-size:13px;">
+        ↳ Nilai Siswa
     </a>
 
     <a href="/admin/doa-harian"

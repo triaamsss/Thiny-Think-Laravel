@@ -2,6 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Dashboard Admin - TinyThink</title>
     <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
 </head>
@@ -16,8 +17,26 @@
             <p>Kelola semua konten pembelajaran TinyThink dari sini.</p>
         </div>
 
-        <div class="admin-badge">
-            Admin TinyThink
+        <div style="display:flex;align-items:center;gap:12px;">
+            <div class="admin-badge">Admin TinyThink</div>
+
+            <form method="POST" action="{{ route('admin.logout') }}" style="margin:0;">
+                @csrf
+                <button type="submit" style="
+                    padding:8px 18px;
+                    background:#ef4444;
+                    color:#fff;
+                    border:none;
+                    border-radius:8px;
+                    font-size:13px;
+                    font-weight:700;
+                    cursor:pointer;
+                    transition:background .2s;
+                " onmouseover="this.style.background='#dc2626'"
+                onmouseout="this.style.background='#ef4444'">
+                    Logout
+                </button>
+            </form>
         </div>
     </div>
 

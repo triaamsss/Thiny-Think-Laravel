@@ -58,6 +58,18 @@
                 name="audio"
             >
 
+            <label>Upload Audio Kuis</label>
+            <input
+                type="file"
+                name="quiz_audio"
+            >
+
+            <label>Upload Gambar Kuis</label>
+            <input
+                type="file"
+                name="quiz_image"
+            >
+
             <label>Teks Arab</label>
             <textarea
                 name="arab"

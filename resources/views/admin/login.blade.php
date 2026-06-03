@@ -106,6 +106,15 @@
 
             <button type="submit" class="btn-login">Login</button>
         </form>
+
+        <div style="text-align:center;margin-top:16px;">
+            <a href="{{ route('home') }}" style="
+                font-size:13px;
+                color:#6c63ff;
+                text-decoration:none;
+                font-weight:600;
+            ">← Kembali ke Beranda</a>
+        </div>
     </div>
 
 </body>

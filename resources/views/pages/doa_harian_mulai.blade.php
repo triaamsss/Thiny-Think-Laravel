@@ -245,7 +245,7 @@
 
 <script>
 
-  const DOA = [
+  const DEFAULT_DOA = [
       { id:"doa-masuk-kelas", title:"Doa Masuk Kelas", tag:"Kelas",
         image:"/assets/images/doa harian/C1.png",
         quizImage:"/assets/images/doa harian/masuk kelas.png",
@@ -377,6 +377,36 @@
         continueLatin:"wa mursaahaa inna robbii laghofuurur rohiim",
       },
   ];
+
+
+  const DB_DOA = {!! json_encode($doaHarians->map(function ($doa) {
+      return [
+          'id' => $doa->key ?: 'doa-' . $doa->id,
+          'title' => $doa->title,
+          'tag' => $doa->tag ?: 'Doa',
+          'image' => $doa->image ? asset('storage/' . $doa->image) : asset('assets/images/doa harian/C1.png'),
+          'quizImage' => $doa->quiz_image
+            ? asset('storage/' . $doa->quiz_image)
+            : ($doa->image
+            ? asset('storage/' . $doa->image)
+            : asset('assets/images/doa harian/C1.png')),
+          'arab' => $doa->arab ?: '',
+          'latin' => $doa->latin ?: '',
+          'arti' => $doa->arti ?: '',
+          'audio' => $doa->audio ? asset('storage/' . $doa->audio) : '',
+          'quizAudio' => $doa->quiz_audio
+            ? asset('storage/' . $doa->quiz_audio)
+            : ($doa->audio
+            ? asset('storage/' . $doa->audio)
+            : ''),
+          'scene' => 'Kegiatan sesuai dengan ' . $doa->title,
+          'question' => 'Kegiatan mana yang cocok dengan ' . $doa->title . '?',
+          'startLatin' => collect(explode(' ', $doa->latin))->take(max(1, ceil(count(explode(' ', $doa->latin)) / 2)))->implode(' '),
+          'continueLatin' => collect(explode(' ', $doa->latin))->skip(max(1, ceil(count(explode(' ', $doa->latin)) / 2)))->implode(' '),
+      ];
+  })->values(), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!};
+
+  const DOA = DB_DOA;
 
   const listenedKey = "tt_doa_listened";
   const scoreKey = "tt_doa_score";
@@ -892,7 +922,7 @@
   window.startArenaQuiz = startArenaQuiz;
   window.startFinalQuiz = startFinalQuiz;
 
-  render(DOA);
+render(getFiltered());
 </script>
 </body>
 </html>
