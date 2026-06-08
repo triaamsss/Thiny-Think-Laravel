@@ -236,7 +236,7 @@ const suratData = [
       arti: "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang"
     },
     {
-      no: 1,
+      no: 1,a
       audio: "/assets/audio/Surat_Pendek/At-Takasuur/1.mp3",
       arab: "أَلْهَاكُمُ التَّكَاثُرُ",
       latin: "Alhakumut takatsur",
@@ -538,30 +538,21 @@ ayat.arab +
 }
 
 function nextAyat(){
-
 if(index < currentSurat.ayat.length - 1){
-
   index++;
   update();
-
   isAudioPlaying = false;
-
 document.getElementById("playBtn")
 .innerHTML = "🔇";
-
 }else{
-
   document.getElementById("finishPopup")
   .classList.add("show");
-
   document.getElementById("finishText")
   .innerText =
   "Horeee kamu telah menyelesaikan surat " +
   currentSurat.judul + " 🎉🌈";
-
 }
 }
-
 function prevAyat(){
 if(index > 0){
 index--;
@@ -1114,18 +1105,13 @@ document.getElementById("quizPopup")
 }
 
 function playAudio(){
-
 const ayat = currentSurat.ayat[index];
-
 if(!ayat.audio){
   alert("Audio belum ada");
   return;
 }
-
 const player = document.getElementById("audioPlayer");
 const btn = document.getElementById("playBtn");
-
-
 if(isAudioPlaying){
 
   player.pause();

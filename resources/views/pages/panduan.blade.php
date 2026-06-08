@@ -71,7 +71,7 @@
                                     <li><a href="{{ route('hijaiyah') }}">Hijaiyah</a></li>
                                     <li><a href="{{ route('comingsoon') }}">Doa Harian</a></li>
                                     <li><a href="{{ route('comingsoon') }}">Hadist</a></li>
-                                    <li><a href="{{ route('comingsoon') }}">Surat Pendek</a></li>
+                                    <li><a href="{{ route('surat-pendek.play')}}">Surat Pendek</a></li>
                                     <li><a href="{{ route('abjad') }}">Huruf Abjad</a></li>
                                     <li><a href="{{ route('comingsoon') }}">Pencocokan Abjad</a></li>
                                     <li><a href="{{ route('kosa-kata') }}">Pembuatan Kosa-Kata</a></li>

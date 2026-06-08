@@ -11,7 +11,7 @@ use App\Http\Controllers\Admin\DoaHarianController;
 use App\Http\Controllers\Admin\QuizController;
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\HijaiyahScoreController;
-// use App\Http\Controllers\Admin\SuratPendekController; 
+use App\Http\Controllers\Admin\SuratPendekController; 
 use App\Http\Controllers\Admin\KosaKataController;     
 // use App\Http\Controllers\Admin\PencocokkanAbjadController; 
 
@@ -22,6 +22,7 @@ use App\Models\Hadist;
 use App\Models\DoaHarian;
 use App\Models\Quiz;
 use App\Models\KosaKata;
+use App\Models\SuratPendek;
 
 
 
@@ -70,8 +71,8 @@ Route::view('/abjad/play', 'pages.abjad_play')->name('abjad.play');
 Route::view('/pencocokkan-abjad', 'pages.pencocokkan_abjad')->name('pencocokkan-abjad');
 Route::view('/pencocokkan-abjad/play', 'pages.pencocokkan_abjad_play')->name('pencocokkan-abjad.play');
 
+Route::view('/surat-pendek/play', 'pages.surat_pendek_play')->name('surat-pendek.play');
 Route::view('/surat-pendek', 'pages.surat_pendek')->name('surat-pendek');
-Route::view('/surat-pendek/play', 'pages.surat_pendek_play')->name('surat-pendek.play');    
 
 Route::view('/kosa-kata', 'pages.kosa_kata')->name('kosa-kata');
 
@@ -170,9 +171,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('lessons', LessonController::class);
         Route::resource('hadist', HadistController::class);
         Route::resource('doa-harian', DoaHarianController::class);
-        Route::get('/surat-pendek', function () {
-            return view('admin.coming-soon', ['title' => 'Surat Pendek']);
-        })->name('surat-pendek.index');
+        Route::resource('surat-pendek', SuratPendekController::class);
         Route::get('/pencocokkan-abjad', function () {
             return view('admin.coming-soon', ['title' => 'Pencocokkan Abjad']);
         })->name('pencocokkan-abjad.index');

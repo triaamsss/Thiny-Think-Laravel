@@ -3,16 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hafalan Surat Pendek</title>
+  <title>Pengenalan Surat Pendek</title>
 
   <!-- Existing CSS -->
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/animate.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
   <!-- New Animation Library -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
@@ -28,8 +27,11 @@
 </head>
 
 <body>
+
+<!-- BACKGROUND MUSIC -->
+<!-- CATATAN: autoplay sering diblokir browser, tapi kita akan "coba play" via JS saat load -->
 <audio id="bg-music" loop preload="auto">
-  <source src="assets/audio/Doa Harian audio/Backsound.mp3" type="audio/mpeg">
+  <source src="{{ asset('assets/audio/Doa Harian audio/Backsound.mp3') }}" type="audio/mpeg">
 </audio>
 
 <!-- MAIN WRAPPER -->
@@ -38,36 +40,36 @@
 
   <!-- CLOSE BUTTON -->
   <button class="btn-close-app">
-    <a href="index.html" style="color: white;">✕</a>
+    <a href="{{ route('home') }}" style="color: white;">✕</a>
   </button>
 
   <!-- BOARD AREA -->
   <div class="board-area">
-    <img src="assets/images/hijaiyah/BG14.png" class="board-bg" alt="">
+    <img src="{{ asset('assets/images/hijaiyah/BG14.png') }}" class="board-bg" alt="">
 
-    <h6 class="board-title" data-aos="zoom-in">
+    <h1 class="board-title" data-aos="zoom-in">
       Surat Pendek
-    </h6>
+    </h1>
 
     <h1 class="btn-start" data-aos="zoom-in" data-aos-delay="200">
-      <a href="Surat-pendek.play.html">MULAI</a>
+      <a href="{{ route('surat-pendek') }}">MULAI</a>
     </h1>
   </div>
 
   <!-- CHARACTER LEFT -->
   <div class="character character-left" data-aos="fade-up">
-    <img src="assets/images/hijaiyah/C1.png" alt="">
+    <img src="{{ asset('assets/images/hijaiyah/C1.png') }}" alt="">
   </div>
 
   <!-- CHARACTER RIGHT -->
   <div class="character character-right" data-aos="fade-up" data-aos-delay="150">
-    <img src="assets/images/hijaiyah/C2.png" alt="">
+    <img src="{{ asset('assets/images/hijaiyah/C2.png') }}" alt="">
   </div>
 </div>
 
 <!-- JS -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script>
@@ -82,32 +84,40 @@
   const music = document.getElementById('bg-music');
   const btnMute = document.getElementById('btnMute');
 
+  // helper: update icon sesuai kondisi
   function updateIcon() {
+    // kalau muted ATAU belum jalan -> tampilkan 🔇
+    // kalau sedang play dan tidak muted -> 🔊
     if (music.muted || music.paused) btnMute.textContent = '🔇';
     else btnMute.textContent = '🔊';
   }
 
   // toggle mute
   btnMute.addEventListener('click', function (e) {
-    e.stopPropagation(); 
+    e.stopPropagation(); // biar gak "klik body" kebaca dobel
     music.muted = !music.muted;
 
+    // kalau user unmute tapi musik belum jalan, coba play
     if (!music.muted && music.paused) {
       music.play().catch(() => {});
     }
     updateIcon();
   });
 
+  // 1) COBA AUTOPLAY SAAT LOAD
   window.addEventListener('load', async () => {
     try {
+      // jangan muted supaya beneran terdengar (kalau browser ngizinin)
       music.muted = false;
-      await music.play();     
+      await music.play();     // kalau diblokir bakal masuk catch
     } catch (err) {
-        music.muted = true;
+      // autoplay diblokir -> normal, nanti nyala setelah klik user
     }
     updateIcon();
   });
 
+  // 2) FALLBACK: sekali klik di mana aja, musik nyala
+  // (ini yang paling aman buat Chrome)
   function playOnFirstUserAction() {
     music.muted = false;
     music.play().catch(() => {});
