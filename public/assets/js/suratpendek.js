@@ -236,7 +236,7 @@ const suratData = [
       arti: "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang"
     },
     {
-      no: 1,a
+      no: 1,
       audio: "/assets/audio/Surat_Pendek/At-Takasuur/1.mp3",
       arab: "أَلْهَاكُمُ التَّكَاثُرُ",
       latin: "Alhakumut takatsur",
