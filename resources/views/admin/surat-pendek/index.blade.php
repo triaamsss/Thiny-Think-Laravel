@@ -9,7 +9,7 @@
 
 @include('admin.partials.sidebar')
 
-<div class="main">
+<div class="main surat-pendek-page">
 
     <div class="topbar">
         <div>
@@ -19,7 +19,6 @@
 
         <div class="action-buttons">
             <a href="{{ route('admin.surat-pendek.create') }}" class="btn">+ Tambah Surat</a>
-            <a href="{{ route('admin.quiz.index') }}" class="btn secondary-btn">🧠 Kelola Quiz</a>
         </div>
     </div>
 

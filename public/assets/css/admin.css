@@ -484,3 +484,33 @@ audio {
     margin-bottom: 10px;
     width: 100%;
 }
+.surat-pendek-page .form-admin label {
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 8px;
+}
+.surat-pendek-page .form-admin input[type="text"],
+.surat-pendek-page .form-admin input[type="number"],
+.surat-pendek-page .form-admin input[type="file"],
+.surat-pendek-page .form-admin textarea,
+.surat-pendek-page .form-admin select {
+    width: 100%;
+    display: block;
+    margin-bottom: 22px;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+.surat-pendek-page .form-admin input[type="number"] {
+    max-width: 220px;
+}
+.surat-pendek-page .ayat-box label {
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+.surat-pendek-page .ayat-box input[type="number"] {
+    margin-bottom: 24px;
+}
+.surat-pendek-page .ayat-box input[type="file"] {
+    margin-bottom: 24px;
+}
