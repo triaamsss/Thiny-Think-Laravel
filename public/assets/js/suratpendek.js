@@ -615,18 +615,6 @@ options:[
 "Manusia"
 ],
 answer:"Pembukaan"
-},
-
-{
-  question:"Dengarkan audio berikut, apa arti ayat ini?",
-  audio:"/assets/audio/Surat_Pendek/Al-Fatihah/7.mp3",
-  options:[
-    "Jalan orang-orang yang Engkau beri nikmat",
-    "Segala puji bagi Allah",
-    "Yang Maha Pengasih",
-    "Pemilik hari pembalasan"
-  ],
-  answer:"Jalan orang-orang yang Engkau beri nikmat"
 }
 
 ],
@@ -655,18 +643,6 @@ answer:"Pembukaan"
   question:"Apa arti Al-Quraisy?",
   options:["Gajah","Keluarga Quraisy","Api","Kuda"],
   answer:"Keluarga Quraisy"
-},
-
-{
-  question:"Dengarkan audio berikut, apa arti ayat ini?",
-  audio:"/assets/audio/Surat_Pendek/Al-Quraisy/4.mp3",
-  options:[
-    "Yang telah memberi makanan kepada mereka",
-    "Maka hendaklah mereka menyembah",
-    "Karena kebiasaan orang Quraisy",
-    "Perjalanan musim panas dan dingin"
-  ],
-  answer:"Yang telah memberi makanan kepada mereka"
 }
 
 ],
@@ -711,19 +687,7 @@ answer:"أَبَابِيلَ"
 question:"Surat Al-Fil memiliki berapa ayat?",
 options:["9","4","7","5"],
 answer:"5"
-},
-
-{
-  question:"Dengarkan audio berikut, apa arti ayat ini?",
-  audio:"/assets/audio/Surat_Pendek/Al-Fiil/3.mp3",
-  options:[
-    "Dan Dia mengirimkan kepada mereka burung yang berbondong-bondong",
-    "Bukankah Dia menjadikan tipu daya mereka sia-sia",
-    "Sehingga mereka dijadikan seperti daun yang dimakan ulat",
-    "Tidakkah kamu melihat"
-  ],
-  answer:"Dan Dia mengirimkan kepada mereka burung yang berbondong-bondong"
-},
+}
 
 ],
 
@@ -767,18 +731,6 @@ options:[
 "قُرَيْشٍ"
 ],
 answer:"الْمُوقَدَةُ"
-},
-
-{
-  question:"Dengarkan audio berikut, apa arti ayat ini?",
-  audio:"/assets/audio/Surat_Pendek/Al-Humazah/6.mp3",
-  options:[
-    "Api Allah yang dinyalakan",
-    "Yang membakar sampai ke hati",
-    "Celakalah bagi setiap pengumpat",
-    "Pasti dilemparkan ke Huthamah"
-  ],
-  answer:"Api Allah yang dinyalakan"
 }
 
 ],
@@ -823,18 +775,6 @@ options:[
 "الضَّالِّينَ"
 ],
 answer:"الْجَحِيمَ"
-},
-
-{
-  question:"Dengarkan audio berikut, apa arti ayat ini?",
-  audio:"/assets/audio/Surat_Pendek/At-Takasuur/6.mp3",
-  options:[
-    "Niscaya kamu benar-benar akan melihat neraka Jahim",
-    "Sampai kamu masuk ke kubur",
-    "Bermegah-megahan telah melalaikan kamu",
-    "Kamu akan ditanya tentang kenikmatan"
-  ],
-  answer:"Niscaya kamu benar-benar akan melihat neraka Jahim"
 }
 
 ],
@@ -879,18 +819,6 @@ options:[
 "Keluarga Quraisy"
 ],
 answer:"Tuhannya"
-},
-
-{
-  question:"Dengarkan audio berikut, apa arti ayat ini?",
-  audio:"/assets/audio/Surat_Pendek/Al-Adiyat/11.mp3",
-  options:[
-    "Sungguh Tuhan mereka pada hari itu Maha Mengetahui keadaan mereka",
-    "Manusia sangat ingkar kepada Tuhannya",
-    "Lalu menyerbu ke tengah musuh",
-    "Menerbangkan debu"
-  ],
-  answer:"Sungguh Tuhan mereka pada hari itu Maha Mengetahui keadaan mereka"
 }
 
 ],
@@ -940,19 +868,7 @@ options:[
 "manusia saja"
 ],
 answer:"langit dan bumi"
-},
-
-{
-  question:"Dengarkan audio berikut, apa arti ayat ini?",
-  audio:"/assets/audio/Surat_Pendek/Ayat-Kursi/7.mp3",
-  options:[
-    "Kursi-Nya meliputi langit dan bumi",
-    "Tidak ada yang dapat memberi syafaat",
-    "Allah tidak tidur dan tidak mengantuk",
-    "Dia mengetahui apa yang di hadapan mereka"
-  ],
-  answer:"Kursi-Nya meliputi langit dan bumi"
-},
+}
 ]
 };
 

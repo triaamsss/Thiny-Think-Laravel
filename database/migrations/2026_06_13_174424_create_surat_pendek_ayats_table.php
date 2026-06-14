@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId('surat_pendek_id')
-                ->constrained('surat_pendek')
+                ->constrained('surat_pendeks')
                 ->onDelete('cascade');
 
             $table->integer('no_ayat')->nullable();
