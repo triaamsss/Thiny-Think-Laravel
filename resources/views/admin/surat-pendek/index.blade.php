@@ -40,61 +40,62 @@
                 </thead>
 
                 <tbody>
-                    @foreach($surats as $surat)
-                        <tr style="border-bottom:1px solid #e5e7eb;">
-                            <td style="padding:14px;">{{ $loop->iteration }}</td>
+    @foreach($surats as $surat)
+        <tr style="border-bottom:1px solid #e5e7eb;">
+            <td style="padding:14px;">{{ $loop->iteration }}</td>
 
-                            <td style="padding:14px;font-size:28px;">
-                                {{ $surat->emoji ?? '📖' }}
-                            </td>
+            <td style="padding:14px;font-size:28px;">
+                {{ $surat->emoji ?? '📖' }}
+            </td>
 
-                            <td style="padding:14px;">
-                                <strong>{{ $surat->title }}</strong>
-                            </td>
+            <td style="padding:14px;">
+                <strong>{{ $surat->title }}</strong> <br>
+                <small style="color: #6b7280;">{{ $surat->arab_title }}</small>
+            </td>
 
-                            <td style="padding:14px;">
-                                <small>{{ $surat->key }}</small>
-                            </td>
+            <td style="padding:14px;">
+                <small>{{ $surat->ayats->first()->no_ayat ?? '-' }}</small>
+            </td>
 
-                            <td style="padding:14px;">
-                                {{ $surat->arti }}
-                            </td>
+            <td style="padding:14px;">
+                {{ $surat->ayats->first()->arti ?? '-' }}
+            </td>
 
-                            <td style="padding:14px;">
-                                @if($surat->audio)
-                                    <audio controls style="width:180px;border-radius:10px;">
-                                        <source src="{{ asset($surat->audio) }}" type="audio/mpeg">
-                                    </audio>
-                                @else
-                                    Tidak ada audio
-                                @endif
-                            </td>
+            <td style="padding:14px;">
+                @if($surat->ayats->first() && $surat->ayats->first()->audio)
+                    <audio controls style="width:180px;border-radius:10px;">
+                        <source src="{{ asset('storage/' . $surat->ayats->first()->audio) }}" type="audio/mpeg">
+                        Browser kamu tidak mendukung audio player.
+                    </audio>
+                @else
+                    <span style="color: #9ca3af; font-style: italic;">Tidak ada audio</span>
+                @endif
+            </td>
 
-                            <td style="padding:14px;">
-                                <div class="action-btns">
-                                    <a href="{{ route('admin.surat-pendek.edit', $surat->id) }}" class="btn-edit">
-                                        Edit
-                                    </a>
+            <td style="padding:14px;">
+                <div class="action-btns">
+                    <a href="{{ route('admin.surat-pendek.edit', $surat->id) }}" class="btn-edit">
+                        Edit
+                    </a>
 
-                                    <form
-                                        action="{{ route('admin.surat-pendek.destroy', $surat->id) }}"
-                                        method="POST"
-                                        onsubmit="return confirm('Hapus surat ini?')"
-                                        style="display:inline-block;"
-                                    >
-                                        @csrf
-                                        @method('DELETE')
+                    <form
+                        action="{{ route('admin.surat-pendek.destroy', $surat->id) }}"
+                        method="POST"
+                        onsubmit="return confirm('Hapus surat ini?')"
+                        style="display:inline-block;"
+                    >
+                        @csrf
+                        @method('DELETE')
 
-                                        <button type="submit" class="btn-delete">
-                                            Delete
-                                        </button>
-                                    </form>
-                                </div>
-                            </td>
-
-                        </tr>
-                    @endforeach
-                </tbody>
+                        <button type="submit" class="btn-delete">
+                            Delete
+                        </button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+    @endforeach
+</tbody>
             </table>
         @else
             <div class="empty">Belum ada surat</div>

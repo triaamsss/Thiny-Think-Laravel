@@ -8,7 +8,6 @@ class SuratPendek extends Model
 {
     protected $fillable = [
         'title',
-        'key',
         'arab_title',
         'jumlah_ayat',
         'emoji',
