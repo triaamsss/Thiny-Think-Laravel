@@ -75,7 +75,7 @@ class DoaHarianController extends Controller
     public function update(Request $request, DoaHarian $doa_harian)
     {
         $imagePath = $doa_harian->image;
-        $audioPath = $doa_harian->audio;
+        $quizImagePath = $doa_harian->quiz_image;
 
         $audioPath = $doa_harian->audio;
         $quizAudioPath = $doa_harian->quiz_audio;
